@@ -4,6 +4,23 @@
   <h1>Luděk Koňařík</h1>
   <p>Welcome to my website!</p>
   <div>JAVA DEVELOPER</div>
+  <span id="email-box"></span>
+
+<script>
+  (function() {
+    // Rozdělení adresy na části
+    var user = "java";
+    var domain = "ludek.sk";
+    
+    // Sestavení adresy a vytvoření odkazu
+    var fullEmail = user + "@" + domain;
+    var emailBox = document.getElementById("email-box");
+    
+    // Vložení odkazu do stránky
+    emailBox.innerHTML = '<a href="mailto:' + fullEmail + '">' + fullEmail + '</a>';
+  })();
+</script>
+
 </body>
 
 </html>
