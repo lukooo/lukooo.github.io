@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17G43C2BC0"></script>
+  <!-- Google tag (gtag.js) with Consent Mode -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag("consent", "default", {
+      "analytics_storage": (localStorage.getItem("cookie_consent") === "granted") ? "granted" : "denied"
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17G43C2BC0"></script>
+  <script>
     gtag("js", new Date());
-
     gtag("config", "G-17G43C2BC0");
   </script>
   <meta charset="UTF-8">
@@ -408,10 +412,74 @@
     .lang-switch a:hover { border-color: var(--accent); color: var(--accent); }
 
     .lang-switch a.active { color: var(--accent); border-color: var(--accent); }
+
+    .cookie-banner {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px;
+      display: none;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .cookie-banner.show { display: flex; }
+
+    .cookie-banner p {
+      margin: 0;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      max-width: 640px;
+    }
+
+    .cookie-banner .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .cookie-banner button {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+    }
+
+    .cookie-banner .accept-btn {
+      background: var(--accent);
+      color: #0b0b0e;
+      border-color: var(--accent);
+    }
+
+    .cookie-banner .accept-btn:hover { filter: brightness(1.08); }
+
+    .cookie-banner .decline-btn {
+      background: transparent;
+      color: var(--text-dim);
+    }
+
+    .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
   </style>
 </head>
 
 <body>
+
+  <div class="cookie-banner" id="cookie-banner">
+    <p>This site uses cookies for traffic analysis (Google Analytics). Do you consent to their use?</p>
+    <div class="cookie-actions">
+      <button class="decline-btn" id="cookie-decline">Decline</button>
+      <button class="accept-btn" id="cookie-accept">Accept</button>
+    </div>
+  </div>
 
   <a class="back-link" href="../en.html">&larr; Back</a>
 
@@ -601,6 +669,27 @@
       emailBox.innerHTML = '<a href="mailto:' + fullEmail + '">' + fullEmail + '</a>';
 
       document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var consent = localStorage.getItem("cookie_consent");
+      var banner = document.getElementById("cookie-banner");
+      if (!consent) {
+        banner.classList.add("show");
+      }
+      document.getElementById("cookie-accept").addEventListener("click", function () {
+        localStorage.setItem("cookie_consent", "granted");
+        if (typeof gtag === "function") {
+          gtag("consent", "update", { "analytics_storage": "granted" });
+        }
+        banner.classList.remove("show");
+      });
+      document.getElementById("cookie-decline").addEventListener("click", function () {
+        localStorage.setItem("cookie_consent", "denied");
+        banner.classList.remove("show");
+      });
     })();
   </script>
 
