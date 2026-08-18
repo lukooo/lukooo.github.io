@@ -1,25 +1,374 @@
-<html>
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luděk Koňařík — Java Developer</title>
+  <meta name="description" content="Osobná prezentácia — Luděk Koňařík, Java Developer.">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --bg-alt: #161922;
+      --card: #1b1f2a;
+      --border: #2a2f3d;
+      --text: #e8eaf0;
+      --text-dim: #9aa1b2;
+      --accent: #ff6b35;
+      --accent-dim: #7a4a80;
+      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header.hero {
+      padding: 96px 0 64px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(600px 300px at 15% 0%, rgba(255, 107, 53, 0.12), transparent 60%),
+        var(--bg);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      font-size: 1.25rem;
+      color: var(--text-dim);
+      margin: 0 0 28px;
+    }
+
+    .hero p.lead {
+      max-width: 620px;
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+    }
+
+    .btn:hover { text-decoration: none; }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #14100e;
+      border-color: var(--accent);
+    }
+
+    .btn.primary:hover { filter: brightness(1.08); }
+
+    .btn.ghost {
+      color: var(--text);
+    }
+
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.6rem;
+      margin: 0 0 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    h2 .num {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      color: var(--accent);
+    }
+
+    .card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline .item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 20px;
+    }
+
+    .timeline .period {
+      color: var(--text-dim);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      padding-top: 2px;
+    }
+
+    .timeline h3 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+    }
+
+    .timeline .company {
+      color: var(--accent);
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .timeline p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    @media (max-width: 560px) {
+      .timeline .item { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    footer {
+      padding: 48px 0 72px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    #email-box a { font-family: var(--mono); }
+
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+  </style>
+</head>
 
 <body>
-  <h1>Luděk Koňařík</h1>
-  <p>Welcome to my website!</p>
-  <div>JAVA DEVELOPER</div>
-  <span id="email-box"></span>
 
-<script>
-  (function() {
-    // Rozdělení adresy na části
-    var user = "java";
-    var domain = "ludek.sk";
-    
-    // Sestavení adresy a vytvoření odkazu
-    var fullEmail = user + "@" + domain;
-    var emailBox = document.getElementById("email-box");
-    
-    // Vložení odkazu do stránky
-    emailBox.innerHTML = '<a href="mailto:' + fullEmail + '">' + fullEmail + '</a>';
-  })();
-</script>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">// Ahoj, volám sa</p>
+      <h1>Luděk Koňařík</h1>
+      <p class="role">Java Developer</p>
+      <p class="lead">
+        Vyvíjam robustné backendové systémy a webové aplikácie postavené na Jave a Spring frameworku.
+        Zaujíma ma čistý kód, dobrá architektúra a riešenia, ktoré obstoja v prevádzke.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Kontaktovať</a>
+        <a class="btn ghost" href="#experience">Moje skúsenosti</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <h2><span class="num">01.</span> O mne</h2>
+      <div class="card">
+        <p>
+          Som Java developer so zameraním na backendový vývoj — od návrhu API a dátových modelov,
+          cez implementáciu business logiky, až po nasadenie a údržbu v produkcii.
+          Pracujem s ekosystémom Spring (Boot, Data, Security), relačnými databázami a nástrojmi
+          pre kontinuálnu integráciu. Rád sa učím nové veci a hľadám jednoduché riešenia
+          pre komplexné problémy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2><span class="num">02.</span> Zručnosti</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Jazyky &amp; Core</h3>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Frameworky</h3>
+          <div class="tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Spring Data</span>
+            <span class="tag">Spring Security</span>
+            <span class="tag">Hibernate / JPA</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Databázy</h3>
+          <div class="tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Redis</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>DevOps &amp; Nástroje</h3>
+          <div class="tags">
+            <span class="tag">Docker</span>
+            <span class="tag">Git</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Maven / Gradle</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>API &amp; Integrácie</h3>
+          <div class="tags">
+            <span class="tag">REST</span>
+            <span class="tag">JSON</span>
+            <span class="tag">Message Queues</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Testovanie</h3>
+          <div class="tags">
+            <span class="tag">JUnit</span>
+            <span class="tag">Mockito</span>
+            <span class="tag">Integration Tests</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2><span class="num">03.</span> Skúsenosti</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="period">2022 — dnes</div>
+          <div>
+            <h3>Java Developer</h3>
+            <div class="company">Backend vývoj</div>
+            <p>
+              Návrh a vývoj backendových služieb v Jave a Spring Boot, práca s REST API,
+              relačnými databázami a nasadzovaním aplikácií do produkcie.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="period">Predtým</div>
+          <div>
+            <h3>Softvérový vývoj</h3>
+            <div class="company">Rôzne projekty</div>
+            <p>
+              Skúsenosti s návrhom a implementáciou softvérových riešení naprieč rôznymi
+              technológiami a doménami.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Kontakt</h2>
+      <div class="card">
+        <p>Máte projekt alebo pracovnú ponuku? Ozvite sa.</p>
+        <div class="contact-row">
+          <span id="email-box"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Luděk Koňařík — Java Developer</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // Rozdělení adresy na části (ochrana proti spam botom)
+      var user = "java";
+      var domain = "ludek.sk";
+      var fullEmail = user + "@" + domain;
+      var emailBox = document.getElementById("email-box");
+      emailBox.innerHTML = '<a href="mailto:' + fullEmail + '">' + fullEmail + '</a>';
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
 
 </body>
 
