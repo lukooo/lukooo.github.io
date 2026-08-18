@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mgr. Zdenka Hudáková — Grafická dizajnérka | CreativePaper</title>
+  <meta name="description" content="Mgr. Zdenka Hudáková — grafická dizajnérka so špecializáciou na knižný dizajn. Návrh obálok kníh, DTP sadzba, svadobná a propagačná grafika. 12+ rokov praxe.">
+  <meta name="keywords" content="grafický dizajn, grafická dizajnérka, knižný dizajn, obálka knihy, DTP sadzba, svadobné oznámenia, CreativePaper, Zdenka Hudáková, Praha">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Zdenka Hudáková">
+  <link rel="canonical" href="https://www.ludek.sk/graficky-dizajn/">
+  <link rel="alternate" hreflang="sk" href="https://www.ludek.sk/graficky-dizajn/">
+  <link rel="alternate" hreflang="cs" href="https://www.ludek.sk/graficky-dizajn/cs.html">
+  <link rel="alternate" hreflang="en" href="https://www.ludek.sk/graficky-dizajn/en.html">
+  <link rel="alternate" hreflang="de" href="https://www.ludek.sk/graficky-dizajn/de.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.ludek.sk/graficky-dizajn/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mgr. Zdenka Hudáková — Grafická dizajnérka">
+  <meta property="og:description" content="Grafická dizajnérka so špecializáciou na knižný dizajn. Návrh obálok kníh, DTP sadzba, svadobná a propagačná grafika.">
+  <meta property="og:url" content="https://www.ludek.sk/graficky-dizajn/">
+  <meta property="og:site_name" content="CreativePaper — Zdenka Hudáková">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:locale:alternate" content="cs_CZ">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mgr. Zdenka Hudáková — Grafická dizajnérka">
+  <meta name="twitter:description" content="Grafická dizajnérka so špecializáciou na knižný dizajn. 12+ rokov praxe, spolupráca so zahraničnými vydavateľstvami.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zdenka Hudáková",
+    "jobTitle": "Grafická dizajnérka",
+    "url": "https://www.ludek.sk/graficky-dizajn/",
+    "email": "mailto:info@creativepaper.sk",
+    "sameAs": ["https://creativepaper.sk", "https://navolnenoze.cz/prezentace/zdenka-hudakova/"],
+    "knowsAbout": ["Knižný dizajn", "Grafický dizajn", "DTP sadzba", "Obálky kníh", "Svadobná grafika"],
+    "address": { "@type": "PostalAddress", "addressLocality": "Praha", "addressCountry": "CZ" }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #150e13;
+      --bg-alt: #1c131a;
+      --card: #211621;
+      --border: #33222f;
+      --text: #f1e9ee;
+      --text-dim: #a89aa4;
+      --accent: #e85d75;
+      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header.hero {
+      padding: 96px 0 64px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(600px 300px at 15% 0%, rgba(232, 93, 117, 0.16), transparent 60%),
+        var(--bg);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.6vw, 3.1rem);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      margin: 0 0 28px;
+    }
+
+    .hero p.lead {
+      max-width: 640px;
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+    }
+
+    .btn:hover { text-decoration: none; }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #180a10;
+      border-color: var(--accent);
+    }
+
+    .btn.primary:hover { filter: brightness(1.08); }
+
+    .btn.ghost { color: var(--text); }
+
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.55rem;
+      margin: 0 0 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    h2 .num {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      color: var(--accent);
+    }
+
+    .card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .facts .fact {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .facts .fact .label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+
+    .facts .fact .value { font-size: 0.98rem; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .features .feature {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      background: var(--bg-alt);
+    }
+
+    .features .feature .num-badge {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
+    .features .feature p { margin: 0; color: var(--text-dim); font-size: 0.92rem; }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .portfolio-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-card .thumb {
+      height: 90px;
+      background: linear-gradient(135deg, var(--accent), #7a3350);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #180a10;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .portfolio-card .body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+    .portfolio-card h3 { margin: 0; font-size: 0.98rem; color: var(--text); }
+    .portfolio-card .tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .portfolio-card p { margin: 0; color: var(--text-dim); font-size: 0.88rem; }
+    .portfolio-card .view-link { margin-top: auto; font-size: 0.82rem; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    form.contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field label {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .field input, .field textarea {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+
+    .field input:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: var(--accent);
+      color: #180a10;
+      border: none;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+
+    .submit-btn:hover { filter: brightness(1.08); }
+
+    .contact-direct p { color: var(--text-dim); font-size: 0.95rem; }
+    #email-box a { font-family: var(--mono); }
+
+    footer {
+      padding: 40px 0 64px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-alt);
+      color: var(--text-dim);
+    }
+
+    .back-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+
+    .lang-switch a {
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-dim);
+      background: var(--bg-alt);
+    }
+
+    .lang-switch a:hover { border-color: var(--accent); color: var(--accent); }
+
+    .lang-switch a.active { color: var(--accent); border-color: var(--accent); }
+  </style>
+</head>
+
+<body>
+
+  <a class="back-link" href="../index.html">&larr; Späť</a>
+
+  <nav class="lang-switch">
+    <a href="index.html" class="active">SK</a>
+    <a href="cs.html">CS</a>
+    <a href="en.html">EN</a>
+    <a href="de.html">DE</a>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">// CreativePaper &middot; Zdenka Hudáková</p>
+      <h1>Grafický dizajn so zmyslom pre detail</h1>
+      <p class="role">Grafická dizajnérka &middot; špecializácia na knižný dizajn &middot; Praha</p>
+      <p class="lead">
+        Už viac ako 12 rokov navrhujem obálky kníh, sadzbu a ďalšiu tlačovú aj digitálnu
+        grafiku pre vydavateľstvá a súkromných klientov na Slovensku, v Česku aj v zahraničí.
+        Pomôžem vašej knihe či projektu vyzerať presne tak dobre, ako sa číta.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Kontaktovať ma</a>
+        <a class="btn ghost" href="#portfolio">Ukážky práce</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <h2><span class="num">01.</span> O mne</h2>
+      <div class="card">
+        <p>
+          Som Mgr. Zdenka Hudáková, grafická dizajnérka pôsobiaca pod značkou CreativePaper.
+          Viac ako 12 rokov sa venujem grafickému dizajnu so špecializáciou na knižný dizajn —
+          navrhujem obálky kníh a e-kníh a robím sadzbu (DTP) vnútra kníh pre vydavateľstvá
+          zo Slovenska, Česka aj zo zahraničia. Okrem knižného dizajnu vytváram aj ďalšiu
+          tlačovú a digitálnu grafiku — plagáty, letáky, svadobné oznámenia, pozvánky
+          a blahoprajné pohľadnice.
+        </p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="label">Špecializácia</div><div class="value">Knižný dizajn</div></div>
+        <div class="fact"><div class="label">Prax</div><div class="value">12+ rokov</div></div>
+        <div class="fact"><div class="label">Pôsobnosť</div><div class="value">SK, ČR, zahraničie</div></div>
+        <div class="fact"><div class="label">Web</div><div class="value"><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></div></div>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="num-badge">01</div><p>12+ rokov skúseností v grafickom dizajne</p></div>
+        <div class="feature"><div class="num-badge">02</div><p>Spolupráca so zahraničnými vydavateľstvami</p></div>
+        <div class="feature"><div class="num-badge">03</div><p>Individuálny prístup ku každej zákazke</p></div>
+        <div class="feature"><div class="num-badge">04</div><p>Rýchla a spoľahlivá komunikácia</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2><span class="num">02.</span> Čo robím</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Návrh obálky knihy</h3>
+          <p>Originálny grafický návrh obálky pre tlačenú knihu aj e-knihu.</p>
+        </div>
+        <div class="card">
+          <h3>DTP sadzba knihy</h3>
+          <p>Zalomenie a sadzba vnútra knihy pripravené na tlač aj digitálnu distribúciu.</p>
+        </div>
+        <div class="card">
+          <h3>Svadobná grafika</h3>
+          <p>Svadobné oznámenia, pozvánky na krstiny a grafika pre ďalšie rodinné udalosti.</p>
+        </div>
+        <div class="card">
+          <h3>Plagáty a letáky</h3>
+          <p>Návrh tlačovej aj digitálnej propagačnej grafiky.</p>
+        </div>
+        <div class="card">
+          <h3>Pohľadnice a bannery</h3>
+          <p>Grafika pre osobné aj firemné príležitosti.</p>
+        </div>
+        <div class="card">
+          <h3>Grafika na mieru</h3>
+          <p>Individuálne grafické spracovanie materiálov podľa potrieb klienta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="wrap">
+      <h2><span class="num">03.</span> Ukážky práce</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="thumb">Obálka knihy</div>
+          <div class="body">
+            <span class="tag">Knižný dizajn</span>
+            <h3>100 spôsobov, ktorými si zbytočne komplikujeme život</h3>
+            <p>Grafický návrh obálky knihy.</p>
+            <a class="view-link" href="https://navolnenoze.cz/prezentace/zdenka-hudakova/galerie/71926/" target="_blank" rel="noopener">Zobraziť ukážku &rarr;</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="thumb">Obálka knihy</div>
+          <div class="body">
+            <span class="tag">Knižný dizajn</span>
+            <h3>Uspejte v online</h3>
+            <p>Grafický návrh obálky knihy.</p>
+            <a class="view-link" href="https://navolnenoze.cz/prezentace/zdenka-hudakova/galerie/71935/" target="_blank" rel="noopener">Zobraziť ukážku &rarr;</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="thumb">Obálka knihy</div>
+          <div class="body">
+            <span class="tag">Zahraničné vydavateľstvo</span>
+            <h3>Wired for Wellness</h3>
+            <p>Design knižnej obálky pre zahraničného klienta.</p>
+            <a class="view-link" href="https://navolnenoze.cz/prezentace/zdenka-hudakova/galerie/71946/" target="_blank" rel="noopener">Zobraziť ukážku &rarr;</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="thumb">DTP sadzba</div>
+          <div class="body">
+            <span class="tag">DTP</span>
+            <h3>The Badass Birth Goddess</h3>
+            <p>DTP sadzba knihy pre zahraničné vydavateľstvo.</p>
+            <a class="view-link" href="https://navolnenoze.cz/prezentace/zdenka-hudakova/galerie/72002/" target="_blank" rel="noopener">Zobraziť ukážku &rarr;</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="thumb">Pozvánka</div>
+          <div class="body">
+            <span class="tag">Rodinná udalosť</span>
+            <h3>Pozvánka na krstiny</h3>
+            <p>Grafický dizajn pozvánky s fotografiou.</p>
+            <a class="view-link" href="https://navolnenoze.cz/prezentace/zdenka-hudakova/galerie/72037/" target="_blank" rel="noopener">Zobraziť ukážku &rarr;</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="thumb">Oznámenie</div>
+          <div class="body">
+            <span class="tag">Svadba</span>
+            <h3>Svadobné oznámenie — veselý vzor</h3>
+            <p>Grafický dizajn svadobného oznámenia.</p>
+            <a class="view-link" href="https://navolnenoze.cz/prezentace/zdenka-hudakova/galerie/72036/" target="_blank" rel="noopener">Zobraziť ukážku &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 20px; color: var(--text-dim); font-size: 0.92rem;">
+        Kompletné portfólio nájdete na
+        <a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a>
+        alebo v galérii na
+        <a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/galerie/" target="_blank" rel="noopener">navolnenoze.cz</a>.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Kontakt</h2>
+      <div class="contact-layout">
+        <form class="contact-form" action="https://formsubmit.co/info@creativepaper.sk" method="POST">
+          <input type="hidden" name="_subject" value="Nová správa z webu CreativePaper">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <div class="field">
+            <label for="name">Meno</label>
+            <input type="text" id="name" name="Meno" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="E-mail" required>
+          </div>
+          <div class="field">
+            <label for="message">Správa</label>
+            <textarea id="message" name="Správa" rows="5" required></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Odoslať správu</button>
+        </form>
+        <div class="card contact-direct">
+          <h3>Priamy kontakt</h3>
+          <p>Radšej ma oslovíte priamo?</p>
+          <p id="email-box"></p>
+          <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
+          <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profil na navolnenoze.cz</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Zdenka Hudáková &middot; CreativePaper &middot; Grafický dizajn</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var user = "info";
+      var domain = "creativepaper.sk";
+      var fullEmail = user + "@" + domain;
+      var emailBox = document.getElementById("email-box");
+      emailBox.innerHTML = '<a href="mailto:' + fullEmail + '">' + fullEmail + '</a>';
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+
+</body>
+
+</html>
