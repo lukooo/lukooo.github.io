@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.SJ s.r.o. — Buchhaltungskanzlei</title>
+  <meta name="description" content="M.SJ s.r.o. — Buchhaltungs- und Steuerkanzlei in Prag. Buchführung, Lohnbuchhaltung und Steuerberatung für kleine und mittlere Unternehmen.">
+  <style>
+    :root {
+      --bg: #0d1210;
+      --bg-alt: #131a17;
+      --card: #17201d;
+      --border: #263230;
+      --text: #e8ede9;
+      --text-dim: #98a6a0;
+      --accent: #17c087;
+      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header.hero {
+      padding: 96px 0 64px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(600px 300px at 15% 0%, rgba(23, 192, 135, 0.14), transparent 60%),
+        var(--bg);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.6vw, 3.1rem);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      margin: 0 0 28px;
+    }
+
+    .hero p.lead {
+      max-width: 640px;
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+    }
+
+    .btn:hover { text-decoration: none; }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #06140f;
+      border-color: var(--accent);
+    }
+
+    .btn.primary:hover { filter: brightness(1.08); }
+
+    .btn.ghost { color: var(--text); }
+
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.55rem;
+      margin: 0 0 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    h2 .num {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      color: var(--accent);
+    }
+
+    .card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .facts .fact {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .facts .fact .label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+
+    .facts .fact .value { font-size: 0.98rem; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .features .feature {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      background: var(--bg-alt);
+    }
+
+    .features .feature .num-badge {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
+    .features .feature p { margin: 0; color: var(--text-dim); font-size: 0.92rem; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .team-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #0d8f63);
+      color: #06140f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: var(--mono);
+      font-size: 1rem;
+    }
+
+    .team-card h3 { margin: 0 0 2px; font-size: 1.02rem; color: var(--text); }
+    .team-card .role-tag {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .team-card p { margin: 0; color: var(--text-dim); font-size: 0.92rem; }
+
+    .location-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 720px) {
+      .location-layout { grid-template-columns: 1fr; }
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .map-frame iframe { width: 100%; height: 100%; min-height: 260px; border: 0; filter: grayscale(0.3) invert(0.92) contrast(0.9); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    form.contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field label {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .field input, .field textarea {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+
+    .field input:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: var(--accent);
+      color: #06140f;
+      border: none;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+
+    .submit-btn:hover { filter: brightness(1.08); }
+
+    .contact-direct p { color: var(--text-dim); font-size: 0.95rem; }
+    #email-box a { font-family: var(--mono); }
+
+    footer {
+      padding: 40px 0 64px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-alt);
+      color: var(--text-dim);
+    }
+
+    .back-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+
+    .lang-switch a {
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-dim);
+      background: var(--bg-alt);
+    }
+
+    .lang-switch a:hover { border-color: var(--accent); color: var(--accent); }
+
+    .lang-switch a.active { color: var(--accent); border-color: var(--accent); }
+  </style>
+</head>
+
+<body>
+
+  <a class="back-link" href="../de.html">&larr; Zurück</a>
+
+  <nav class="lang-switch">
+    <a href="index.html">SK</a>
+    <a href="cs.html">CS</a>
+    <a href="en.html">EN</a>
+    <a href="de.html" class="active">DE</a>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">// M.SJ s.r.o. &middot; Buchhaltungskanzlei</p>
+      <h1>Buchhaltung, der Sie vertrauen können</h1>
+      <p class="role">Buchführung, Lohnbuchhaltung und Steuern &middot; Prag</p>
+      <p class="lead">
+        Wir sind eine kleine Buchhaltungskanzlei mit Sitz in Prag, die sich seit 2015
+        um Buchführung, Löhne und Steuern für kleine und mittlere Unternehmen sowie
+        Selbstständige kümmert. Wir erledigen Ihre Agenda zuverlässig, genau und pünktlich.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Kontaktieren Sie uns</a>
+        <a class="btn ghost" href="#services">Unsere Leistungen</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <h2><span class="num">01.</span> Über das Unternehmen</h2>
+      <div class="card">
+        <p>
+          M.SJ s.r.o. ist eine Buchhaltungs- und Steuerkanzlei mit Sitz in Prag 9 – Letňany.
+          Das Unternehmen wurde 2015 gegründet und wird von Anfang an von zwei
+          Geschäftsführerinnen mit langjähriger Erfahrung im Bereich Buchhaltung
+          und Steuern geleitet. Wir sind spezialisiert auf die umfassende Betreuung
+          der Buchhaltung kleiner und mittlerer Unternehmen, Selbstständiger und
+          gemeinnütziger Organisationen — von der Buchführung über die Lohnbuchhaltung
+          bis hin zu Steuererklärungen und Beratung.
+        </p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="label">Handelsregisternummer</div><div class="value">03933857</div></div>
+        <div class="fact"><div class="label">Sitz</div><div class="value">Fryčovická 459, 199 00 Prag 9 – Letňany</div></div>
+        <div class="fact"><div class="label">Gegründet</div><div class="value">2015</div></div>
+        <div class="fact"><div class="label">Rechtsform</div><div class="value">s.r.o. (GmbH)</div></div>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="num-badge">01</div><p>Über 10 Jahre am Markt</p></div>
+        <div class="feature"><div class="num-badge">02</div><p>Individueller Ansatz für jeden Kunden</p></div>
+        <div class="feature"><div class="num-badge">03</div><p>Diskretion und Zuverlässigkeit</p></div>
+        <div class="feature"><div class="num-badge">04</div><p>Kommunikation online oder persönlich</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2><span class="num">02.</span> Unsere Leistungen</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Buchführung</h3>
+          <p>Doppelte Buchführung sowie vereinfachte Steueraufzeichnungen für Unternehmen und Selbstständige.</p>
+        </div>
+        <div class="card">
+          <h3>Lohnbuchhaltung &amp; Personalwesen</h3>
+          <p>Lohnabrechnung, An- und Abmeldung von Mitarbeitern, Kommunikation mit Behörden und Versicherungen.</p>
+        </div>
+        <div class="card">
+          <h3>Steuererklärungen</h3>
+          <p>Einkommensteuer-, Umsatzsteuer- und weitere Steuererklärungen inklusive elektronischer Einreichung.</p>
+        </div>
+        <div class="card">
+          <h3>Steuerberatung</h3>
+          <p>Optimierung der Steuerlast und Beratung bei buchhalterischen und steuerlichen Fragen.</p>
+        </div>
+        <div class="card">
+          <h3>Jahresabschlüsse</h3>
+          <p>Erstellung von Jahresabschlüssen, Berichten und Unterlagen für Wirtschaftsprüfungen.</p>
+        </div>
+        <div class="card">
+          <h3>Firmengründung</h3>
+          <p>Administrative Unterstützung bei der Gründung einer s.r.o. oder eines Gewerbes und dessen Führung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <h2><span class="num">03.</span> Unser Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar">MJ</div>
+          <div>
+            <h3>Ing. Michaela Jenčová</h3>
+            <span class="role-tag">Geschäftsführerin</span>
+            <p>Mitgründerin von M.SJ s.r.o. seit 2015. Kümmert sich um die Buchführung und Steuerberatung für die Kunden des Unternehmens.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">MS</div>
+          <div>
+            <h3>Ing. Mária Scholzová</h3>
+            <span class="role-tag">Geschäftsführerin</span>
+            <p>Mitgründerin von M.SJ s.r.o. seit 2015. Verantwortlich für Lohnbuchhaltung und Buchführung der Kunden des Unternehmens.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Wo Sie uns finden</h2>
+      <div class="location-layout">
+        <div class="card">
+          <h3>Büro</h3>
+          <p>
+            M.SJ s.r.o.<br>
+            Prag 2 – Vinohrady<br>
+            wenige Schritte vom Nationalmuseum entfernt<br>
+            Tschechische Republik
+          </p>
+          <p style="margin-top: 10px; font-size: 0.85rem;">
+            Eingetragener Sitz: Fryčovická 459, 199 00 Prag 9 – Letňany
+          </p>
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=National+Museum%2C+Vinohrady%2C+Prague&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Karte – Büro von M.SJ s.r.o., Vinohrady, Prag"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2><span class="num">05.</span> Kontakt</h2>
+      <div class="contact-layout">
+        <form class="contact-form" action="https://formsubmit.co/mich.jencova@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Neue Nachricht von der M.SJ s.r.o. Website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required>
+          </div>
+          <div class="field">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="E-Mail" required>
+          </div>
+          <div class="field">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="Telefon">
+          </div>
+          <div class="field">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="Nachricht" rows="5" required></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Nachricht senden</button>
+        </form>
+        <div class="card contact-direct">
+          <h3>Direkter Kontakt</h3>
+          <p>Sie erreichen uns lieber direkt?</p>
+          <p id="email-box"></p>
+          <p>Fryčovická 459, 199 00 Prag 9 – Letňany</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> M.SJ s.r.o. &middot; Handelsregisternummer 03933857 &middot; Buchhaltungskanzlei</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var user = "mich.jencova";
+      var domain = "gmail.com";
+      var fullEmail = user + "@" + domain;
+      var emailBox = document.getElementById("email-box");
+      emailBox.innerHTML = '<a href="mailto:' + fullEmail + '">' + fullEmail + '</a>';
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+
+</body>
+
+</html>

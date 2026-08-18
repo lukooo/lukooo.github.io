@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.SJ s.r.o. — Účtovná kancelária</title>
+  <meta name="description" content="M.SJ s.r.o. — účtovná a daňová kancelária v Prahe. Vedenie účtovníctva, miezd a daňové poradenstvo pre malé a stredné firmy.">
+  <style>
+    :root {
+      --bg: #0d1210;
+      --bg-alt: #131a17;
+      --card: #17201d;
+      --border: #263230;
+      --text: #e8ede9;
+      --text-dim: #98a6a0;
+      --accent: #17c087;
+      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header.hero {
+      padding: 96px 0 64px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(600px 300px at 15% 0%, rgba(23, 192, 135, 0.14), transparent 60%),
+        var(--bg);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.6vw, 3.1rem);
+      margin: 0 0 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      margin: 0 0 28px;
+    }
+
+    .hero p.lead {
+      max-width: 640px;
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+    }
+
+    .btn:hover { text-decoration: none; }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #06140f;
+      border-color: var(--accent);
+    }
+
+    .btn.primary:hover { filter: brightness(1.08); }
+
+    .btn.ghost { color: var(--text); }
+
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.55rem;
+      margin: 0 0 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    h2 .num {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.02rem;
+      color: var(--accent);
+    }
+
+    .card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .facts .fact {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .facts .fact .label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+
+    .facts .fact .value { font-size: 0.98rem; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .features .feature {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      background: var(--bg-alt);
+    }
+
+    .features .feature .num-badge {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
+    .features .feature p { margin: 0; color: var(--text-dim); font-size: 0.92rem; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .team-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #0d8f63);
+      color: #06140f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: var(--mono);
+      font-size: 1rem;
+    }
+
+    .team-card h3 { margin: 0 0 2px; font-size: 1.02rem; color: var(--text); }
+    .team-card .role-tag {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .team-card p { margin: 0; color: var(--text-dim); font-size: 0.92rem; }
+
+    .location-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 720px) {
+      .location-layout { grid-template-columns: 1fr; }
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .map-frame iframe { width: 100%; height: 100%; min-height: 260px; border: 0; filter: grayscale(0.3) invert(0.92) contrast(0.9); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+
+    form.contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field label {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .field input, .field textarea {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+
+    .field input:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: var(--accent);
+      color: #06140f;
+      border: none;
+      padding: 11px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+
+    .submit-btn:hover { filter: brightness(1.08); }
+
+    .contact-direct p { color: var(--text-dim); font-size: 0.95rem; }
+    #email-box a { font-family: var(--mono); }
+
+    footer {
+      padding: 40px 0 64px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    .back-link {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-alt);
+      color: var(--text-dim);
+    }
+
+    .back-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+
+    .lang-switch a {
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-dim);
+      background: var(--bg-alt);
+    }
+
+    .lang-switch a:hover { border-color: var(--accent); color: var(--accent); }
+
+    .lang-switch a.active { color: var(--accent); border-color: var(--accent); }
+  </style>
+</head>
+
+<body>
+
+  <a class="back-link" href="../index.html">&larr; Späť</a>
+
+  <nav class="lang-switch">
+    <a href="index.html" class="active">SK</a>
+    <a href="cs.html">CS</a>
+    <a href="en.html">EN</a>
+    <a href="de.html">DE</a>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">// M.SJ s.r.o. &middot; účtovná kancelária</p>
+      <h1>Účtovníctvo, ktorému môžete dôverovať</h1>
+      <p class="role">Vedenie účtovníctva, miezd a daní &middot; Praha</p>
+      <p class="lead">
+        Sme malá účtovná kancelária so sídlom v Prahe, ktorá sa od roku 2015 stará
+        o účtovníctvo, mzdy a dane pre malé a stredné firmy aj živnostníkov.
+        Postaráme sa o vašu agendu spoľahlivo, presne a včas.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Kontaktovať nás</a>
+        <a class="btn ghost" href="#services">Naše služby</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <h2><span class="num">01.</span> O spoločnosti</h2>
+      <div class="card">
+        <p>
+          M.SJ s.r.o. je účtovná a daňová kancelária so sídlom v Prahe 9 – Letňanoch.
+          Spoločnosť bola založená v roku 2015 a od začiatku ju vedú dve konateľky
+          s dlhoročnými skúsenosťami v oblasti účtovníctva a daní. Špecializujeme sa
+          na komplexnú starostlivosť o účtovníctvo malých a stredných firiem, živnostníkov
+          a neziskových organizácií — od vedenia účtovníctva, cez mzdovú agendu,
+          až po daňové priznania a poradenstvo.
+        </p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="label">IČO</div><div class="value">03933857</div></div>
+        <div class="fact"><div class="label">Sídlo</div><div class="value">Fryčovická 459, 199 00 Praha 9 – Letňany</div></div>
+        <div class="fact"><div class="label">Založená</div><div class="value">2015</div></div>
+        <div class="fact"><div class="label">Právna forma</div><div class="value">s.r.o.</div></div>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="num-badge">01</div><p>Viac ako 10 rokov na trhu</p></div>
+        <div class="feature"><div class="num-badge">02</div><p>Individuálny prístup ku každému klientovi</p></div>
+        <div class="feature"><div class="num-badge">03</div><p>Diskrétnosť a spoľahlivosť</p></div>
+        <div class="feature"><div class="num-badge">04</div><p>Komunikácia online aj osobne</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2><span class="num">02.</span> Naše služby</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Vedenie účtovníctva</h3>
+          <p>Podvojné účtovníctvo aj daňová evidencia (jednoduché účtovníctvo) pre firmy a živnostníkov.</p>
+        </div>
+        <div class="card">
+          <h3>Mzdy a personalistika</h3>
+          <p>Spracovanie miezd, prihlášky a odhlášky zamestnancov, komunikácia s úradmi a poisťovňami.</p>
+        </div>
+        <div class="card">
+          <h3>Daňové priznania</h3>
+          <p>Priznania k dani z príjmu, DPH a ďalším daniam vrátane elektronického podania.</p>
+        </div>
+        <div class="card">
+          <h3>Daňové poradenstvo</h3>
+          <p>Optimalizácia daňovej záťaže a poradenstvo pri účtovných a daňových otázkach.</p>
+        </div>
+        <div class="card">
+          <h3>Ročné uzávierky</h3>
+          <p>Zostavenie účtovnej závierky, výkazov a príprava podkladov pre audit.</p>
+        </div>
+        <div class="card">
+          <h3>Zakladanie spoločností</h3>
+          <p>Administratívna podpora pri založení s.r.o. či živnosti a jej vedení.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <h2><span class="num">03.</span> Náš tím</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="avatar">MJ</div>
+          <div>
+            <h3>Ing. Michaela Jenčová</h3>
+            <span class="role-tag">Konateľka</span>
+            <p>Spoluzakladateľka spoločnosti M.SJ s.r.o. od roku 2015. Venuje sa vedeniu účtovníctva a daňovému poradenstvu pre klientov spoločnosti.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="avatar">MS</div>
+          <div>
+            <h3>Ing. Mária Scholzová</h3>
+            <span class="role-tag">Konateľka</span>
+            <p>Spoluzakladateľka spoločnosti M.SJ s.r.o. od roku 2015. Zameriava sa na mzdovú agendu a účtovníctvo klientov spoločnosti.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Kde nás nájdete</h2>
+      <div class="location-layout">
+        <div class="card">
+          <h3>Kancelária</h3>
+          <p>
+            M.SJ s.r.o.<br>
+            Praha 2 – Vinohrady<br>
+            pár krokov od Národného múzea<br>
+            Česká republika
+          </p>
+          <p style="margin-top: 10px; font-size: 0.85rem;">
+            Registrované sídlo: Fryčovická 459, 199 00 Praha 9 – Letňany
+          </p>
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=N%C3%A1rodn%C3%AD+muzeum%2C+Vinohrady%2C+Praha&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa – kancelária M.SJ s.r.o., Vinohrady, Praha"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2><span class="num">05.</span> Kontakt</h2>
+      <div class="contact-layout">
+        <form class="contact-form" action="https://formsubmit.co/mich.jencova@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nová správa z webu M.SJ s.r.o.">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <div class="field">
+            <label for="name">Meno</label>
+            <input type="text" id="name" name="Meno" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="E-mail" required>
+          </div>
+          <div class="field">
+            <label for="phone">Telefón</label>
+            <input type="tel" id="phone" name="Telefón">
+          </div>
+          <div class="field">
+            <label for="message">Správa</label>
+            <textarea id="message" name="Správa" rows="5" required></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Odoslať správu</button>
+        </form>
+        <div class="card contact-direct">
+          <h3>Priamy kontakt</h3>
+          <p>Radšej nás oslovíte priamo?</p>
+          <p id="email-box"></p>
+          <p>Fryčovická 459, 199 00 Praha 9 – Letňany</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> M.SJ s.r.o. &middot; IČO 03933857 &middot; Účtovná kancelária</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var user = "mich.jencova";
+      var domain = "gmail.com";
+      var fullEmail = user + "@" + domain;
+      var emailBox = document.getElementById("email-box");
+      emailBox.innerHTML = '<a href="mailto:' + fullEmail + '">' + fullEmail + '</a>';
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+
+</body>
+
+</html>
