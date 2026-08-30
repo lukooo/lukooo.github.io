@@ -445,6 +445,45 @@
     }
 
     .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 16px;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .faq-item[open] summary::after { content: "\2212"; }
+
+    .faq-item p {
+      margin: 0;
+      padding-bottom: 16px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -463,6 +502,20 @@
         "name": "Grafický design — CreativePaper",
         "item": "https://www.ludek.sk/graficky-dizajn/cs.html"
       }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Jak dlouho trvá návrh obálky knihy?", "acceptedAnswer": { "@type": "Answer", "text": "Záleží na rozsahu zadání a počtu úprav, obvykle to trvá několik dní až dva týdny od zadání po finální verzi." } },
+      { "@type": "Question", "name": "Děláte i sazbu (DTP) celé knihy, nebo jen obálku?", "acceptedAnswer": { "@type": "Answer", "text": "Obojí — věnuji se návrhu obálky i kompletní sazbě vnitřku knihy, připravené pro tisk i digitální distribuci." } },
+      { "@type": "Question", "name": "Spolupracujete i se zahraničními klienty a nakladatelstvími?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, mám zkušenosti se spoluprací se zahraničními nakladatelstvími, komunikace probíhá i v angličtině." } },
+      { "@type": "Question", "name": "Jak probíhá spolupráce a předávání podkladů?", "acceptedAnswer": { "@type": "Answer", "text": "Komunikujeme online, podklady a připomínky si vyměňujeme elektronicky, takže spolupráce funguje bez ohledu na vzdálenost." } },
+      { "@type": "Question", "name": "Děláte i grafiku mimo knižní design, například svatební oznámení?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, věnuji se i svatebním oznámením, pozvánkám, plakátům, letákům a další propagační grafice." } },
+      { "@type": "Question", "name": "Jak si mohu prohlédnout vaše další práce?", "acceptedAnswer": { "@type": "Answer", "text": "Kompletní portfolio najdete na creativepaper.sk nebo v galerii na navolnenoze.cz — odkazy jsou i v sekci Ukázky práce výše." } }
     ]
   }
   </script>
@@ -632,9 +685,41 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Časté otázky</h2>
+      <div class="faq-list">
+      <details class="faq-item">
+        <summary>Jak dlouho trvá návrh obálky knihy?</summary>
+        <p>Záleží na rozsahu zadání a počtu úprav, obvykle to trvá několik dní až dva týdny od zadání po finální verzi.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Děláte i sazbu (DTP) celé knihy, nebo jen obálku?</summary>
+        <p>Obojí — věnuji se návrhu obálky i kompletní sazbě vnitřku knihy, připravené pro tisk i digitální distribuci.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Spolupracujete i se zahraničními klienty a nakladatelstvími?</summary>
+        <p>Ano, mám zkušenosti se spoluprací se zahraničními nakladatelstvími, komunikace probíhá i v angličtině.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Jak probíhá spolupráce a předávání podkladů?</summary>
+        <p>Komunikujeme online, podklady a připomínky si vyměňujeme elektronicky, takže spolupráce funguje bez ohledu na vzdálenost.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Děláte i grafiku mimo knižní design, například svatební oznámení?</summary>
+        <p>Ano, věnuji se i svatebním oznámením, pozvánkám, plakátům, letákům a další propagační grafice.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Jak si mohu prohlédnout vaše další práce?</summary>
+        <p>Kompletní portfolio najdete na creativepaper.sk nebo v galerii na navolnenoze.cz — odkazy jsou i v sekci Ukázky práce výše.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">04.</span> Kontakt</h2>
+      <h2><span class="num">05.</span> Kontakt</h2>
       <div class="contact-layout">
         <form class="contact-form" action="https://formsubmit.co/info@creativepaper.sk" method="POST">
           <input type="hidden" name="_subject" value="Nová zpráva z webu CreativePaper">

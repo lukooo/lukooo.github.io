@@ -348,7 +348,60 @@
     }
 
     .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 16px;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .faq-item[open] summary::after { content: "\2212"; }
+
+    .faq-item p {
+      margin: 0;
+      padding-bottom: 16px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What technologies do you prefer working with?", "acceptedAnswer": { "@type": "Answer", "text": "I currently work mainly with Quarkus, and I also have extensive experience with Spring from earlier roles. On the database side, most often Oracle and MSSQL, occasionally PostgreSQL and MySQL." } },
+      { "@type": "Question", "name": "Do you have experience in the banking and finance sector?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, I've spent most of my career in the banking and finance sector — PPF banka, ČSOB, Hypoteční banka, Česká spořitelna and other institutions." } },
+      { "@type": "Question", "name": "Do you work remotely, or only from Prague?", "acceptedAnswer": { "@type": "Answer", "text": "I'm currently based in Prague, but most day-to-day work can be handled remotely or hybrid — it depends on the specific project." } },
+      { "@type": "Question", "name": "Do you have experience with languages other than Java?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, besides Java I also have experience with Kotlin, Groovy, and partly PHP from earlier projects." } },
+      { "@type": "Question", "name": "Do you take on smaller or short-term projects?", "acceptedAnswer": { "@type": "Answer", "text": "The best way is to reach out through the contact form below so we can discuss what form of collaboration would work for both sides." } },
+      { "@type": "Question", "name": "How can I contact you?", "acceptedAnswer": { "@type": "Answer", "text": "Easiest is through the contact form below or directly by email — I'll get back to you as soon as possible." } }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -584,9 +637,41 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Frequently asked questions</h2>
+      <div class="faq-list">
+      <details class="faq-item">
+        <summary>What technologies do you prefer working with?</summary>
+        <p>I currently work mainly with Quarkus, and I also have extensive experience with Spring from earlier roles. On the database side, most often Oracle and MSSQL, occasionally PostgreSQL and MySQL.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you have experience in the banking and finance sector?</summary>
+        <p>Yes, I've spent most of my career in the banking and finance sector — PPF banka, ČSOB, Hypoteční banka, Česká spořitelna and other institutions.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you work remotely, or only from Prague?</summary>
+        <p>I'm currently based in Prague, but most day-to-day work can be handled remotely or hybrid — it depends on the specific project.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you have experience with languages other than Java?</summary>
+        <p>Yes, besides Java I also have experience with Kotlin, Groovy, and partly PHP from earlier projects.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you take on smaller or short-term projects?</summary>
+        <p>The best way is to reach out through the contact form below so we can discuss what form of collaboration would work for both sides.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How can I contact you?</summary>
+        <p>Easiest is through the contact form below or directly by email — I'll get back to you as soon as possible.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">04.</span> Contact</h2>
+      <h2><span class="num">05.</span> Contact</h2>
       <div class="card">
         <p>Have a project or job opportunity? Get in touch.</p>
         <div class="contact-row">
