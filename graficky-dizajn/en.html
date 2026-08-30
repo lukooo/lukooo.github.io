@@ -338,6 +338,7 @@
 
     .submit-btn:hover { filter: brightness(1.08); }
 
+    .contact-direct { max-width: 420px; }
     .contact-direct p { color: var(--text-dim); font-size: 0.95rem; }
     #email-box a { font-family: var(--mono); }
 
@@ -721,32 +722,12 @@
   <section id="contact">
     <div class="wrap">
       <h2><span class="num">05.</span> Contact</h2>
-      <div class="contact-layout">
-        <form class="contact-form" action="https://formsubmit.co/info@creativepaper.sk" method="POST">
-          <input type="hidden" name="_subject" value="New message from the CreativePaper website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="Name" required>
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" required>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="Message" rows="5" required></textarea>
-          </div>
-          <button class="submit-btn" type="submit">Send message</button>
-        </form>
-        <div class="card contact-direct">
-          <h3>Direct contact</h3>
-          <p>Prefer to reach out directly?</p>
-          <p id="email-box"></p>
-          <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
-          <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profile on navolnenoze.cz</a></p>
-        </div>
+      <div class="card contact-direct">
+        <h3>Direct contact</h3>
+        <p>Prefer to reach out directly?</p>
+        <p id="email-box"></p>
+        <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
+        <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profile on navolnenoze.cz</a></p>
       </div>
     </div>
   </section>

@@ -338,6 +338,7 @@
 
     .submit-btn:hover { filter: brightness(1.08); }
 
+    .contact-direct { max-width: 420px; }
     .contact-direct p { color: var(--text-dim); font-size: 0.95rem; }
     #email-box a { font-family: var(--mono); }
 
@@ -721,32 +722,12 @@
   <section id="contact">
     <div class="wrap">
       <h2><span class="num">05.</span> Kontakt</h2>
-      <div class="contact-layout">
-        <form class="contact-form" action="https://formsubmit.co/info@creativepaper.sk" method="POST">
-          <input type="hidden" name="_subject" value="Neue Nachricht von der CreativePaper Website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="Name" required>
-          </div>
-          <div class="field">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="E-Mail" required>
-          </div>
-          <div class="field">
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="Nachricht" rows="5" required></textarea>
-          </div>
-          <button class="submit-btn" type="submit">Nachricht senden</button>
-        </form>
-        <div class="card contact-direct">
-          <h3>Direkter Kontakt</h3>
-          <p>Sie erreichen mich lieber direkt?</p>
-          <p id="email-box"></p>
-          <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
-          <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profil auf navolnenoze.cz</a></p>
-        </div>
+      <div class="card contact-direct">
+        <h3>Direkter Kontakt</h3>
+        <p>Sie erreichen mich lieber direkt?</p>
+        <p id="email-box"></p>
+        <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
+        <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profil auf navolnenoze.cz</a></p>
       </div>
     </div>
   </section>
