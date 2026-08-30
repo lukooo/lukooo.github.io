@@ -37,7 +37,11 @@
   <meta property="og:locale:alternate" content="sk_SK">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://www.ludek.sk/uctovnictvo/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.ludek.sk/uctovnictvo/og-image.png">
   <meta name="twitter:title" content="M.SJ s.r.o. — Účetní kancelář Praha">
   <meta name="twitter:description" content="Vedení účetnictví, mzdy, daně a poradenství pro firmy i živnostníky v Praze.">
   <script type="application/ld+json">
@@ -374,7 +378,7 @@
       font-size: 0.88rem;
     }
 
-    .back-link {
+    .breadcrumb {
       position: fixed;
       top: 20px;
       left: 24px;
@@ -388,7 +392,10 @@
       color: var(--text-dim);
     }
 
-    .back-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .breadcrumb a { color: var(--text-dim); }
+    .breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+    .breadcrumb .sep { margin: 0 5px; color: var(--border); }
+    .breadcrumb .current { color: var(--text); }
 
     .lang-switch {
       position: fixed;
@@ -468,7 +475,80 @@
     }
 
     .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 16px;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .faq-item[open] summary::after { content: "\2212"; }
+
+    .faq-item p {
+      margin: 0;
+      padding-bottom: 16px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Kolik stojí vedení účetnictví?", "acceptedAnswer": { "@type": "Answer", "text": "Cena závisí na rozsahu agendy a počtu dokladů — po domluvě připravíme individuální nabídku na míru vaší firmě. Kontaktujte nás a rádi vám připravíme cenový návrh." } },
+      { "@type": "Question", "name": "Vedete účetnictví i pro živnostníky, nebo jen pro firmy?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, věnujeme se vedení účetnictví i daňové evidence pro živnostníky, malé a střední firmy i neziskové organizace." } },
+      { "@type": "Question", "name": "Jak probíhá předávání dokladů?", "acceptedAnswer": { "@type": "Answer", "text": "Doklady můžete předávat osobně v kanceláři na Vinohradech, poštou nebo elektronicky — přizpůsobíme se tomu, co vám vyhovuje nejvíce." } },
+      { "@type": "Question", "name": "Zajišťujete i mzdovou agendu a komunikaci s úřady?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, zpracováváme mzdy, přihlášky a odhlášky zaměstnanců a komunikujeme za vás se zdravotními pojišťovnami, správou sociálního zabezpečení i finančním úřadem." } },
+      { "@type": "Question", "name": "Pracujete i s klienty mimo Prahu?", "acceptedAnswer": { "@type": "Answer", "text": "Ano, většinu agendy zvládneme online a na dálku, osobní setkání proto není nutnou podmínkou spolupráce." } },
+      { "@type": "Question", "name": "Jak dlouho trvá, než převezmete mé účetnictví od předchozího účetního?", "acceptedAnswer": { "@type": "Answer", "text": "Přechod obvykle trvá několik dní až týdnů v závislosti na stavu podkladů — postaráme se o hladké převzetí agendy tak, aby nedošlo k výpadku." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Luděk Koňařík",
+        "item": "https://www.ludek.sk/cs.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Účetní kancelář M.SJ",
+        "item": "https://www.ludek.sk/uctovnictvo/cs.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -481,7 +561,7 @@
     </div>
   </div>
 
-  <a class="back-link" href="../cs.html">&larr; Zpět</a>
+  <nav class="breadcrumb" aria-label="breadcrumb"><a href="../cs.html">Luděk Koňařík</a><span class="sep">/</span><span class="current">Účetnictví</span></nav>
 
   <nav class="lang-switch">
     <a href="index.html">SK</a>
@@ -618,9 +698,41 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <h2><span class="num">05.</span> Časté otázky</h2>
+      <div class="faq-list">
+      <details class="faq-item">
+        <summary>Kolik stojí vedení účetnictví?</summary>
+        <p>Cena závisí na rozsahu agendy a počtu dokladů — po domluvě připravíme individuální nabídku na míru vaší firmě. Kontaktujte nás a rádi vám připravíme cenový návrh.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vedete účetnictví i pro živnostníky, nebo jen pro firmy?</summary>
+        <p>Ano, věnujeme se vedení účetnictví i daňové evidence pro živnostníky, malé a střední firmy i neziskové organizace.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Jak probíhá předávání dokladů?</summary>
+        <p>Doklady můžete předávat osobně v kanceláři na Vinohradech, poštou nebo elektronicky — přizpůsobíme se tomu, co vám vyhovuje nejvíce.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Zajišťujete i mzdovou agendu a komunikaci s úřady?</summary>
+        <p>Ano, zpracováváme mzdy, přihlášky a odhlášky zaměstnanců a komunikujeme za vás se zdravotními pojišťovnami, správou sociálního zabezpečení i finančním úřadem.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Pracujete i s klienty mimo Prahu?</summary>
+        <p>Ano, většinu agendy zvládneme online a na dálku, osobní setkání proto není nutnou podmínkou spolupráce.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Jak dlouho trvá, než převezmete mé účetnictví od předchozího účetního?</summary>
+        <p>Přechod obvykle trvá několik dní až týdnů v závislosti na stavu podkladů — postaráme se o hladké převzetí agendy tak, aby nedošlo k výpadku.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">05.</span> Kontakt</h2>
+      <h2><span class="num">06.</span> Kontakt</h2>
       <div class="contact-layout">
         <form class="contact-form" action="https://formsubmit.co/mich.jencova@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Nová zpráva z webu M.SJ s.r.o.">

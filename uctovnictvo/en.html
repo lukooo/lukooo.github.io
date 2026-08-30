@@ -37,7 +37,11 @@
   <meta property="og:locale:alternate" content="sk_SK">
   <meta property="og:locale:alternate" content="cs_CZ">
   <meta property="og:locale:alternate" content="de_DE">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://www.ludek.sk/uctovnictvo/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.ludek.sk/uctovnictvo/og-image.png">
   <meta name="twitter:title" content="M.SJ s.r.o. — Accounting Office Prague">
   <meta name="twitter:description" content="Bookkeeping, payroll, tax returns and advisory for businesses and sole traders in Prague.">
   <script type="application/ld+json">
@@ -374,7 +378,7 @@
       font-size: 0.88rem;
     }
 
-    .back-link {
+    .breadcrumb {
       position: fixed;
       top: 20px;
       left: 24px;
@@ -388,7 +392,10 @@
       color: var(--text-dim);
     }
 
-    .back-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+    .breadcrumb a { color: var(--text-dim); }
+    .breadcrumb a:hover { color: var(--accent); text-decoration: none; }
+    .breadcrumb .sep { margin: 0 5px; color: var(--border); }
+    .breadcrumb .current { color: var(--text); }
 
     .lang-switch {
       position: fixed;
@@ -468,7 +475,80 @@
     }
 
     .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 16px;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .faq-item[open] summary::after { content: "\2212"; }
+
+    .faq-item p {
+      margin: 0;
+      padding-bottom: 16px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much does bookkeeping cost?", "acceptedAnswer": { "@type": "Answer", "text": "The price depends on the scope of work and the number of documents — we'll prepare an individual quote tailored to your business after a short consultation. Get in touch and we'll be happy to put together a price proposal." } },
+      { "@type": "Question", "name": "Do you handle accounting for sole traders, or only companies?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we handle bookkeeping and tax records for sole traders, small and medium-sized businesses, and non-profit organizations alike." } },
+      { "@type": "Question", "name": "How does document handover work?", "acceptedAnswer": { "@type": "Answer", "text": "You can hand over documents in person at our office in Vinohrady, by post, or electronically — we adapt to whatever works best for you." } },
+      { "@type": "Question", "name": "Do you also handle payroll and communication with authorities?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we process payroll, employee registrations and deregistrations, and handle communication with health insurers, social security, and the tax office on your behalf." } },
+      { "@type": "Question", "name": "Do you work with clients outside Prague?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, most of the work can be handled online and remotely, so an in-person meeting isn't a requirement for working together." } },
+      { "@type": "Question", "name": "How long does it take to take over my accounting from a previous accountant?", "acceptedAnswer": { "@type": "Answer", "text": "The handover usually takes a few days to a few weeks depending on the state of the records — we make sure the transition is smooth so there's no disruption." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Luděk Koňařík",
+        "item": "https://www.ludek.sk/en.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "M.SJ Accounting Office",
+        "item": "https://www.ludek.sk/uctovnictvo/en.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -481,7 +561,7 @@
     </div>
   </div>
 
-  <a class="back-link" href="../en.html">&larr; Back</a>
+  <nav class="breadcrumb" aria-label="breadcrumb"><a href="../en.html">Luděk Koňařík</a><span class="sep">/</span><span class="current">Accounting</span></nav>
 
   <nav class="lang-switch">
     <a href="index.html">SK</a>
@@ -618,9 +698,41 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <h2><span class="num">05.</span> Frequently asked questions</h2>
+      <div class="faq-list">
+      <details class="faq-item">
+        <summary>How much does bookkeeping cost?</summary>
+        <p>The price depends on the scope of work and the number of documents — we'll prepare an individual quote tailored to your business after a short consultation. Get in touch and we'll be happy to put together a price proposal.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you handle accounting for sole traders, or only companies?</summary>
+        <p>Yes, we handle bookkeeping and tax records for sole traders, small and medium-sized businesses, and non-profit organizations alike.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does document handover work?</summary>
+        <p>You can hand over documents in person at our office in Vinohrady, by post, or electronically — we adapt to whatever works best for you.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you also handle payroll and communication with authorities?</summary>
+        <p>Yes, we process payroll, employee registrations and deregistrations, and handle communication with health insurers, social security, and the tax office on your behalf.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you work with clients outside Prague?</summary>
+        <p>Yes, most of the work can be handled online and remotely, so an in-person meeting isn't a requirement for working together.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does it take to take over my accounting from a previous accountant?</summary>
+        <p>The handover usually takes a few days to a few weeks depending on the state of the records — we make sure the transition is smooth so there's no disruption.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">05.</span> Contact</h2>
+      <h2><span class="num">06.</span> Contact</h2>
       <div class="contact-layout">
         <form class="contact-form" action="https://formsubmit.co/mich.jencova@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New message from the M.SJ s.r.o. website">
