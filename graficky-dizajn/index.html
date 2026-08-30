@@ -338,6 +338,7 @@
 
     .submit-btn:hover { filter: brightness(1.08); }
 
+    .contact-direct { max-width: 420px; }
     .contact-direct p { color: var(--text-dim); font-size: 0.95rem; }
     #email-box a { font-family: var(--mono); }
 
@@ -445,6 +446,45 @@
     }
 
     .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 16px;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .faq-item[open] summary::after { content: "\2212"; }
+
+    .faq-item p {
+      margin: 0;
+      padding-bottom: 16px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -463,6 +503,20 @@
         "name": "Grafický dizajn — CreativePaper",
         "item": "https://www.ludek.sk/graficky-dizajn/"
       }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Ako dlho trvá návrh obálky knihy?", "acceptedAnswer": { "@type": "Answer", "text": "Závisí od rozsahu zadania a počtu úprav, zvyčajne to trvá niekoľko dní až dva týždne od zadania po finálnu verziu." } },
+      { "@type": "Question", "name": "Robíte aj sadzbu (DTP) celej knihy, alebo len obálku?", "acceptedAnswer": { "@type": "Answer", "text": "Obe — venujem sa návrhu obálky aj kompletnej sadzbe vnútra knihy, pripravenej na tlač aj digitálnu distribúciu." } },
+      { "@type": "Question", "name": "Spolupracujete aj so zahraničnými klientmi a vydavateľstvami?", "acceptedAnswer": { "@type": "Answer", "text": "Áno, mám skúsenosti so spoluprácou so zahraničnými vydavateľstvami, komunikácia prebieha aj v angličtine." } },
+      { "@type": "Question", "name": "Ako prebieha spolupráca a odovzdávanie podkladov?", "acceptedAnswer": { "@type": "Answer", "text": "Komunikujeme online, podklady a pripomienky si vymieňame elektronicky, takže spolupráca funguje bez ohľadu na vzdialenosť." } },
+      { "@type": "Question", "name": "Robíte aj grafiku mimo knižného dizajnu, napríklad svadobné oznámenia?", "acceptedAnswer": { "@type": "Answer", "text": "Áno, venujem sa aj svadobným oznámeniam, pozvánkam, plagátom, letákom a ďalšej propagačnej grafike." } },
+      { "@type": "Question", "name": "Ako si môžem pozrieť vaše ďalšie práce?", "acceptedAnswer": { "@type": "Answer", "text": "Kompletné portfólio nájdete na creativepaper.sk alebo v galérii na navolnenoze.cz — odkazy sú aj v sekcii Ukážky práce vyššie." } }
     ]
   }
   </script>
@@ -632,35 +686,47 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Časté otázky</h2>
+      <div class="faq-list">
+      <details class="faq-item">
+        <summary>Ako dlho trvá návrh obálky knihy?</summary>
+        <p>Závisí od rozsahu zadania a počtu úprav, zvyčajne to trvá niekoľko dní až dva týždne od zadania po finálnu verziu.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Robíte aj sadzbu (DTP) celej knihy, alebo len obálku?</summary>
+        <p>Obe — venujem sa návrhu obálky aj kompletnej sadzbe vnútra knihy, pripravenej na tlač aj digitálnu distribúciu.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Spolupracujete aj so zahraničnými klientmi a vydavateľstvami?</summary>
+        <p>Áno, mám skúsenosti so spoluprácou so zahraničnými vydavateľstvami, komunikácia prebieha aj v angličtine.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ako prebieha spolupráca a odovzdávanie podkladov?</summary>
+        <p>Komunikujeme online, podklady a pripomienky si vymieňame elektronicky, takže spolupráca funguje bez ohľadu na vzdialenosť.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Robíte aj grafiku mimo knižného dizajnu, napríklad svadobné oznámenia?</summary>
+        <p>Áno, venujem sa aj svadobným oznámeniam, pozvánkam, plagátom, letákom a ďalšej propagačnej grafike.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ako si môžem pozrieť vaše ďalšie práce?</summary>
+        <p>Kompletné portfólio nájdete na creativepaper.sk alebo v galérii na navolnenoze.cz — odkazy sú aj v sekcii Ukážky práce vyššie.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">04.</span> Kontakt</h2>
-      <div class="contact-layout">
-        <form class="contact-form" action="https://formsubmit.co/info@creativepaper.sk" method="POST">
-          <input type="hidden" name="_subject" value="Nová správa z webu CreativePaper">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <div class="field">
-            <label for="name">Meno</label>
-            <input type="text" id="name" name="Meno" required>
-          </div>
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="E-mail" required>
-          </div>
-          <div class="field">
-            <label for="message">Správa</label>
-            <textarea id="message" name="Správa" rows="5" required></textarea>
-          </div>
-          <button class="submit-btn" type="submit">Odoslať správu</button>
-        </form>
-        <div class="card contact-direct">
-          <h3>Priamy kontakt</h3>
-          <p>Radšej ma oslovíte priamo?</p>
-          <p id="email-box"></p>
-          <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
-          <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profil na navolnenoze.cz</a></p>
-        </div>
+      <h2><span class="num">05.</span> Kontakt</h2>
+      <div class="card contact-direct">
+        <h3>Priamy kontakt</h3>
+        <p>Radšej ma oslovíte priamo?</p>
+        <p id="email-box"></p>
+        <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
+        <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profil na navolnenoze.cz</a></p>
       </div>
     </div>
   </section>

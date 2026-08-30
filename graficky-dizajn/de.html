@@ -338,6 +338,7 @@
 
     .submit-btn:hover { filter: brightness(1.08); }
 
+    .contact-direct { max-width: 420px; }
     .contact-direct p { color: var(--text-dim); font-size: 0.95rem; }
     #email-box a { font-family: var(--mono); }
 
@@ -445,6 +446,45 @@
     }
 
     .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 16px;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .faq-item[open] summary::after { content: "\2212"; }
+
+    .faq-item p {
+      margin: 0;
+      padding-bottom: 16px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -463,6 +503,20 @@
         "name": "Grafikdesign — CreativePaper",
         "item": "https://www.ludek.sk/graficky-dizajn/de.html"
       }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Wie lange dauert der Entwurf eines Buchcovers?", "acceptedAnswer": { "@type": "Answer", "text": "Das hängt vom Umfang des Auftrags und der Anzahl der Überarbeitungen ab, üblicherweise dauert es einige Tage bis zwei Wochen vom Briefing bis zur finalen Version." } },
+      { "@type": "Question", "name": "Übernehmen Sie auch den Satz (DTP) des ganzen Buches, oder nur das Cover?", "acceptedAnswer": { "@type": "Answer", "text": "Beides — ich gestalte das Cover sowie den kompletten Innensatz des Buches, bereit für Druck und digitale Distribution." } },
+      { "@type": "Question", "name": "Arbeiten Sie auch mit internationalen Kunden und Verlagen zusammen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ich habe Erfahrung in der Zusammenarbeit mit internationalen Verlagen, die Kommunikation erfolgt auch auf Englisch." } },
+      { "@type": "Question", "name": "Wie läuft die Zusammenarbeit und Übergabe der Unterlagen ab?", "acceptedAnswer": { "@type": "Answer", "text": "Wir kommunizieren online, Unterlagen und Feedback tauschen wir elektronisch aus, sodass die Zusammenarbeit unabhängig von der Entfernung funktioniert." } },
+      { "@type": "Question", "name": "Machen Sie auch Grafik außerhalb des Buchdesigns, zum Beispiel Hochzeitseinladungen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, ich widme mich auch Hochzeitseinladungen, Einladungen, Postern, Flyern und weiterer Werbegrafik." } },
+      { "@type": "Question", "name": "Wo kann ich weitere Arbeiten von Ihnen sehen?", "acceptedAnswer": { "@type": "Answer", "text": "Das vollständige Portfolio finden Sie auf creativepaper.sk oder in der Galerie auf navolnenoze.cz — Links dazu finden Sie auch im Abschnitt Arbeitsproben weiter oben." } }
     ]
   }
   </script>
@@ -633,35 +687,47 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Häufig gestellte Fragen</h2>
+      <div class="faq-list">
+      <details class="faq-item">
+        <summary>Wie lange dauert der Entwurf eines Buchcovers?</summary>
+        <p>Das hängt vom Umfang des Auftrags und der Anzahl der Überarbeitungen ab, üblicherweise dauert es einige Tage bis zwei Wochen vom Briefing bis zur finalen Version.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Übernehmen Sie auch den Satz (DTP) des ganzen Buches, oder nur das Cover?</summary>
+        <p>Beides — ich gestalte das Cover sowie den kompletten Innensatz des Buches, bereit für Druck und digitale Distribution.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Arbeiten Sie auch mit internationalen Kunden und Verlagen zusammen?</summary>
+        <p>Ja, ich habe Erfahrung in der Zusammenarbeit mit internationalen Verlagen, die Kommunikation erfolgt auch auf Englisch.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wie läuft die Zusammenarbeit und Übergabe der Unterlagen ab?</summary>
+        <p>Wir kommunizieren online, Unterlagen und Feedback tauschen wir elektronisch aus, sodass die Zusammenarbeit unabhängig von der Entfernung funktioniert.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Machen Sie auch Grafik außerhalb des Buchdesigns, zum Beispiel Hochzeitseinladungen?</summary>
+        <p>Ja, ich widme mich auch Hochzeitseinladungen, Einladungen, Postern, Flyern und weiterer Werbegrafik.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wo kann ich weitere Arbeiten von Ihnen sehen?</summary>
+        <p>Das vollständige Portfolio finden Sie auf creativepaper.sk oder in der Galerie auf navolnenoze.cz — Links dazu finden Sie auch im Abschnitt Arbeitsproben weiter oben.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">04.</span> Kontakt</h2>
-      <div class="contact-layout">
-        <form class="contact-form" action="https://formsubmit.co/info@creativepaper.sk" method="POST">
-          <input type="hidden" name="_subject" value="Neue Nachricht von der CreativePaper Website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="Name" required>
-          </div>
-          <div class="field">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="E-Mail" required>
-          </div>
-          <div class="field">
-            <label for="message">Nachricht</label>
-            <textarea id="message" name="Nachricht" rows="5" required></textarea>
-          </div>
-          <button class="submit-btn" type="submit">Nachricht senden</button>
-        </form>
-        <div class="card contact-direct">
-          <h3>Direkter Kontakt</h3>
-          <p>Sie erreichen mich lieber direkt?</p>
-          <p id="email-box"></p>
-          <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
-          <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profil auf navolnenoze.cz</a></p>
-        </div>
+      <h2><span class="num">05.</span> Kontakt</h2>
+      <div class="card contact-direct">
+        <h3>Direkter Kontakt</h3>
+        <p>Sie erreichen mich lieber direkt?</p>
+        <p id="email-box"></p>
+        <p><a href="https://creativepaper.sk" target="_blank" rel="noopener">creativepaper.sk</a></p>
+        <p><a href="https://navolnenoze.cz/prezentace/zdenka-hudakova/" target="_blank" rel="noopener">Profil auf navolnenoze.cz</a></p>
       </div>
     </div>
   </section>

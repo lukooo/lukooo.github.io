@@ -348,7 +348,60 @@
     }
 
     .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 20px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 16px 0;
+      font-weight: 600;
+      color: var(--text);
+      list-style: none;
+      position: relative;
+      padding-right: 28px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 16px;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .faq-item[open] summary::after { content: "\2212"; }
+
+    .faq-item p {
+      margin: 0;
+      padding-bottom: 16px;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Aké technológie preferuješ pri vývoji?", "acceptedAnswer": { "@type": "Answer", "text": "Aktuálne pracujem najmä s Quarkusom, historicky mám bohaté skúsenosti aj so Springom. Databázovo najčastejšie Oracle a MSSQL, príležitostne PostgreSQL a MySQL." } },
+      { "@type": "Question", "name": "Máš skúsenosti s bankovým a finančným sektorom?", "acceptedAnswer": { "@type": "Answer", "text": "Áno, väčšinu kariéry som strávil vo finančnom a bankovom sektore — PPF banka, ČSOB, Hypoteční banka, Česká spořitelna a ďalšie inštitúcie." } },
+      { "@type": "Question", "name": "Pracuješ na diaľku, alebo len z Prahy?", "acceptedAnswer": { "@type": "Answer", "text": "Momentálne pôsobím v Prahe, no väčšinu bežnej agendy viem riešiť aj na diaľku či hybridne — záleží od konkrétneho projektu." } },
+      { "@type": "Question", "name": "Máš skúsenosti aj s inými jazykmi ako Java?", "acceptedAnswer": { "@type": "Answer", "text": "Áno, popri Jave mám skúsenosti aj s Kotlinom, Groovy a čiastočne s PHP z predošlých projektov." } },
+      { "@type": "Question", "name": "Robíš aj menšie alebo krátkodobé projekty?", "acceptedAnswer": { "@type": "Answer", "text": "Najlepšie mi napíšte cez kontaktný formulár nižšie a prediskutujeme, aká forma spolupráce by vyhovovala obom stranám." } },
+      { "@type": "Question", "name": "Ako ťa môžem kontaktovať?", "acceptedAnswer": { "@type": "Answer", "text": "Najjednoduchšie cez kontaktný formulár nižšie alebo priamo e-mailom — odpoviem čo najskôr." } }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -583,9 +636,41 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Časté otázky</h2>
+      <div class="faq-list">
+      <details class="faq-item">
+        <summary>Aké technológie preferuješ pri vývoji?</summary>
+        <p>Aktuálne pracujem najmä s Quarkusom, historicky mám bohaté skúsenosti aj so Springom. Databázovo najčastejšie Oracle a MSSQL, príležitostne PostgreSQL a MySQL.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Máš skúsenosti s bankovým a finančným sektorom?</summary>
+        <p>Áno, väčšinu kariéry som strávil vo finančnom a bankovom sektore — PPF banka, ČSOB, Hypoteční banka, Česká spořitelna a ďalšie inštitúcie.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Pracuješ na diaľku, alebo len z Prahy?</summary>
+        <p>Momentálne pôsobím v Prahe, no väčšinu bežnej agendy viem riešiť aj na diaľku či hybridne — záleží od konkrétneho projektu.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Máš skúsenosti aj s inými jazykmi ako Java?</summary>
+        <p>Áno, popri Jave mám skúsenosti aj s Kotlinom, Groovy a čiastočne s PHP z predošlých projektov.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Robíš aj menšie alebo krátkodobé projekty?</summary>
+        <p>Najlepšie mi napíšte cez kontaktný formulár nižšie a prediskutujeme, aká forma spolupráce by vyhovovala obom stranám.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ako ťa môžem kontaktovať?</summary>
+        <p>Najjednoduchšie cez kontaktný formulár nižšie alebo priamo e-mailom — odpoviem čo najskôr.</p>
+      </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">04.</span> Kontakt</h2>
+      <h2><span class="num">05.</span> Kontakt</h2>
       <div class="card">
         <p>Máte projekt alebo pracovnú ponuku? Ozvite sa.</p>
         <div class="contact-row">
