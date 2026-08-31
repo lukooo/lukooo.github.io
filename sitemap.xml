@@ -125,4 +125,45 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.ludek.sk/kralovstvo-na-sarisi/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/kralovstvo-na-sarisi/cs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/kralovstvo-na-sarisi/en.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.ludek.sk/kralovstvo-na-sarisi/de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ludek.sk/kralovstvo-na-sarisi/cs.html</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/kralovstvo-na-sarisi/cs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/kralovstvo-na-sarisi/en.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.ludek.sk/kralovstvo-na-sarisi/de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ludek.sk/kralovstvo-na-sarisi/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/kralovstvo-na-sarisi/cs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/kralovstvo-na-sarisi/en.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.ludek.sk/kralovstvo-na-sarisi/de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.ludek.sk/kralovstvo-na-sarisi/de.html</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/kralovstvo-na-sarisi/cs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/kralovstvo-na-sarisi/en.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.ludek.sk/kralovstvo-na-sarisi/de.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ludek.sk/kralovstvo-na-sarisi/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

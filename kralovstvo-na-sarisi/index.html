@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <!-- Google tag (gtag.js) with Consent Mode -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("consent", "default", {
+      "analytics_storage": (localStorage.getItem("cookie_consent") === "granted") ? "granted" : "denied"
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-17G43C2BC0"></script>
+  <script>
+    gtag("js", new Date());
+    gtag("config", "G-17G43C2BC0");
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kráľovstvo na Šariši — Turistický sprievodca regiónom</title>
+  <meta name="description" content="Objavte Šariš — Bardejov (UNESCO), Šarišský hrad, drevené kostolíky, Bardejovské kúpele a ďalšie miesta severovýchodného Slovenska. Praktický turistický sprievodca regiónom Šariš.">
+  <meta name="keywords" content="Šariš, cestovný ruch Šariš, Bardejov, Prešov, Šarišský hrad, drevené kostolíky, Bardejovské kúpele, turistika východné Slovensko, Kráľovstvo na Šariši">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Kráľovstvo na Šariši">
+  <link rel="canonical" href="https://www.ludek.sk/kralovstvo-na-sarisi/">
+  <link rel="alternate" hreflang="sk" href="https://www.ludek.sk/kralovstvo-na-sarisi/">
+  <link rel="alternate" hreflang="cs" href="https://www.ludek.sk/kralovstvo-na-sarisi/cs.html">
+  <link rel="alternate" hreflang="en" href="https://www.ludek.sk/kralovstvo-na-sarisi/en.html">
+  <link rel="alternate" hreflang="de" href="https://www.ludek.sk/kralovstvo-na-sarisi/de.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.ludek.sk/kralovstvo-na-sarisi/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kráľovstvo na Šariši — Turistický sprievodca regiónom">
+  <meta property="og:description" content="Objavte Šariš — Bardejov (UNESCO), Šarišský hrad, drevené kostolíky, Bardejovské kúpele a ďalšie miesta severovýchodného Slovenska.">
+  <meta property="og:url" content="https://www.ludek.sk/kralovstvo-na-sarisi/">
+  <meta property="og:site_name" content="Kráľovstvo na Šariši">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:image" content="https://www.ludek.sk/kralovstvo-na-sarisi/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.ludek.sk/kralovstvo-na-sarisi/og-image.png">
+  <meta name="twitter:title" content="Kráľovstvo na Šariši — Turistický sprievodca regiónom">
+  <meta name="twitter:description" content="Objavte Šariš — Bardejov (UNESCO), Šarišský hrad, drevené kostolíky, Bardejovské kúpele a ďalšie miesta severovýchodného Slovenska.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": "Šariš",
+    "description": "Historický región na severovýchode Slovenska s hradmi, drevenými kostolíkmi a kúpeľmi.",
+    "url": "https://www.ludek.sk/kralovstvo-na-sarisi/",
+    "geo": { "@type": "GeoCoordinates", "latitude": 49.15, "longitude": 21.2 },
+    "includesAttraction": [
+      { "@type": "TouristAttraction", "name": "Bardejov — historické centrum (UNESCO)" },
+      { "@type": "TouristAttraction", "name": "Šarišský hrad" },
+      { "@type": "TouristAttraction", "name": "Drevené gréckokatolícke kostolíky" },
+      { "@type": "TouristAttraction", "name": "Bardejovské Kúpele" }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #faf6ef;
+      --bg-alt: #f2ead9;
+      --card: #ffffff;
+      --border: #ecdfc6;
+      --text: #2c2620;
+      --text-dim: #6e6355;
+      --accent: #e35b1f;
+      --accent-2: #1f8a5f;
+      --accent-3: #2678c2;
+      --mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header.hero {
+      padding: 80px 0 56px;
+      border-bottom: 4px solid var(--accent);
+      background:
+        radial-gradient(900px 420px at 100% 0%, rgba(227, 91, 31, 0.10), transparent 60%),
+        radial-gradient(700px 380px at 0% 100%, rgba(31, 138, 95, 0.10), transparent 60%),
+        var(--bg-alt);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      margin: 0 0 24px;
+      font-weight: 600;
+    }
+
+    .hero p.lead {
+      max-width: 660px;
+      color: var(--text-dim);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 2px solid var(--border);
+    }
+
+    .btn:hover { text-decoration: none; }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 6px 16px rgba(227, 91, 31, 0.3);
+    }
+
+    .btn.primary:hover { filter: brightness(1.06); }
+
+    .btn.ghost { color: var(--text); background: #fff; }
+
+    .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .chip-row {
+      margin-top: 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+
+    h2 {
+      font-size: 1.65rem;
+      margin: 0 0 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    h2 .num {
+      font-family: var(--mono);
+      color: var(--accent);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(60, 45, 20, 0.06);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .card p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    .tile {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(60, 45, 20, 0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tile .photo {
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      position: relative;
+    }
+
+    .tile .photo.hrad { background: linear-gradient(135deg, #e35b1f, #b83a12); }
+    .tile .photo.unesco { background: linear-gradient(135deg, #2678c2, #184f85); }
+    .tile .photo.kupele { background: linear-gradient(135deg, #1f8a5f, #0f5b3d); }
+    .tile .photo.priroda { background: linear-gradient(135deg, #6fa832, #3c6d16); }
+
+    .tile .tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 9px;
+      border-radius: 999px;
+    }
+
+    .tile .body { padding: 18px 20px; }
+
+    .tile h3 { margin: 0 0 8px; font-size: 1.02rem; color: var(--text); }
+
+    .tile p { margin: 0; color: var(--text-dim); font-size: 0.92rem; }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .facts .fact {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .facts .fact .label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .facts .fact .value { font-size: 0.98rem; }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .timeline .item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 10px rgba(60, 45, 20, 0.05);
+    }
+
+    .timeline .period {
+      color: #fff;
+      background: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      align-self: flex-start;
+      height: fit-content;
+    }
+
+    .timeline h3 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .timeline p { margin: 0; color: var(--text-dim); font-size: 0.95rem; }
+
+    @media (max-width: 560px) {
+      .timeline .item { grid-template-columns: 1fr; gap: 10px; }
+      .timeline .period { justify-self: flex-start; }
+    }
+
+    .town-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .town-grid .town {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent-2);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(60, 45, 20, 0.05);
+    }
+
+    .town-grid .town h3 {
+      margin: 0 0 6px;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .town-grid .town p { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
+
+    .note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 40px 0 64px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      background: var(--bg-alt);
+    }
+
+    .cookie-banner {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 16px rgba(60, 45, 20, 0.08);
+      padding: 16px 24px;
+      display: none;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .cookie-banner.show { display: flex; }
+
+    .cookie-banner p {
+      margin: 0;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      max-width: 640px;
+    }
+
+    .cookie-banner .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .cookie-banner button {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      border: 2px solid var(--border);
+    }
+
+    .cookie-banner .accept-btn {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .cookie-banner .accept-btn:hover { filter: brightness(1.08); }
+
+    .cookie-banner .decline-btn {
+      background: #fff;
+      color: var(--text-dim);
+    }
+
+    .cookie-banner .decline-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+
+    .lang-switch a {
+      padding: 4px 9px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-dim);
+      background: #fff;
+    }
+
+    .lang-switch a:hover { border-color: var(--accent); color: var(--accent); }
+
+    .lang-switch a.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+  </style>
+</head>
+
+<body>
+
+  <nav class="lang-switch">
+    <a href="index.html" class="active">SK</a>
+    <a href="cs.html">CS</a>
+    <a href="en.html">EN</a>
+    <a href="de.html">DE</a>
+  </nav>
+
+  <div class="cookie-banner" id="cookie-banner">
+    <p>Táto stránka používa cookies na analýzu návštevnosti (Google Analytics). Súhlasíte s ich použitím?</p>
+    <div class="cookie-actions">
+      <button class="decline-btn" id="cookie-decline">Odmietnuť</button>
+      <button class="accept-btn" id="cookie-accept">Súhlasím</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">// Kráľovstvo na Šariši</p>
+      <h1>Šariš sa predstavuje</h1>
+      <p class="role">Destinácia cestovného ruchu na severovýchode Slovenska</p>
+      <p class="lead">
+        Šariš je historický región s hradmi, najväčšou koncentráciou drevených kostolíkov na Slovensku
+        a mestom Bardejov zapísaným v zozname svetového dedičstva UNESCO. Objavte, čo tento kraj
+        ponúka — od stredovekých pamiatok po kúpele a horskú prírodu.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#objavujte">Objavte Šariš</a>
+        <a class="btn ghost" href="#info">Praktické informácie</a>
+      </div>
+
+      <div class="chip-row">
+        <a class="chip" href="#objavujte">🏰 Hrady a zámky</a>
+        <a class="chip" href="#objavujte">⛪ Drevené kostolíky</a>
+        <a class="chip" href="#objavujte">♨️ Kúpele</a>
+        <a class="chip" href="#objavujte">🥾 Turistika</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="o-sarisi">
+    <div class="wrap">
+      <h2><span class="num">01.</span> O Šariši</h2>
+      <div class="card">
+        <p>
+          Šariš sa nachádza na severovýchode Slovenska a tvoria ho okresy Bardejov, Prešov, Sabinov,
+          Stropkov a Svidník. Región sa tradične delí na Horný Šariš s centrom v Bardejove a Dolný Šariš
+          s centrom v Prešove. Krajina je mierne hornatá — nížiny sa tu striedajú s pohoriami, ktorými
+          pretekajú rieky Torysa, Topľa, Ondava, Poprad a Hornád.
+        </p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="label">Poloha</div><div class="value">Severovýchodné Slovensko</div></div>
+        <div class="fact"><div class="label">Okresy</div><div class="value">Bardejov, Prešov, Sabinov, Stropkov, Svidník</div></div>
+        <div class="fact"><div class="label">Najvyšší vrch</div><div class="value">Minčol (1 157 m n. m.)</div></div>
+        <div class="fact"><div class="label">Centrá regiónu</div><div class="value">Bardejov (Horný Šariš), Prešov (Dolný Šariš)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="wrap">
+      <h2><span class="num">02.</span> História</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="period">Stredovek</div>
+          <div>
+            <h3>Šarišská stolica</h3>
+            <p>Šariš bol stáročia samostatnou stolicou (župou) Uhorského kráľovstva, so správnym centrom
+            postupne v Šarišskom hrade a neskôr v Prešove.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="period">14.–17. stor.</div>
+          <div>
+            <h3>Rozkvet miest a remesiel</h3>
+            <p>Bardejov sa rozvíja ako významné kráľovské mesto s bohatým remeselníckym a obchodným
+            zázemím — dodnes je táto história čitateľná v jeho historickom centre.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="period">1918</div>
+          <div>
+            <h3>Súčasť Československa</h3>
+            <p>Po zániku Rakúsko-Uhorska sa Šariš stáva súčasťou novovzniknutého Československa
+            a neskôr samostatného Slovenska.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="period">Dnes</div>
+          <div>
+            <h3>Región cestovného ruchu</h3>
+            <p>Šariš dnes patrí medzi regióny s najbohatšou koncentráciou zachovaných hradov, kaštieľov
+            a drevených kostolíkov na Slovensku — v roku 2019 vznikol projekt Šarišskej hradnej cesty,
+            ktorý tieto pamiatky prepája turistickou trasou.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="objavujte">
+    <div class="wrap">
+      <h2><span class="num">03.</span> Objavujte Šariš</h2>
+      <div class="grid">
+        <div class="tile">
+          <div class="photo unesco"><span class="tag">UNESCO</span>🏛️</div>
+          <div class="body">
+            <h3>Bardejov — historické centrum</h3>
+            <p>Jedno z najkrajších miest na Slovensku, zapísané v zozname svetového dedičstva UNESCO
+          pre výnimočne zachované stredoveké mestské jadro.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="photo hrad"><span class="tag">HRAD</span>🏰</div>
+          <div class="body">
+            <h3>Šarišský hrad</h3>
+            <p>Jeden z najrozsiahlejších hradných komplexov na Slovensku, týčiaci sa nad obcou
+          Veľký Šariš s výhľadom do širokého okolia.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="photo unesco"><span class="tag">UNESCO</span>⛪</div>
+          <div class="body">
+            <h3>Drevené gréckokatolícke kostolíky</h3>
+            <p>Šariš má najväčšiu koncentráciu drevených kostolíkov na Slovensku — viaceré z nich sú
+          súčasťou zoznamu svetového dedičstva UNESCO.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="photo kupele"><span class="tag">KÚPELE</span>♨️</div>
+          <div class="body">
+            <h3>Bardejovské Kúpele</h3>
+            <p>Kúpeľné mestečko obklopené jedľovo-bukovými lesmi, ktoré kedysi navštívila aj rakúska
+          cisárovná Alžbeta (Sisi). Súčasťou je aj skanzen ľudovej architektúry.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="photo hrad"><span class="tag">TRASA</span>🗺️</div>
+          <div class="body">
+            <h3>Šarišská hradná cesta</h3>
+            <p>Turistický projekt spájajúci hrady, hradné zrúcaniny a kaštiele regiónu do jednej
+          pomyselnej trasy pre výletníkov.</p>
+          </div>
+        </div>
+        <div class="tile">
+          <div class="photo priroda"><span class="tag">PRÍRODA</span>🥾</div>
+          <div class="body">
+            <h3>Náučný chodník Čierna Mláka</h3>
+            <p>Obľúbený lesnícky náučný chodník v okolí Bardejovských Kúpeľov, vhodný na nenáročnú
+          turistiku v prírode.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="mesta">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Mestá a obce</h2>
+      <div class="town-grid">
+        <div class="town">
+          <h3>Prešov</h3>
+          <p>Centrum Dolného Šariša a tretie najväčšie mesto Slovenska.</p>
+        </div>
+        <div class="town">
+          <h3>Bardejov</h3>
+          <p>Centrum Horného Šariša, historické jadro pod ochranou UNESCO.</p>
+        </div>
+        <div class="town">
+          <h3>Veľký Šariš</h3>
+          <p>Mesto pod Šarišským hradom s bohatou históriou.</p>
+        </div>
+        <div class="town">
+          <h3>Sabinov</h3>
+          <p>Stredoveké kráľovské mesto s dochovaným historickým centrom.</p>
+        </div>
+        <div class="town">
+          <h3>Svidník</h3>
+          <p>Brána do Nízkych Beskýd, centrum rusínskej a ukrajinskej kultúry v regióne.</p>
+        </div>
+        <div class="town">
+          <h3>Stropkov</h3>
+          <p>Mesto na rieke Ondava s renesančným kaštieľom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="wrap">
+      <h2><span class="num">05.</span> Praktické informácie</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Ako sa dostanete</h3>
+          <p>Regiónom prechádza cesta aj železnica spájajúca Prešov, Bardejov a ďalšie mestá.
+          Najbližšie letisko je v Košiciach.</p>
+        </div>
+        <div class="card">
+          <h3>Turistické informačné centrá (TIC)</h3>
+          <p>Aktuálne informácie, mapy a tipy na výlety poskytujú TIC v Prešove a Bardejove.</p>
+        </div>
+        <div class="card">
+          <h3>Kedy prísť</h3>
+          <p>Letné mesiace sú ideálne na turistiku a hradnú cestu, zima ponúka pokojnejšiu atmosféru
+          historických miest a kúpeľov.</p>
+        </div>
+      </div>
+      <div class="note">
+        Táto stránka je nezávislý informačný sprievodca regiónom. Aktuálne a oficiálne informácie
+        o cestovnom ruchu v regióne nájdete na stránke Oblastnej organizácie cestovného ruchu Šariš —
+        <a href="https://www.regionsaris.sk" target="_blank" rel="noopener">regionsaris.sk</a>.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Kráľovstvo na Šariši — turistický sprievodca regiónom</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var consent = localStorage.getItem("cookie_consent");
+      var banner = document.getElementById("cookie-banner");
+      if (!consent) {
+        banner.classList.add("show");
+      }
+      document.getElementById("cookie-accept").addEventListener("click", function () {
+        localStorage.setItem("cookie_consent", "granted");
+        if (typeof gtag === "function") {
+          gtag("consent", "update", { "analytics_storage": "granted" });
+        }
+        banner.classList.remove("show");
+      });
+      document.getElementById("cookie-decline").addEventListener("click", function () {
+        localStorage.setItem("cookie_consent", "denied");
+        banner.classList.remove("show");
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
