@@ -313,7 +313,25 @@
       overflow: hidden;
     }
 
-    .map-frame iframe { width: 100%; height: 100%; min-height: 260px; border: 0; filter: grayscale(0.3) invert(0.92) contrast(0.9); }
+    a.map-frame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--bg-alt);
+      color: var(--text);
+      text-decoration: none;
+      text-align: center;
+      padding: 20px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a.map-frame:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+    a.map-frame .map-pin { font-size: 2.4rem; line-height: 1; }
+
+    a.map-frame .map-link-text { font-weight: 600; font-size: 0.95rem; }
 
     .contact-layout {
       display: grid;
@@ -648,13 +666,10 @@
             Registrované sídlo: Fryčovická 459, 199 00 Praha 9 – Letňany
           </p>
         </div>
-        <div class="map-frame">
-          <iframe
-            src="https://www.google.com/maps?q=N%C3%A1rodn%C3%AD+muzeum%2C+Vinohrady%2C+Praha&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa – kancelária M.SJ s.r.o., Vinohrady, Praha"></iframe>
-        </div>
+        <a class="map-frame" href="https://www.google.com/maps?q=N%C3%A1rodn%C3%AD+muzeum%2C+Vinohrady%2C+Praha" target="_blank" rel="noopener" aria-label="Otvoriť polohu kancelárie v Google Maps">
+          <span class="map-pin">📍</span>
+          <span class="map-link-text">Otvoriť v Google Maps</span>
+        </a>
       </div>
     </div>
   </section>
