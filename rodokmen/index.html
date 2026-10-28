@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodokmeň Koňařík a Knap</title>
+  <meta name="description" content="Rodokmeň rodov Koňařík a Knap — vývod predkov, údaje o členoch rodiny a odkazy na matričné pramene.">
+  <!-- Rodokmeň môže obsahovať údaje o žijúcich osobách — stránku neindexujeme. -->
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --surface: #ffffff;
+      --text: #24211c;
+      --muted: #6b655a;
+      --line: #d9d3c6;
+      --accent: #7a4b22;
+      --konarik: #2f6b4f;
+      --knap: #2f4f7a;
+      --female: #8a3a5a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #1a1916;
+        --surface: #24221e;
+        --text: #ece7dc;
+        --muted: #a49d8f;
+        --line: #3d3a33;
+        --accent: #d39a62;
+        --konarik: #6fbf96;
+        --knap: #7fa3d6;
+        --female: #d58aa8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #1a1916;
+      --surface: #24221e;
+      --text: #ece7dc;
+      --muted: #a49d8f;
+      --line: #3d3a33;
+      --accent: #d39a62;
+      --konarik: #6fbf96;
+      --knap: #7fa3d6;
+      --female: #d58aa8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 Georgia, "Times New Roman", serif;
+    }
+    a { color: var(--accent); }
+    header, main, footer { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+    header { padding-top: 40px; padding-bottom: 8px; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0 0 8px; }
+    h2 { font-size: 1.4rem; margin: 40px 0 12px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    .lead { color: var(--muted); margin: 0; }
+
+    .tabs { display: flex; gap: 8px; margin: 24px 0 16px; flex-wrap: wrap; }
+    .tabs button {
+      font: inherit; cursor: pointer;
+      border: 1px solid var(--line); background: var(--surface); color: var(--text);
+      padding: 8px 18px; border-radius: 999px;
+    }
+    .tabs button[aria-selected="true"] { background: var(--branch); border-color: var(--branch); color: var(--bg); }
+
+    .notice {
+      background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+      padding: 14px 18px; border-radius: 6px; margin: 16px 0;
+    }
+    .notice p { margin: 0 0 8px; }
+    .notice p:last-child { margin: 0; }
+
+    /* Vývod predkov: koreň vľavo, každá ďalšia generácia doprava. */
+    .pedigree-wrap { overflow-x: auto; padding: 8px 0 16px; }
+    .node { display: flex; align-items: center; }
+    .node > .parents { display: flex; flex-direction: column; margin-left: 24px; position: relative; }
+    .node > .parents::before {
+      content: ""; position: absolute; left: -24px; top: 50%; width: 12px; border-top: 1px solid var(--line);
+    }
+    .node > .parents > .node { position: relative; padding: 4px 0 4px 12px; }
+    .node > .parents > .node::before {
+      content: ""; position: absolute; left: -12px; width: 24px; border-top: 1px solid var(--line); top: 50%;
+    }
+    .node > .parents > .node:first-child::after,
+    .node > .parents > .node:last-child::after {
+      content: ""; position: absolute; left: -12px; border-left: 1px solid var(--line);
+    }
+    .node > .parents > .node:first-child::after { top: 50%; bottom: 0; }
+    .node > .parents > .node:last-child::after { top: 0; bottom: 50%; }
+
+    .card {
+      font: inherit; text-align: left; cursor: pointer;
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--line); border-left: 4px solid var(--branch);
+      border-radius: 6px; padding: 8px 12px; min-width: 180px; max-width: 220px;
+    }
+    .card.f { border-left-color: var(--female); }
+    .card:hover, .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .card strong { display: block; }
+    .card span { display: block; font-size: 0.85rem; color: var(--muted); }
+    .card.unknown { cursor: default; border-style: dashed; color: var(--muted); }
+
+    table { width: 100%; border-collapse: collapse; background: var(--surface); }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 0.85rem; color: var(--muted); font-weight: normal; }
+    .table-wrap { overflow-x: auto; }
+    td button { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+
+    dialog {
+      border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text);
+      max-width: 560px; width: calc(100% - 32px); padding: 24px;
+    }
+    dialog::backdrop { background: rgb(0 0 0 / 0.4); }
+    dialog h3 { margin: 16px 0 12px; }
+    dialog h3:first-of-type { margin-top: 0; }
+    dialog dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 0; }
+    dialog dt { color: var(--muted); }
+    dialog dd { margin: 0; }
+    dialog .close { float: right; font: inherit; cursor: pointer; background: none; border: 1px solid var(--line); color: var(--text); border-radius: 4px; }
+
+    .archives { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+    .archives article { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px 16px; }
+    .archives h3 { font-size: 1rem; margin: 0 0 4px; }
+    .archives p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+    footer { color: var(--muted); font-size: 0.85rem; padding-top: 32px; padding-bottom: 40px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Rodokmeň Koňařík a Knap</h1>
+    <p class="lead">Vývod predkov dvoch rodových vetiev, údaje o členoch rodiny a pramene, z ktorých pochádzajú.</p>
+  </header>
+
+  <main>
+    <div class="tabs" role="tablist" aria-label="Rodová vetva">
+      <button role="tab" data-branch="konarik" aria-selected="true">Koňařík</button>
+      <button role="tab" data-branch="knap" aria-selected="false">Knap</button>
+    </div>
+
+    <section id="branch" aria-live="polite"></section>
+
+    <h2>Kde hľadať ďalších predkov</h2>
+    <p>Matriky narodených (do konca 18. storočia krstov), sobášov a zomrelých starších ako 100, resp. 75 rokov sú uložené v štátnych archívoch a väčšinou digitalizované. Najlepší postup je ísť od najmladšieho overeného zápisu smerom do minulosti — sobášny zápis zvyčajne uvádza rodičov oboch snúbencov a ich pôvod.</p>
+    <div class="archives">
+      <article>
+        <h3><a href="https://www.actapublica.eu/" rel="noopener">Acta Publica</a></h3>
+        <p>Moravský zemský archiv v Brne — matriky južnej Moravy, Zlínska a Vysočiny.</p>
+      </article>
+      <article>
+        <h3><a href="https://matriky.archives.cz/" rel="noopener">Zemský archiv v Opavě</a></h3>
+        <p>Matriky severnej Moravy a Sliezska.</p>
+      </article>
+      <article>
+        <h3><a href="https://ebadatelna.soapraha.cz/" rel="noopener">eBadatelna SOA Praha</a></h3>
+        <p>Matriky stredných Čiech.</p>
+      </article>
+      <article>
+        <h3><a href="https://digi.ceskearchivy.cz/" rel="noopener">SOA Třeboň</a></h3>
+        <p>Matriky južných Čiech.</p>
+      </article>
+      <article>
+        <h3><a href="https://www.portafontium.eu/" rel="noopener">Porta fontium</a></h3>
+        <p>SOA Plzeň — matriky západných Čiech (Plzeňsko, Karlovarsko).</p>
+      </article>
+      <article>
+        <h3><a href="https://vademecum.soalitomerice.cz/" rel="noopener">SOA Litoměřice</a></h3>
+        <p>Matriky severných Čiech.</p>
+      </article>
+      <article>
+        <h3><a href="https://aron.vychodoceskearchivy.cz/" rel="noopener">SOA Zámrsk</a></h3>
+        <p>Matriky východných Čiech.</p>
+      </article>
+      <article>
+        <h3><a href="https://www.familysearch.org/" rel="noopener">FamilySearch</a></h3>
+        <p>Matriky Slovenska (cirkevné a synagogálne 1592–1935), časť českých matrík, sčítania ľudu.</p>
+      </article>
+      <article>
+        <h3><a href="https://www.kdejsme.cz/" rel="noopener">Kde jsme</a></h3>
+        <p>Rozšírenie priezvisk v ČR — pomôže určiť, v ktorej oblasti rod hľadať.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>Údaje sa dopĺňajú do súboru <code>rodokmen/data.js</code>. Pri každej osobe uvádzajte prameň (archív, fara, kniha, folio).</p>
+  </footer>
+
+  <dialog id="detail" aria-labelledby="detail-title"></dialog>
+
+  <script src="data.js"></script>
+  <script>
+    (function () {
+      var data = window.RODOKMEN || { vetvy: {}, osoby: [] };
+      var byId = {};
+      data.osoby.forEach(function (o) { byId[o.id] = o; });
+      var MAX_GEN = 10;
+
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+        });
+      }
+      function fullName(o) {
+        return [o.meno, o.priezvisko].filter(Boolean).join(" ") + (o.rodne ? " (rod. " + o.rodne + ")" : "");
+      }
+      function lifespan(o) {
+        var b = (o.narodenie && o.narodenie.datum) || (o.krst && o.krst.datum ? "pokrst. " + o.krst.datum : "");
+        var d = o.umrtie && o.umrtie.datum;
+        if (!b && !d) return "";
+        return (b ? "* " + b : "") + (b && d ? " – " : "") + (d ? "† " + d : "");
+      }
+      function isFemale(o) {
+        return data.osoby.some(function (p) { return p.matka === o.id; }) || /ová$|á$/.test(o.priezvisko || "");
+      }
+
+      function renderNode(id, gen) {
+        var o = byId[id];
+        if (!o) {
+          return '<div class="node"><div class="card unknown"><strong>Neznámy predok</strong><span>čaká na vyhľadanie</span></div></div>';
+        }
+        var html = '<div class="node"><button class="card' + (isFemale(o) ? " f" : "") + '" data-id="' + esc(o.id) + '">' +
+          "<strong>" + esc(fullName(o)) + "</strong>" +
+          (lifespan(o) ? "<span>" + esc(lifespan(o)) + "</span>" : "") +
+          (o.narodenie && o.narodenie.miesto ? "<span>" + esc(o.narodenie.miesto) + "</span>" : "") +
+          "</button>";
+        if (gen < MAX_GEN && (o.otec || o.matka)) {
+          html += '<div class="parents">' + renderNode(o.otec, gen + 1) + renderNode(o.matka, gen + 1) + "</div>";
+        }
+        return html + "</div>";
+      }
+
+      function renderBranch(key) {
+        var vetva = data.vetvy[key] || { nazov: key, koren: "" };
+        var members = data.osoby.filter(function (o) { return o.vetva === key; });
+        document.documentElement.style.setProperty("--branch", "var(--" + key + ")");
+        var out = "<h2>Vetva " + esc(vetva.nazov) + "</h2>";
+
+        if (!members.length) {
+          out += '<div class="notice"><p><strong>Zatiaľ bez overených údajov.</strong></p>' +
+            "<p>Pre vetvu " + esc(vetva.nazov) + " ešte nie sú zapísané žiadne osoby. Údaje treba prevziať z pôvodného rodokmeňa " +
+            '(<a href="https://rodokmen1.webnode.cz/" rel="noopener">rodokmen1.webnode.cz</a>) a overiť v matrikách — ' +
+            "odkazy na archívy sú nižšie. Osoby sa dopĺňajú do súboru <code>rodokmen/data.js</code>.</p></div>";
+          return out;
+        }
+
+        if (vetva.koren && byId[vetva.koren]) {
+          out += "<p>Vývod predkov — kliknutím na osobu zobrazíte podrobnosti a pramene.</p>" +
+            '<div class="pedigree-wrap">' + renderNode(vetva.koren, 1) + "</div>";
+        }
+
+        members.sort(function (a, b) {
+          return String((a.narodenie && a.narodenie.datum) || "9999").localeCompare(String((b.narodenie && b.narodenie.datum) || "9999"));
+        });
+        out += "<h2>Členovia vetvy (" + members.length + ")</h2><div class=\"table-wrap\"><table><thead><tr>" +
+          "<th>Meno</th><th>Narodenie / krst</th><th>Úmrtie</th><th>Povolanie</th></tr></thead><tbody>";
+        members.forEach(function (o) {
+          var born = o.narodenie || {}, bapt = o.krst || {}, died = o.umrtie || {};
+          out += '<tr><td><button data-id="' + esc(o.id) + '">' + esc(fullName(o)) + "</button></td>" +
+            "<td>" + esc([born.datum || bapt.datum, born.miesto || bapt.miesto].filter(Boolean).join(", ")) + "</td>" +
+            "<td>" + esc([died.datum, died.miesto].filter(Boolean).join(", ")) + "</td>" +
+            "<td>" + esc(o.povolanie) + "</td></tr>";
+        });
+        return out + "</tbody></table></div>";
+      }
+
+      function event(label, e) {
+        if (!e) return "";
+        var parts = [e.datum, e.miesto, e.fara ? "fara " + e.fara : ""].filter(Boolean);
+        if (e.s && byId[e.s]) parts.push("s " + fullName(byId[e.s]));
+        return parts.length ? "<dt>" + label + "</dt><dd>" + esc(parts.join(", ")) + "</dd>" : "";
+      }
+      function personLink(label, id) {
+        if (!id) return "";
+        var p = byId[id];
+        return "<dt>" + label + "</dt><dd>" + (p ? '<a href="#" data-id="' + esc(id) + '">' + esc(fullName(p)) + "</a>" : esc(id)) + "</dd>";
+      }
+
+      var dialog = document.getElementById("detail");
+      function showPerson(id) {
+        var o = byId[id];
+        if (!o) return;
+        var children = data.osoby.filter(function (p) { return p.otec === id || p.matka === id; });
+        var html = '<button class="close" aria-label="Zavrieť">✕</button><h3 id="detail-title">' + esc(fullName(o)) + "</h3><dl>" +
+          event("Narodenie", o.narodenie) + event("Krst", o.krst) + event("Sobáš", o.sobas) + event("Úmrtie", o.umrtie) +
+          (o.povolanie ? "<dt>Povolanie</dt><dd>" + esc(o.povolanie) + "</dd>" : "") +
+          personLink("Otec", o.otec) + personLink("Matka", o.matka) +
+          (children.length ? "<dt>Deti</dt><dd>" + children.map(function (c) {
+            return '<a href="#" data-id="' + esc(c.id) + '">' + esc(fullName(c)) + "</a>";
+          }).join(", ") + "</dd>" : "") +
+          (o.poznamka ? "<dt>Poznámka</dt><dd>" + esc(o.poznamka) + "</dd>" : "") +
+          "</dl>";
+        if (o.zdroje && o.zdroje.length) {
+          html += "<h3>Pramene</h3><ul>" + o.zdroje.map(function (z) {
+            return "<li>" + (z.url ? '<a href="' + esc(z.url) + '" rel="noopener">' + esc(z.popis || z.url) + "</a>" : esc(z.popis)) + "</li>";
+          }).join("") + "</ul>";
+        }
+        dialog.innerHTML = html;
+        if (!dialog.open) dialog.showModal();
+      }
+
+      document.addEventListener("click", function (e) {
+        var t = e.target.closest("[data-id]");
+        if (t) { e.preventDefault(); showPerson(t.getAttribute("data-id")); return; }
+        if (e.target.closest("dialog .close") || e.target === dialog) dialog.close();
+      });
+
+      var tabs = document.querySelectorAll(".tabs button");
+      function select(key) {
+        tabs.forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.branch === key)); });
+        document.getElementById("branch").innerHTML = renderBranch(key);
+        try { history.replaceState(null, "", "#" + key); } catch (err) {}
+      }
+      tabs.forEach(function (b) { b.addEventListener("click", function () { select(b.dataset.branch); }); });
+      select(location.hash === "#knap" ? "knap" : "konarik");
+    })();
+  </script>
+</body>
+
+</html>
