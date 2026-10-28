@@ -107,7 +107,7 @@
     th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
     th { font-size: 0.85rem; color: var(--muted); font-weight: normal; }
     .table-wrap { overflow-x: auto; }
-    td button { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+    td button { font: inherit; text-align: left; color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
 
     dialog {
       border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text);
@@ -239,13 +239,13 @@
         var members = data.osoby.filter(function (o) { return o.vetva === key; });
         document.documentElement.style.setProperty("--branch", "var(--" + key + ")");
         var out = "<h2>Vetva " + esc(vetva.nazov) + "</h2>";
+        if (vetva.poznamka) out += "<p>" + esc(vetva.poznamka) + "</p>";
 
         if (!members.length) {
           out += '<div class="notice"><p><strong>Zatiaľ bez overených údajov.</strong></p>' +
-            "<p>Pre vetvu " + esc(vetva.nazov) + " ešte nie sú zapísané žiadne osoby. Údaje treba prevziať z pôvodného rodokmeňa " +
-            '(<a href="https://rodokmen1.webnode.cz/" rel="noopener">rodokmen1.webnode.cz</a>) a overiť v matrikách — ' +
+            "<p>Pre vetvu " + esc(vetva.nazov) + " ešte nie sú zapísané žiadne osoby. Treba ich dohľadať v matrikách — " +
             "odkazy na archívy sú nižšie. Osoby sa dopĺňajú do súboru <code>rodokmen/data.js</code>.</p></div>";
-          return out;
+          return out + renderLeads(vetva);
         }
 
         if (vetva.koren && byId[vetva.koren]) {
@@ -265,7 +265,15 @@
             "<td>" + esc([died.datum, died.miesto].filter(Boolean).join(", ")) + "</td>" +
             "<td>" + esc(o.povolanie) + "</td></tr>";
         });
-        return out + "</tbody></table></div>";
+        return out + "</tbody></table></div>" + renderLeads(vetva);
+      }
+
+      function renderLeads(vetva) {
+        if (!vetva.stopy || !vetva.stopy.length) return "";
+        return "<h2>Otvorené stopy</h2><p>Neoverené indície na ďalší výskum — nie sú súčasťou rodokmeňa, kým sa nepotvrdia v matrike.</p><ul>" +
+          vetva.stopy.map(function (z) {
+            return "<li>" + esc(z.popis) + (z.url ? ' (<a href="' + esc(z.url) + '" rel="noopener">prameň</a>)' : "") + "</li>";
+          }).join("") + "</ul>";
       }
 
       function event(label, e) {
