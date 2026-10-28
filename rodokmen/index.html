@@ -188,6 +188,7 @@
 
   <footer>
     <p>Údaje sa dopĺňajú do súboru <code>rodokmen/data.js</code>. Pri každej osobe uvádzajte prameň (archív, fara, kniha, folio).</p>
+    <p>Pri žijúcich osobách sa uvádza len meno, rok narodenia a príbuzenské väzby.</p>
   </footer>
 
   <dialog id="detail" aria-labelledby="detail-title"></dialog>
@@ -206,7 +207,7 @@
         });
       }
       function fullName(o) {
-        return [o.meno, o.priezvisko].filter(Boolean).join(" ") + (o.rodne ? " (rod. " + o.rodne + ")" : "");
+        return ([o.meno, o.priezvisko].filter(Boolean).join(" ") || "(meno neuvedené)") + (o.rodne ? " (rod. " + o.rodne + ")" : "");
       }
       function lifespan(o) {
         var b = (o.narodenie && o.narodenie.datum) || (o.krst && o.krst.datum ? "pokrst. " + o.krst.datum : "");
@@ -215,6 +216,7 @@
         return (b ? "* " + b : "") + (b && d ? " – " : "") + (d ? "† " + d : "");
       }
       function isFemale(o) {
+        if (o.pohlavie) return o.pohlavie === "z";
         return data.osoby.some(function (p) { return p.matka === o.id; }) || /ová$|á$/.test(o.priezvisko || "");
       }
 
