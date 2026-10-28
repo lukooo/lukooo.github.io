@@ -37,6 +37,9 @@
     url: WEB + "news/ropjakovci-a-gregovci-za-velkou-mlakou/"
   };
   var RODINA = { popis: "Údaj od rodiny (zadané 28. 10. 2026)" };
+  var MH = { popis: "MyHeritage — rodokmeň „Konarik Family Tree“ (Koňařík Web Site, autor Luděk Koňařík), export GEDCOM z 28. 10. 2026; bez odkazu na matričný zápis" };
+  var MH_ID = { popis: "MyHeritage — rodokmeň „Konarik Family Tree“, export GEDCOM z 28. 10. 2026; údaj pridaný 30. 6. 2015 funkciou Instant Discovery™, t. j. prevzatý z iného stromu MyHeritage, bez odkazu na matričný zápis" };
+  var MH_SM = { popis: "MyHeritage — rodokmeň „Konarik Family Tree“, export GEDCOM z 28. 10. 2026; údaj pridaný 21. 1. 2019 cez Smart Match zo stromu „Smiga - Muschalek Web Site“ (Amy Smiga Kreis)" };
   var PREVZATE = "Prevzaté z rodokmen1.webnode.cz, zatiaľ neoverené v matrike.";
 
   window.RODOKMEN = {
@@ -53,11 +56,11 @@
       },
       knap: {
         nazov: "Knap",
-        koren: "ropjak-jan-1899",
-        poznamka: "Podľa rodokmen1.webnode.cz patria k tejto časti rodokmeňa mená Ropják, Knap a Grega z okolia Bardejova (Tarnov, Mokroluh). Web zverejnil len osoby z rodín Ropják a Grega; nikoho s priezviskom Knap neuvádza.",
+        koren: "knapova-anna",
+        poznamka: "Podľa rodokmen1.webnode.cz patria k tejto časti rodokmeňa mená Ropják, Knap a Grega z okolia Bardejova (Tarnov, Mokroluh). Web zverejnil len osoby z rodín Ropják a Grega; nikoho s priezviskom Knap neuvádza. Podľa rodokmeňa na MyHeritage je Agnesa Ropjaková (* 1908), dcéra Juraja Ropjáka a Zuzany Gregovej, stará mama Anny Koňaříkovej, rod. Knapovej.",
         stopy: [
           { popis: "rodokmen1.webnode.cz — „História Tarnova a mien: Ropjak, Knap, Grega po roku 1700“: priezvisko Knap sa podľa sčítania z roku 1715 nevyskytuje v Tarnove; článok ho uvádza napr. v Šandale, Osadě, Trstenej, Prietrži či Perneku. Najstaršia matrika v Mokroluhu je z roku 1788.", url: WEB + "news/historia-tarnova-a-mien-ropjak-knap-grega-po-roku-1700/" },
-          { popis: "Rodičia Juraja Ropjáka (* 1874) a Zuzany Gregovej (* 1879) nie sú známi. Ďalší krok: krstné zápisy z Tarnova (Sáros, maď. Tarnó) v zbierke FamilySearch „Slovakia, Church and Synagogue Books, 1592–1935“ (prístup vyžaduje bezplatné prihlásenie).", url: "https://www.familysearch.org/en/wiki/Slovakia_Church_and_Synagogue_Books_-_FamilySearch_Historical_Records" },
+          { popis: "Údaje z MyHeritage (rodičia Juraja Ropjáka a Zuzany Gregovej, najstarší Martin Ropják * 1793) treba overiť v krstných zápisoch z Tarnova a Mokroluhu (Sáros, maď. Tarnó, Sárpatak) v zbierke FamilySearch „Slovakia, Church and Synagogue Books, 1592–1935“ (prístup vyžaduje bezplatné prihlásenie).", url: "https://www.familysearch.org/en/wiki/Slovakia_Church_and_Synagogue_Books_-_FamilySearch_Historical_Records" },
           { popis: "Neoverená indícia (index Ancestry): George (Juraj) Kovály, * 6. 5. 1850 Tarnov, † 25. 1. 1892 Tarnov, rodičia Andreas Kovály a Mária Ropjak. Či ide o príbuznú našich Ropjákovcov, nie je známe.", url: "https://www.ancestry.com/genealogy/records/results?firstName=george&lastName=kovary" },
           { popis: "Neoverená indícia (návrh WikiTree, nie overený profil): Anna Delej, rod. Ropjak, * 12. 6. 1869 Tarnov. Väzba na našu rodinu nie je známa.", url: "https://plus.wikitree.com/Profiles/Suggestions/CZE/777_1800-1899_1.htm" }
         ]
@@ -66,45 +69,273 @@
     osoby: [
       {
         id: "konarik-ludek-1958", vetva: "konarik", meno: "Luděk", priezvisko: "Koňařík",
-        narodenie: { datum: "1958-07-27" },
-        sobas: { s: "knapova-anna" },
+        narodenie: { datum: "1958-07-27", miesto: "Vsetín" },
+        sobas: { datum: "1984-02-25", miesto: "Tarnov", s: "knapova-anna" },
         otec: "konarik-josef-1930", matka: "ceskova-vera-1929",
         poznamka: "Východisková osoba vetvy Koňařík.",
-        zdroje: [RODINA]
+        zdroje: [RODINA, MH]
       },
       {
         id: "konarik-josef-1930", vetva: "konarik", meno: "Josef", priezvisko: "Koňařík",
-        narodenie: { datum: "1930-09-20" },
+        narodenie: { datum: "1930-09-20", miesto: "Halenkov" },
         sobas: { s: "ceskova-vera-1929" },
-        zdroje: [RODINA]
+        umrtie: { datum: "2013-03-28", miesto: "Halenkov (tam aj pochovaný)" },
+        otec: "konarik-frantisek-1905", matka: "hrnova-antonie-1906",
+        zdroje: [RODINA, MH]
       },
       {
         id: "ceskova-vera-1929", vetva: "konarik", meno: "Věra", priezvisko: "Koňaříková", rodne: "Češková",
-        narodenie: { datum: "1929-02-28" },
+        narodenie: { datum: "1929-02-28", miesto: "Držková" },
         sobas: { s: "konarik-josef-1930" },
-        poznamka: "Rodné priezvisko zodpovedá rodu Češek, ktorý pôvodný web rodokmen1.webnode.cz uvádza spolu s Koňaříkmi v okolí Hošťálkovej a Halenkova.",
-        zdroje: [RODINA]
+        umrtie: { datum: "2007-02-05", miesto: "Vsetín" },
+        otec: "cesek-tomas-1874", matka: "uhrikova-anna",
+        poznamka: "Rod Češek uvádza aj pôvodný web rodokmen1.webnode.cz spolu s Koňaříkmi v okolí Hošťálkovej a Halenkova.",
+        zdroje: [RODINA, MH]
       },
       {
         id: "knapova-anna", vetva: "knap", meno: "Anna", priezvisko: "Koňaříková", rodne: "Knapová",
-        sobas: { s: "konarik-ludek-1958" },
-        poznamka: "Väzba na rodiny Ropják a Grega z Tarnova zatiaľ nie je známa.",
-        zdroje: [RODINA]
+        narodenie: { datum: "1959" },
+        sobas: { datum: "1984-02-25", miesto: "Tarnov", s: "konarik-ludek-1958" },
+        otec: "knap-gustav-1934", matka: "juhas-duda-margita-1935",
+        poznamka: "Východisková osoba vetvy Knap. Pri žijúcej osobe uvádzame len rok narodenia.",
+        zdroje: [RODINA, MH]
+      },
+      // — Predkovia vetvy Koňařík podľa rodokmeňa na MyHeritage —
+      {
+        id: "konarik-frantisek-1905", vetva: "konarik", meno: "František", priezvisko: "Koňařík",
+        narodenie: { datum: "1905-06-30" },
+        sobas: { datum: "1927-05-16", s: "hrnova-antonie-1906" },
+        umrtie: { datum: "1989" },
+        otec: "konarik-josef-1883", matka: "kocurkova-frantiska-1884",
+        zdroje: [MH]
       },
       {
+        id: "hrnova-antonie-1906", vetva: "konarik", meno: "Antonie", priezvisko: "Koňaříková", rodne: "Hrňová",
+        narodenie: { datum: "1906" },
+        sobas: { datum: "1927-05-16", s: "konarik-frantisek-1905" },
+        umrtie: { datum: "1964" },
+        otec: "hrna-michal-1868", matka: "andryskova-veronika-1868",
+        zdroje: [MH]
+      },
+      {
+        id: "konarik-josef-1883", vetva: "konarik", meno: "Josef", priezvisko: "Koňařík",
+        narodenie: { datum: "1883-02-12" },
+        sobas: { s: "kocurkova-frantiska-1884" },
+        umrtie: { datum: "1923", miesto: "Halenkov" },
+        otec: "konarik-pavel-1857", matka: "vaculova-anna-1854",
+        zdroje: [MH]
+      },
+      {
+        id: "kocurkova-frantiska-1884", vetva: "konarik", meno: "Františka", priezvisko: "Koňaříková", rodne: "Kocurková",
+        narodenie: { datum: "1884-10-22" },
+        sobas: { s: "konarik-josef-1883" },
+        poznamka: "Rodičia sú v strome len ako „Kocurek“ a „Kocurková“, bez krstných mien.",
+        zdroje: [MH]
+      },
+      {
+        id: "konarik-pavel-1857", vetva: "konarik", meno: "Pavel", priezvisko: "Koňařík",
+        narodenie: { datum: "1857" },
+        sobas: { s: "vaculova-anna-1854" },
+        otec: "konarik-josef-1819", matka: "marianna-1821",
+        zdroje: [MH]
+      },
+      {
+        id: "vaculova-anna-1854", vetva: "konarik", meno: "Anna", priezvisko: "Koňaříková", rodne: "Vaculová",
+        narodenie: { datum: "1854" },
+        sobas: { s: "konarik-pavel-1857" },
+        zdroje: [MH]
+      },
+      {
+        id: "konarik-josef-1819", vetva: "konarik", meno: "Josef", priezvisko: "Koňařík",
+        narodenie: { datum: "1819-08-24" },
+        sobas: { s: "marianna-1821" },
+        otec: "konarik-jan-1791",
+        zdroje: [MH]
+      },
+      {
+        id: "marianna-1821", vetva: "konarik", meno: "Marianna", priezvisko: "Koňaříková",
+        narodenie: { datum: "1821" },
+        sobas: { s: "konarik-josef-1819" },
+        poznamka: "Rodné priezvisko v strome chýba.",
+        zdroje: [MH]
+      },
+      {
+        id: "konarik-jan-1791", vetva: "konarik", meno: "Jan", priezvisko: "Koňařík",
+        narodenie: { datum: "1791-05-04" },
+        poznamka: "Najstarší známy Koňařík v priamej línii. Manželka v strome chýba.",
+        zdroje: [MH]
+      },
+      {
+        id: "hrna-michal-1868", vetva: "konarik", meno: "Michal", priezvisko: "Hrňa",
+        narodenie: { datum: "1868-09-16" },
+        sobas: { datum: "1895-08-12", s: "andryskova-veronika-1868" },
+        otec: "hrna-michal", matka: "korenkova-rosina",
+        zdroje: [MH]
+      },
+      {
+        id: "andryskova-veronika-1868", vetva: "konarik", meno: "Veronika", priezvisko: "Hrňová", rodne: "Andrýsková",
+        narodenie: { datum: "1868-07-12" },
+        sobas: { datum: "1895-08-12", s: "hrna-michal-1868" },
+        umrtie: { miesto: "pochovaná v Halenkove" },
+        otec: "andrysek-josef", matka: "cernotova-marie",
+        zdroje: [MH_SM]
+      },
+      {
+        id: "hrna-michal", vetva: "konarik", meno: "Michal", priezvisko: "Hrňa",
+        sobas: { s: "korenkova-rosina" },
+        zdroje: [MH]
+      },
+      {
+        id: "korenkova-rosina", vetva: "konarik", meno: "Rosina", priezvisko: "Hrňová", rodne: "Kořenková",
+        sobas: { s: "hrna-michal" },
+        zdroje: [MH]
+      },
+      {
+        id: "andrysek-josef", vetva: "konarik", meno: "Josef", priezvisko: "Andrýsek",
+        sobas: { s: "cernotova-marie" },
+        zdroje: [MH]
+      },
+      {
+        id: "cernotova-marie", vetva: "konarik", meno: "Marie", priezvisko: "Andrýsková", rodne: "Černotová",
+        sobas: { s: "andrysek-josef" },
+        otec: "cernota-jan",
+        zdroje: [MH]
+      },
+      {
+        id: "cernota-jan", vetva: "konarik", meno: "Jan", priezvisko: "Černota",
+        zdroje: [MH]
+      },
+      {
+        id: "cesek-tomas-1874", vetva: "konarik", meno: "Tomáš", priezvisko: "Češek",
+        narodenie: { datum: "1874", miesto: "Držková č. 47, Hošťálková" },
+        sobas: { s: "uhrikova-anna" },
+        umrtie: { datum: "1939" },
+        poznamka: "Syn Ladislav (* 24. 6. 1925, Držková č. 47) podľa stromu zahynul 10. 4. 1945 v koncentračnom tábore Mauthausen.",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "uhrikova-anna", vetva: "konarik", meno: "Anna", priezvisko: "Češková", rodne: "Uhříková",
+        sobas: { s: "cesek-tomas-1874" },
+        zdroje: [MH_ID]
+      },
+      // — Predkovia vetvy Knap podľa rodokmeňa na MyHeritage —
+      {
+        id: "knap-gustav-1934", vetva: "knap", meno: "Gustav", priezvisko: "Knap",
+        narodenie: { datum: "1934-06-15", miesto: "Tarnov" },
+        sobas: { s: "juhas-duda-margita-1935" },
+        umrtie: { datum: "1971-05-20", miesto: "Tarnov (tam aj pochovaný)" },
+        otec: "knap-jozef-1908", matka: "ropjakova-agnesa-1908",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "juhas-duda-margita-1935", vetva: "knap", meno: "Margita", priezvisko: "Knapová", rodne: "Juhás-Duda",
+        narodenie: { datum: "1935-05-14" },
+        sobas: { s: "knap-gustav-1934" },
+        umrtie: { datum: "1980-08-02", miesto: "Tarnov (tam aj pochovaná)" },
+        otec: "juhas-duda-jan", matka: "hiscar-agnesa",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "knap-jozef-1908", vetva: "knap", meno: "Jozef", priezvisko: "Knap",
+        narodenie: { datum: "1908-02-18" },
+        sobas: { s: "ropjakova-agnesa-1908" },
+        umrtie: { datum: "1978-10-19" },
+        otec: "knap-peter-1870", matka: "chovancova-maria-1874",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "ropjakova-agnesa-1908", vetva: "knap", meno: "Agnesa", priezvisko: "Knapová", rodne: "Ropjaková",
+        narodenie: { datum: "1908-02-08" },
+        sobas: { s: "knap-jozef-1908" },
+        umrtie: { datum: "1994-08-10", miesto: "Tarnov" },
+        otec: "ropjak-juraj-1874", matka: "gregova-zuzana-1879",
+        poznamka: "Spája vetvu Knap s rodinami Ropják a Grega z pôvodného webu.",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "knap-peter-1870", vetva: "knap", meno: "Peter", priezvisko: "Knap",
+        narodenie: { datum: "1870" },
+        sobas: { s: "chovancova-maria-1874" },
+        poznamka: "Starší syn Jan Knap, * 27. 11. 1895 Tarnov, † 20. 2. 1971.",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "chovancova-maria-1874", vetva: "knap", meno: "Mária", priezvisko: "Knapová", rodne: "Chovancová",
+        narodenie: { datum: "1874" },
+        sobas: { s: "knap-peter-1870" },
+        zdroje: [MH_ID]
+      },
+      {
+        id: "juhas-duda-jan", vetva: "knap", meno: "Ján", priezvisko: "Juhás-Duda",
+        sobas: { s: "hiscar-agnesa" },
+        zdroje: [MH_ID]
+      },
+      {
+        id: "hiscar-agnesa", vetva: "knap", meno: "Agnesa", priezvisko: "Juhás-Duda", rodne: "Hiščar",
+        sobas: { s: "juhas-duda-jan" },
+        zdroje: [MH_ID]
+      },
+      {
+        id: "ropjak-georgius-1837", vetva: "knap", meno: "Georgius (Juraj)", priezvisko: "Ropják",
+        narodenie: { datum: "1837-03-11", miesto: "Tarnov č. 47" },
+        sobas: { s: "holda-zuzana-1837" },
+        otec: "ropjak-martin-1793", matka: "chovancova-anna",
+        poznamka: "Deti podľa stromu: Georg (Gregor) * 21. 3. 1869 † 11. 4. 1870, Mária * 28. 3. 1871, Juraj * 22. 2. 1874, Anna * 3. 5. 1878, Zuzana * 8. 5. 1881, Katarína * 25. 2. 1884.",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "holda-zuzana-1837", vetva: "knap", meno: "Zuzana", priezvisko: "Ropjaková", rodne: "Holda",
+        narodenie: { datum: "1837-11-08", miesto: "Mokroluh (maď. Sárpatak)" },
+        sobas: { s: "ropjak-georgius-1837" },
+        otec: "holda-andras-1807",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "ropjak-martin-1793", vetva: "knap", meno: "Martin", priezvisko: "Ropják",
+        narodenie: { datum: "1793" },
+        sobas: { s: "chovancova-anna" },
+        poznamka: "Najstarší známy Ropják v priamej línii.",
+        zdroje: [MH_ID]
+      },
+      {
+        id: "chovancova-anna", vetva: "knap", meno: "Anna", priezvisko: "Ropjaková", rodne: "Chovancová",
+        sobas: { s: "ropjak-martin-1793" },
+        zdroje: [MH_ID]
+      },
+      {
+        id: "holda-andras-1807", vetva: "knap", meno: "Andras (Ondrej)", priezvisko: "Holda",
+        narodenie: { datum: "1807-08-04" },
+        zdroje: [MH_ID]
+      },
+      {
+        id: "grega-martin-1845", vetva: "knap", meno: "Martin", priezvisko: "Grega",
+        narodenie: { datum: "1845-11-14" },
+        sobas: { s: "gregova-anna-matka" },
+        zdroje: [MH_ID]
+      },
+      {
+        id: "gregova-anna-matka", vetva: "knap", meno: "Anna", priezvisko: "Gregová",
+        sobas: { s: "grega-martin-1845" },
+        poznamka: "Matka Zuzany Gregovej (* 1879); rodné priezvisko v strome chýba.",
+        zdroje: [MH_ID]
+      },
+      // — Rodiny Ropják a Grega podľa pôvodného webu rodokmen1.webnode.cz —
+      {
         id: "ropjak-juraj-1874", vetva: "knap", meno: "Juraj", priezvisko: "Ropják",
-        narodenie: { datum: "1874", miesto: "Tarnov" },
-        sobas: { s: "gregova-zuzana-1879" },
+        narodenie: { datum: "1874-02-22", miesto: "Tarnov č. 47" },
+        sobas: { datum: "1898-06-13", miesto: "Tarnov", s: "gregova-zuzana-1879" },
+        otec: "ropjak-georgius-1837", matka: "holda-zuzana-1837",
         povolanie: "",
-        poznamka: "V maďarských záznamoch Gyorgy. V USA bol dvakrát a neusadil sa tam: 16. 3. 1899 pricestoval z Brém loďou Bremen (cieľ Pittsburgh) a 18. 9. 1910 z Hamburgu loďou SS Pennsylvania (výška 1,65 m). Súrodenci: Georg (zrejme zomrel mladý), Mária (vydatá Gaľanová), Anna (vydatá Gregová) a Zuzana. Bratranec: Andreas Ropják (* 1858). " + PREVZATE,
-        zdroje: [AMERIKA, MLAKA]
+        poznamka: "V maďarských záznamoch Gyorgy. V USA bol dvakrát a neusadil sa tam: 16. 3. 1899 pricestoval z Brém loďou Bremen (cieľ Pittsburgh) a 18. 9. 1910 z Hamburgu loďou SS Pennsylvania (výška 1,65 m). Súrodenci: Georg (zrejme zomrel mladý), Mária (vydatá Gaľanová), Anna (vydatá Gregová) a Zuzana. Bratranec: Andreas Ropják (* 1858). V MyHeritage je ako dátum druhej plavby uvedené 18. 2. 1910 (Hamburg), web uvádza príchod 18. 9. 1910. Údaje prevzaté z rodokmen1.webnode.cz a MyHeritage, zatiaľ neoverené v matrike.",
+        zdroje: [AMERIKA, MLAKA, MH_ID]
       },
       {
         id: "gregova-zuzana-1879", vetva: "knap", meno: "Zuzana", priezvisko: "Gregová",
-        narodenie: { datum: "1879" },
-        sobas: { s: "ropjak-juraj-1874" },
-        poznamka: "Bratia: Ján Grega a Adam Grega (* 1893), obaja v Mansfielde v Ohiu. " + PREVZATE,
-        zdroje: [AMERIKA]
+        narodenie: { datum: "1879-04-13", miesto: "Mokroluh (maď. Sárpatak), okr. Bardejov" },
+        sobas: { datum: "1898-06-13", miesto: "Tarnov", s: "ropjak-juraj-1874" },
+        otec: "grega-martin-1845", matka: "gregova-anna-matka",
+        poznamka: "Bratia: Ján Grega a Adam Grega (* 1893), obaja v Mansfielde v Ohiu. Údaje prevzaté z rodokmen1.webnode.cz a MyHeritage, zatiaľ neoverené v matrike.",
+        zdroje: [AMERIKA, MH_ID]
       },
       {
         id: "ropjak-jan-1899", vetva: "knap", meno: "Ján", priezvisko: "Ropják",
@@ -112,18 +343,18 @@
         sobas: { datum: "1926", s: "safcakova-anna-1906" },
         umrtie: { datum: "1940-08-26", miesto: "USA (pochovaný na Calvary Cemetery v Clevelande 28. 8. 1940)" },
         otec: "ropjak-juraj-1874", matka: "gregova-zuzana-1879",
-        poznamka: "7. 9. 1923 pricestoval z Cherbourgu loďou Aquitania na Ellis Island (24-ročný) k ujovi Adamovi Gregovi, 151 Daisy Street, Mansfield, Ohio. Census 1930: Dowd Street, Lakewood, Ohio, bez práce, nehovoril po anglicky. Zomrel vo veku 41 rokov, 2 mesiacov a 9 dní; príčina smrti spinálna skleróza (prvé príznaky v roku 1931). " + PREVZATE,
-        zdroje: [AMERIKA]
+        poznamka: "7. 9. 1923 pricestoval z Cherbourgu loďou Aquitania na Ellis Island (24-ročný) k ujovi Adamovi Gregovi, 151 Daisy Street, Mansfield, Ohio. Census 1930: Dowd Street, Lakewood, Ohio, bez práce, nehovoril po anglicky. Zomrel vo veku 41 rokov, 2 mesiacov a 9 dní; príčina smrti spinálna skleróza (prvé príznaky v roku 1931). Rozpor: MyHeritage uvádza úmrtie 24. 8. 1940 v Cuyahoga County, Ohio. " + PREVZATE,
+        zdroje: [AMERIKA, MH_ID]
       },
       {
         id: "ropjak-juraj-1902", vetva: "knap", meno: "Juraj", priezvisko: "Ropják",
-        narodenie: { datum: "1902-12-18" },
+        narodenie: { datum: "1902-12-18", miesto: "Tarnov" },
         sobas: { datum: "asi 1925", s: "fornadelova-mary-1903" },
         umrtie: { datum: "1944-04-17", miesto: "Bath, okres Allen, Ohio" },
         povolanie: "robotník, neskôr mechanik (Bolt Works)",
         otec: "ropjak-juraj-1874", matka: "gregova-zuzana-1879",
-        poznamka: "V USA George Ropjak. 17. 9. 1921 pricestoval z Le Havre loďou SS France do New Yorku (19-ročný, výška 1,65 m) k ujovi Johnovi Gregovi, Lily Street, Mansfield, Ohio. Census 1930: 2068 Quail Avenue, Lakewood, Ohio. Zomrel na obojstranný lobárny zápal pľúc (tuberkulóza); pohreb 21. 4. 1944 z kostola sv. Cyrila a Metoda v Lakewoode, pochovaný na Calvary Cemetery v Clevelande. Rozpor v prameni: vek pri úmrtí sa uvádza 38 rokov, 3 mesiace a 29 dní, čo nezodpovedá narodeniu v roku 1902 — treba overiť v úmrtnom zázname. " + PREVZATE,
-        zdroje: [AMERIKA]
+        poznamka: "V USA George Ropjak. 17. 9. 1921 pricestoval z Le Havre loďou SS France do New Yorku (19-ročný, výška 1,65 m) k ujovi Johnovi Gregovi, Lily Street, Mansfield, Ohio. Census 1930: 2068 Quail Avenue, Lakewood, Ohio. Zomrel na obojstranný lobárny zápal pľúc (tuberkulóza); pohreb 21. 4. 1944 z kostola sv. Cyrila a Metoda v Lakewoode, pochovaný na Calvary Cemetery v Clevelande. Rozpor v prameňoch: web uvádza úmrtie 17. 4. 1944, MyHeritage 20. 4. 1941. Vek pri úmrtí, ktorý cituje web (38 rokov, 3 mesiace a 29 dní), zodpovedá skôr roku 1941 — treba overiť v úmrtnom zázname. " + PREVZATE,
+        zdroje: [AMERIKA, MH_ID]
       },
       {
         id: "fornadel-andrew", vetva: "knap", meno: "Andrew", priezvisko: "Fornadel",
@@ -188,9 +419,11 @@
       },
       {
         id: "ropjakova-maria", vetva: "knap", meno: "Mária", priezvisko: "Gaľanová", rodne: "Ropjaková",
+        narodenie: { datum: "1871-03-28" },
         sobas: { s: "galan-peter-1858" },
-        poznamka: "Sestra Juraja Ropjáka (* 1874). Podľa zoznamu pasažierov bola v USA už v rokoch 1889–1894. V roku 1901 pricestovala z Antverp loďou SS Friesland s deťmi Máriou (* 1892), Jánom (* 1895) a Annou (* 1899) za manželom do Pittsburghu. V USA zostala natrvalo. " + PREVZATE,
-        zdroje: [MLAKA]
+        otec: "ropjak-georgius-1837", matka: "holda-zuzana-1837",
+        poznamka: "Sestra Juraja Ropjáka (* 1874). Podľa zoznamu pasažierov bola v USA už v rokoch 1889–1894. V roku 1901 pricestovala z Antverp loďou SS Friesland s deťmi Máriou (* 1892), Jánom (* 1895) a Annou (* 1899) za manželom do Pittsburghu. V USA zostala natrvalo. Dátum narodenia a rodičia podľa MyHeritage; že ide o tú istú Máriu, nie je v strome výslovne uvedené. " + PREVZATE,
+        zdroje: [MLAKA, MH_ID]
       },
       {
         id: "galan-peter-1858", vetva: "knap", meno: "Peter", priezvisko: "Gaľan",
@@ -201,9 +434,12 @@
       },
       {
         id: "ropjakova-anna", vetva: "knap", meno: "Anna", priezvisko: "Gregová", rodne: "Ropjaková",
+        narodenie: { datum: "1878-05-03", miesto: "Tarnov č. 47" },
         sobas: { s: "grega-jan" },
-        poznamka: "Sestra Juraja Ropjáka (* 1874). V roku 1920 sa s deťmi Jánom (* 1902), Annou (* 1907), Zuzanou (* 1909) a Jurajom (* 1911) plavila loďou SS France za manželom do Mansfieldu, Ohio (100 Daisy Street). V USA zostala natrvalo. " + PREVZATE,
-        zdroje: [MLAKA]
+        umrtie: { datum: "1949-06-24" },
+        otec: "ropjak-georgius-1837", matka: "holda-zuzana-1837",
+        poznamka: "Sestra Juraja Ropjáka (* 1874). V roku 1920 sa s deťmi Jánom (* 1902), Annou (* 1907), Zuzanou (* 1909) a Jurajom (* 1911) plavila loďou SS France za manželom do Mansfieldu, Ohio (100 Daisy Street). V USA zostala natrvalo. Dátumy a rodičia podľa MyHeritage. " + PREVZATE,
+        zdroje: [MLAKA, MH_ID]
       },
       {
         id: "grega-jan", vetva: "knap", meno: "Ján", priezvisko: "Grega",
@@ -247,9 +483,11 @@
       },
       {
         id: "ropjakova-zuzana-1881", vetva: "knap", meno: "Zuzana", priezvisko: "Ropjaková",
-        narodenie: { datum: "1881", miesto: "Tarnov č. 47" },
-        poznamka: "Sestra Juraja Ropjáka (* 1874). Emigrovala 8. 12. 1899 cez Brémy za bratom (ktorým, nie je známe); zrejme sa usadila v USA. " + PREVZATE,
-        zdroje: [MLAKA]
+        narodenie: { datum: "1881-05-08", miesto: "Tarnov č. 47" },
+        umrtie: { datum: "1972-01" },
+        otec: "ropjak-georgius-1837", matka: "holda-zuzana-1837",
+        poznamka: "Sestra Juraja Ropjáka (* 1874). Emigrovala 8. 12. 1899 cez Brémy za bratom (ktorým, nie je známe); zrejme sa usadila v USA. Dátumy a rodičia podľa MyHeritage. " + PREVZATE,
+        zdroje: [MLAKA, MH_ID]
       },
       {
         id: "ropjak-andreas-1858", vetva: "knap", meno: "Andreas", priezvisko: "Ropják",
