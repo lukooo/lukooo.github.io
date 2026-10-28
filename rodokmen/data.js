@@ -36,13 +36,14 @@
     popis: "rodokmen1.webnode.cz — „Ropjákovci a Gregovci za veľkou mlákou“ (2. 11. 2011); článok cituje zoznamy pasažierov (ellisisland.org)",
     url: WEB + "news/ropjakovci-a-gregovci-za-velkou-mlakou/"
   };
+  var RODINA = { popis: "Údaj od rodiny (zadané 28. 10. 2026)" };
   var PREVZATE = "Prevzaté z rodokmen1.webnode.cz, zatiaľ neoverené v matrike.";
 
   window.RODOKMEN = {
     vetvy: {
       konarik: {
         nazov: "Koňařík",
-        koren: "",
+        koren: "konarik-ludek-1958",
         poznamka: "Pôvodný web rodokmen1.webnode.cz uvádza len to, že mená Koňařík a Češek sa vyskytujú v okolí Hošťálkovej a Halenkova na Vsetínsku. Žiadnu konkrétnu osobu z tejto vetvy na webe nezverejnil.",
         stopy: [
           { popis: "rodokmen1.webnode.cz, úvodná stránka — vetvy Koňařík a Češek: okolie Hošťálkovej a Halenkova (okr. Vsetín)", url: WEB },
@@ -63,6 +64,19 @@
       }
     },
     osoby: [
+      {
+        id: "konarik-ludek-1958", vetva: "konarik", meno: "Luděk", priezvisko: "Koňařík",
+        narodenie: { datum: "1958-07-27" },
+        sobas: { s: "knapova-anna" },
+        poznamka: "Východisková osoba vetvy Koňařík.",
+        zdroje: [RODINA]
+      },
+      {
+        id: "knapova-anna", vetva: "knap", meno: "Anna", priezvisko: "Koňaříková", rodne: "Knapová",
+        sobas: { s: "konarik-ludek-1958" },
+        poznamka: "Väzba na rodiny Ropják a Grega z Tarnova zatiaľ nie je známa.",
+        zdroje: [RODINA]
+      },
       {
         id: "ropjak-juraj-1874", vetva: "knap", meno: "Juraj", priezvisko: "Ropják",
         narodenie: { datum: "1874", miesto: "Tarnov" },
