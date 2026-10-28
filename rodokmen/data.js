@@ -68,7 +68,21 @@
         id: "konarik-ludek-1958", vetva: "konarik", meno: "Luděk", priezvisko: "Koňařík",
         narodenie: { datum: "1958-07-27" },
         sobas: { s: "knapova-anna" },
+        otec: "konarik-josef-1930", matka: "ceskova-vera-1929",
         poznamka: "Východisková osoba vetvy Koňařík.",
+        zdroje: [RODINA]
+      },
+      {
+        id: "konarik-josef-1930", vetva: "konarik", meno: "Josef", priezvisko: "Koňařík",
+        narodenie: { datum: "1930-09-20" },
+        sobas: { s: "ceskova-vera-1929" },
+        zdroje: [RODINA]
+      },
+      {
+        id: "ceskova-vera-1929", vetva: "konarik", meno: "Věra", priezvisko: "Koňaříková", rodne: "Češková",
+        narodenie: { datum: "1929-02-28" },
+        sobas: { s: "konarik-josef-1930" },
+        poznamka: "Rodné priezvisko zodpovedá rodu Češek, ktorý pôvodný web rodokmen1.webnode.cz uvádza spolu s Koňaříkmi v okolí Hošťálkovej a Halenkova.",
         zdroje: [RODINA]
       },
       {
