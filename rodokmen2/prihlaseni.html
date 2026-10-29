@@ -56,7 +56,7 @@
         document.cookie = 'rodokmen=' + hash + '; Max-Age=31536000; Path=/; SameSite=Lax' + secure;
         // úvodní lomítka sloučit: z adresy „https://web//cizi.web“ by jinak „//cizi.web“ přesměrovalo na cizí web
         var z = new URLSearchParams(location.search).get('z') || '';
-        var back = /^\/rodokmen2\/(?!\/)/.test(z) ? z : '/rodokmen2/';
+        var back = /^\/(rodokmen2|rodokmen)\/(?!\/)/.test(z) ? z : '/rodokmen2/';
         if (hash !== '82cdec986ef5300684b48ebaaa02d4c5609a7be24763943aea237292bde3d257') {
           document.getElementById('err').textContent = 'To není ono – zkuste to znovu.';
         } else {
