@@ -30,7 +30,7 @@
     <h1>Rodokmen Koňaříkových</h1>
     <p>Tenhle web je jen pro rodinu a příbuzné.</p>
     <form id="f">
-      <label for="a"></label>
+      <label for="a">Ako sa volá Luděkov a Zdenkin zajo?</label>
       <input id="a" name="a" autocomplete="off" autofocus required />
       <button type="submit">Vstoupit</button>
       <p class="err" id="err" role="alert"></p>
@@ -55,15 +55,13 @@
         var secure = location.protocol === 'https:' ? '; Secure' : '';
         document.cookie = 'rodokmen=' + hash + '; Max-Age=31536000; Path=/; SameSite=Lax' + secure;
         // úvodní lomítka sloučit: z adresy „https://web//cizi.web“ by jinak „//cizi.web“ přesměrovalo na cizí web
-        var path = location.pathname.replace(/^[\/\\]+/, '/');
-        var back = path === '/rodokmen2/prihlaseni.html' ? '/' : path + location.search;
-        return fetch(back, { credentials: 'same-origin', cache: 'no-store' }).then(function (r) {
-          if (r.status === 401) {
-            document.getElementById('err').textContent = 'To není ono – zkuste to znovu.';
-          } else {
-            location.replace(back);
-          }
-        });
+        var z = new URLSearchParams(location.search).get('z') || '';
+        var back = /^\/rodokmen2\/(?!\/)/.test(z) ? z : '/rodokmen2/';
+        if (hash !== '82cdec986ef5300684b48ebaaa02d4c5609a7be24763943aea237292bde3d257') {
+          document.getElementById('err').textContent = 'To není ono – zkuste to znovu.';
+        } else {
+          location.replace(back);
+        }
       });
     });
   </script>
