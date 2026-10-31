@@ -387,6 +387,19 @@
       color: var(--text-dim);
       font-size: 0.95rem;
     }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .card p.project-meta {
+      margin-top: 12px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -634,9 +647,36 @@
     </div>
   </section>
 
+  <section id="projects">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Projekty</h2>
+      <div class="card">
+        <h3>LK Sudoku — Android aplikace</h3>
+        <p>
+          Hra Sudoku pro Android, kterou vyvíjím ve volném čase v Kotlinu. Generátor zadání
+          s jediným řešením, obtížnost podle potřebných technik řešení, poznámky, krok zpět,
+          stopky, tmavý režim a podpora TalkBack.
+        </p>
+        <div class="tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Android</span>
+          <span class="tag">ViewModel</span>
+          <span class="tag">Coroutines</span>
+          <span class="tag">Gradle</span>
+          <span class="tag">JUnit</span>
+        </div>
+        <div class="project-actions">
+          <a class="btn primary" href="downloads/lksudoku.apk" download="lksudoku-1.0.apk">Stáhnout APK</a>
+          <a class="btn ghost" href="https://github.com/lukooo/lksudoku" target="_blank" rel="noopener">Zdrojový kód na GitHubu</a>
+        </div>
+        <p class="project-meta">Verze 1.0 · Android 7.0+ · 0,8 MB · při instalaci je třeba povolit neznámé zdroje</p>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap">
-      <h2><span class="num">04.</span> Časté otázky</h2>
+      <h2><span class="num">05.</span> Časté otázky</h2>
       <div class="faq-list">
       <details class="faq-item">
         <summary>Jaké technologie preferuješ při vývoji?</summary>
@@ -668,7 +708,7 @@
 
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">05.</span> Kontakt</h2>
+      <h2><span class="num">06.</span> Kontakt</h2>
       <div class="card">
         <p>Máte projekt nebo pracovní nabídku? Ozvěte se.</p>
         <div class="contact-row">

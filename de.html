@@ -387,6 +387,19 @@
       color: var(--text-dim);
       font-size: 0.95rem;
     }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .card p.project-meta {
+      margin-top: 12px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -637,9 +650,36 @@
     </div>
   </section>
 
+  <section id="projects">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Projekte</h2>
+      <div class="card">
+        <h3>LK Sudoku — Android-App</h3>
+        <p>
+          Ein Sudoku-Spiel für Android, das ich in meiner Freizeit in Kotlin entwickle.
+          Rätselgenerator mit eindeutiger Lösung, Schwierigkeitsgrad nach den benötigten
+          Lösungstechniken, Notizen, Rückgängig, Stoppuhr, Dunkelmodus und TalkBack-Unterstützung.
+        </p>
+        <div class="tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Android</span>
+          <span class="tag">ViewModel</span>
+          <span class="tag">Coroutines</span>
+          <span class="tag">Gradle</span>
+          <span class="tag">JUnit</span>
+        </div>
+        <div class="project-actions">
+          <a class="btn primary" href="downloads/lksudoku.apk" download="lksudoku-1.0.apk">APK herunterladen</a>
+          <a class="btn ghost" href="https://github.com/lukooo/lksudoku" target="_blank" rel="noopener">Quellcode auf GitHub</a>
+        </div>
+        <p class="project-meta">Version 1.0 · Android 7.0+ · 0,8 MB · für die Installation müssen unbekannte Quellen erlaubt werden</p>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap">
-      <h2><span class="num">04.</span> Häufig gestellte Fragen</h2>
+      <h2><span class="num">05.</span> Häufig gestellte Fragen</h2>
       <div class="faq-list">
       <details class="faq-item">
         <summary>Welche Technologien bevorzugst du bei der Entwicklung?</summary>
@@ -671,7 +711,7 @@
 
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">05.</span> Kontakt</h2>
+      <h2><span class="num">06.</span> Kontakt</h2>
       <div class="card">
         <p>Sie haben ein Projekt oder ein Stellenangebot? Melden Sie sich.</p>
         <div class="contact-row">

@@ -387,6 +387,19 @@
       color: var(--text-dim);
       font-size: 0.95rem;
     }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .card p.project-meta {
+      margin-top: 12px;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -635,9 +648,36 @@
     </div>
   </section>
 
+  <section id="projects">
+    <div class="wrap">
+      <h2><span class="num">04.</span> Projects</h2>
+      <div class="card">
+        <h3>LK Sudoku — Android app</h3>
+        <p>
+          A Sudoku game for Android that I build in Kotlin in my spare time. Puzzle generator
+          with a unique solution, difficulty graded by the solving techniques required, notes,
+          undo, timer, dark mode and TalkBack support.
+        </p>
+        <div class="tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Android</span>
+          <span class="tag">ViewModel</span>
+          <span class="tag">Coroutines</span>
+          <span class="tag">Gradle</span>
+          <span class="tag">JUnit</span>
+        </div>
+        <div class="project-actions">
+          <a class="btn primary" href="downloads/lksudoku.apk" download="lksudoku-1.0.apk">Download APK</a>
+          <a class="btn ghost" href="https://github.com/lukooo/lksudoku" target="_blank" rel="noopener">Source code on GitHub</a>
+        </div>
+        <p class="project-meta">Version 1.0 · Android 7.0+ · 0.8 MB · installation requires allowing unknown sources</p>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap">
-      <h2><span class="num">04.</span> Frequently asked questions</h2>
+      <h2><span class="num">05.</span> Frequently asked questions</h2>
       <div class="faq-list">
       <details class="faq-item">
         <summary>What technologies do you prefer working with?</summary>
@@ -669,7 +709,7 @@
 
   <section id="contact">
     <div class="wrap">
-      <h2><span class="num">05.</span> Contact</h2>
+      <h2><span class="num">06.</span> Contact</h2>
       <div class="card">
         <p>Have a project or job opportunity? Get in touch.</p>
         <div class="contact-row">
