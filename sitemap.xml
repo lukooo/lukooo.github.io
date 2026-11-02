@@ -166,4 +166,10 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://www.ludek.sk/lksudoku/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
