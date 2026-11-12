@@ -400,6 +400,8 @@
       font-family: var(--mono);
       font-size: 0.8rem;
     }
+
+    #projects .card + .card { margin-top: 16px; }
   </style>
   <script type="application/ld+json">
   {
@@ -650,6 +652,27 @@
   <section id="projects">
     <div class="wrap">
       <h2><span class="num">04.</span> Projekty</h2>
+      <div class="card">
+        <h3>Portfolio Tracker — webová aplikace</h3>
+        <p>
+          Přehled investičního portfolia pro klienty brokera XTB na českém a slovenském trhu.
+          Import exportů z XTB i ruční zadání transakcí, vývoj hodnoty a zisku v čase, dividendy
+          a diverzifikace, daňový report podle českých a slovenských pravidel (časový test, FIFO,
+          kurzy ČNB a ECB) a export pro Portfolio Performance. Backend v Quarkusu, frontend v Reactu.
+        </p>
+        <div class="tags">
+          <span class="tag">Java 25</span>
+          <span class="tag">Quarkus</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Flyway</span>
+          <span class="tag">JWT</span>
+          <span class="tag">React</span>
+        </div>
+        <div class="project-actions">
+          <a class="btn primary" href="https://pt.ludek.sk/" target="_blank" rel="noopener">Otevřít aplikaci</a>
+        </div>
+        <p class="project-meta">Beta verze · zatím zdarma · 9 jazyků včetně češtiny a slovenštiny</p>
+      </div>
       <div class="card">
         <h3>LK Sudoku — Android aplikace</h3>
         <p>
