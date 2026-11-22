@@ -402,6 +402,13 @@
     }
 
     #projects .card + .card { margin-top: 16px; }
+
+    .install { margin-top: 14px; font-size: 0.9rem; color: var(--text-dim); }
+    .install summary { cursor: pointer; font-weight: 600; color: var(--text); }
+    .install summary:hover { color: var(--accent); }
+    .install ol { margin: 10px 0 0; padding-left: 22px; }
+    .install li { margin: 6px 0; }
+    .install p { margin-top: 10px; font-size: 0.9rem; }
   </style>
   <script type="application/ld+json">
   {
@@ -695,6 +702,37 @@
           <a class="btn ghost" href="https://github.com/lukooo/lksudoku" target="_blank" rel="noopener">Source code on GitHub</a>
         </div>
         <p class="project-meta">Free · Android 7.0+ · <a href="lksudoku/privacy.html#en">Privacy Policy</a></p>
+      </div>
+      <div class="card">
+        <h3>LK Shopping — Android app</h3>
+        <p>
+          Shared shopping lists for the whole household, synced in real time. A catalog of favourite
+          products with photos and stores, one tap to add to the list, quick add with suggestions,
+          grouping by category and a store filter. Works offline in a store with no signal.
+          Language follows the phone: Slovak, Czech, German and English.
+        </p>
+        <div class="tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">Material 3</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Firestore</span>
+          <span class="tag">Coroutines</span>
+        </div>
+        <div class="project-actions">
+          <a class="btn primary" href="downloads/lkshoppinglist.apk" download>Download APK</a>
+        </div>
+        <p class="project-meta">Free · Android 9.0+ · installed outside Google Play</p>
+        <details class="install">
+          <summary>How to install</summary>
+          <ol>
+            <li>Download the APK on your phone with the button above.</li>
+            <li>Open the downloaded file. Android asks whether the browser may install apps from unknown sources — choose <strong>Settings → Allow from this source</strong>.</li>
+            <li>If Play Protect shows a warning, choose <strong>More details → Install anyway</strong> (the app is not from Google Play, so it does not know it yet).</li>
+            <li>Samsung: if <strong>Auto Blocker</strong> stops the installation, turn it off temporarily in Settings → Security and privacy.</li>
+          </ol>
+          <p>Updates: download the newer APK and install it over the existing app — your data stays.</p>
+        </details>
       </div>
     </div>
   </section>

@@ -402,6 +402,13 @@
     }
 
     #projects .card + .card { margin-top: 16px; }
+
+    .install { margin-top: 14px; font-size: 0.9rem; color: var(--text-dim); }
+    .install summary { cursor: pointer; font-weight: 600; color: var(--text); }
+    .install summary:hover { color: var(--accent); }
+    .install ol { margin: 10px 0 0; padding-left: 22px; }
+    .install li { margin: 6px 0; }
+    .install p { margin-top: 10px; font-size: 0.9rem; }
   </style>
   <script type="application/ld+json">
   {
@@ -694,6 +701,38 @@
           <a class="btn ghost" href="https://github.com/lukooo/lksudoku" target="_blank" rel="noopener">Zdrojový kód na GitHubu</a>
         </div>
         <p class="project-meta">Zdarma · Android 7.0+ · <a href="lksudoku/privacy.html#cs">Zásady ochrany soukromí</a></p>
+      </div>
+      <div class="card">
+        <h3>LK Nákupy — Android aplikace</h3>
+        <p>
+          Společné nákupní seznamy pro celou domácnost se synchronizací v reálném čase. Katalog
+          oblíbených produktů s fotkami a obchody, přidání do seznamu jedním ťuknutím, rychlé
+          přidávání s našeptáváním, seskupení podle kategorií a filtr podle obchodu. Funguje
+          i offline v obchodě bez signálu. Jazyk podle telefonu: slovenština, čeština, němčina
+          a angličtina.
+        </p>
+        <div class="tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">Material 3</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Firestore</span>
+          <span class="tag">Coroutines</span>
+        </div>
+        <div class="project-actions">
+          <a class="btn primary" href="downloads/lkshoppinglist.apk" download>Stáhnout APK</a>
+        </div>
+        <p class="project-meta">Zdarma · Android 9.0+ · instalace mimo Google Play</p>
+        <details class="install">
+          <summary>Jak aplikaci nainstalovat</summary>
+          <ol>
+            <li>Stáhněte APK v telefonu tlačítkem výše.</li>
+            <li>Otevřete stažený soubor. Android se zeptá, zda smí prohlížeč instalovat aplikace z neznámých zdrojů — zvolte <strong>Nastavení → Povolit z tohoto zdroje</strong>.</li>
+            <li>Pokud se zobrazí Play Protect, zvolte <strong>Další podrobnosti → Přesto nainstalovat</strong> (aplikace není z Google Play, proto ji zatím nezná).</li>
+            <li>Samsung: pokud instalaci zablokuje <strong>Automatický blokovač</strong>, dočasně ho vypněte v Nastavení → Zabezpečení a soukromí.</li>
+          </ol>
+          <p>Aktualizace: stáhněte novější APK a nainstalujte ho přes původní aplikaci — data zůstanou zachována.</p>
+        </details>
       </div>
     </div>
   </section>
