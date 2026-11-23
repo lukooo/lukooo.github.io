@@ -2,9 +2,63 @@
 <html lang="cs">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-<title>Kostkový parkour</title>
-<meta name="description" content="Vzdělávací skákací hra pro děti: matika, čeština, angličtina, svět a logika.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kostkový parkour – vzdělávací hra pro děti zdarma</title>
+<meta name="description" content="Vzdělávací skákací hra pro děti 8–12 let zdarma: násobilka, vyjmenovaná slova, angličtina, přírodověda a logika. Bez reklam, na mobilu i offline.">
+<meta name="keywords" content="vzdělávací hra pro děti, hra pro děti zdarma, násobilka hra, vyjmenovaná slova hra, angličtina pro děti, procvičování matematiky, hry pro 3. třídu, hry pro 4. třídu, hry pro 5. třídu, kostičková hra, parkour">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Luděk Koňařík">
+<link rel="canonical" href="https://www.ludek.sk/kostky/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Luděk Koňařík">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Kostkový parkour – vzdělávací hra pro děti">
+<meta property="og:description" content="Skáčeš z ostrůvku na ostrůvek za správné odpovědi z matiky, češtiny, angličtiny, přírodovědy a logiky. Zdarma, bez reklam, i offline.">
+<meta property="og:url" content="https://www.ludek.sk/kostky/">
+<meta property="og:image" content="https://www.ludek.sk/kostky/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kostičková postavička skáče přes lávu v Kostkovém parkouru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kostkový parkour – vzdělávací hra pro děti">
+<meta name="twitter:description" content="Matika, čeština, angličtina, přírodověda a logika ve skákací hře. Zdarma, bez reklam, i offline.">
+<meta name="twitter:image" content="https://www.ludek.sk/kostky/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["VideoGame", "WebApplication"],
+      "@id": "https://www.ludek.sk/kostky/#game",
+      "name": "Kostkový parkour",
+      "url": "https://www.ludek.sk/kostky/",
+      "description": "Vzdělávací skákací hra pro děti. Za správné odpovědi z matematiky, češtiny, angličtiny, přírodovědy a logiky postavička přeskakuje na další ostrůvek. Obtížnost se sama přizpůsobuje.",
+      "image": "https://www.ludek.sk/kostky/og-image.png",
+      "inLanguage": "cs",
+      "genre": ["Vzdělávací hra", "Plošinovka", "Kvíz"],
+      "gamePlatform": ["Webový prohlížeč", "Android", "iOS"],
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "EducationalApplication",
+      "operatingSystem": "Android, iOS, Windows, macOS",
+      "playMode": "SinglePlayer",
+      "isAccessibleForFree": true,
+      "typicalAgeRange": "8-12",
+      "educationalUse": "procvičování",
+      "teaches": ["násobilka", "sčítání a odčítání", "dělení", "vyjmenovaná slova", "párové souhlásky", "anglická slovíčka", "zeměpis", "přírodověda", "logické řady"],
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 8, "suggestedMaxAge": 12 },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+      "author": { "@type": "Person", "name": "Luděk Koňařík", "url": "https://www.ludek.sk/cs.html" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Luděk Koňařík", "item": "https://www.ludek.sk/cs.html" },
+        { "@type": "ListItem", "position": 2, "name": "Kostkový parkour", "item": "https://www.ludek.sk/kostky/" }
+      ]
+    }
+  ]
+}
+</script>
 <meta name="theme-color" content="#2b6cff">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
@@ -59,6 +113,15 @@ button{font:inherit;cursor:pointer;border:0}
 .world .lv{font-size:13px;font-weight:700;opacity:.95}
 .world.wide{grid-column:1 / -1}
 .chest{margin:0 auto;display:flex}
+.about{max-width:560px;margin:0 auto 28px;padding:0 16px;width:100%}
+.about-card{background:rgba(255,255,255,.94);border-radius:18px;padding:16px 18px;color:var(--ink);box-shadow:0 6px 0 rgba(0,0,0,.15);line-height:1.5;font-size:15px;-webkit-user-select:text;user-select:text}
+.about-card h2{font-size:20px;margin:0 0 6px}
+.about-card h3{font-size:16px;margin:14px 0 4px}
+.about-card p{margin:0 0 8px}
+.about-card ul{margin:0 0 8px;padding-left:20px}
+.about-card details{border-top:1px solid #e5e7eb;padding:8px 0}
+.about-card summary{font-weight:800;cursor:pointer}
+.about-card a{color:var(--blue-d);font-weight:700}
 
 /* GAME */
 #game{background:#000}
@@ -142,11 +205,40 @@ button{font:inherit;cursor:pointer;border:0}
   <p class="subtitle">Odpovídej správně a skákej dál!</p>
   <div class="avatar-wrap">
     <div class="side-btns"><button class="btn purple small" id="shopBtn">🛒 Obchod</button></div>
-    <canvas id="menuAvatar" width="300" height="300"></canvas>
+    <canvas id="menuAvatar" width="300" height="300" role="img" aria-label="Tvoje kostičková postavička"></canvas>
     <div class="side-btns"><button class="btn gray small" id="statsBtn">📊 Pro rodiče</button></div>
   </div>
   <button class="btn yellow chest" id="chestBtn" style="display:none">🎁 Denní truhla</button>
   <div class="worlds" id="worlds"></div>
+  <article class="about" id="o-hre">
+    <div class="about-card">
+      <h2>O hře Kostkový parkour</h2>
+      <p>Kostkový parkour je <strong>vzdělávací hra pro děti zdarma</strong>, hlavně pro 3. až 5. třídu (8–12 let). Kostičková postavička stojí na ostrůvku nad lávou. Za každou správnou odpověď přeskočí na další ostrůvek, po chybě spadne, objeví se zpět a hra ukáže správné řešení. Level má 10 otázek a na konci čeká vlajka a až tři hvězdy.</p>
+      <h3>Co se dítě naučí</h3>
+      <ul>
+        <li><strong>Matika:</strong> sčítání a odčítání do 100, násobilka, dělení, přednost násobení, závorky, zlomky a slovní úlohy.</li>
+        <li><strong>Čeština:</strong> i/y po tvrdých a měkkých souhláskách, vyjmenovaná slova po B, L, M, P, S, V, Z a párové souhlásky.</li>
+        <li><strong>Angličtina:</strong> slovíčka (zvířata, barvy, čísla, rodina, škola, jídlo, slovesa) a jednoduché věty.</li>
+        <li><strong>Svět a příroda:</strong> hlavní města Evropy, Sluneční soustava, lidské tělo, zvířata a česká historie.</li>
+        <li><strong>Logika:</strong> číselné řady, opakující se vzory, „co sem nepatří“ a počítání dnů v týdnu.</li>
+      </ul>
+      <h3>Proč to děti baví</h3>
+      <p>Za správné odpovědi sbírají mince a v obchodě si za ně kupují trička, čepice, korunu, meč, křídla nebo pejska. Obtížnost se po každém levelu sama upraví podle výsledků. Denní truhla a série dní motivují hrát každý den pár minut.</p>
+      <details>
+        <summary>Je hra opravdu zdarma a bez reklam?</summary>
+        <p>Ano. Hra nemá reklamy, nákupy za peníze, registraci ani chat s cizími lidmi. Postup se ukládá jen v zařízení dítěte.</p>
+      </details>
+      <details>
+        <summary>Jak hru nainstalovat do telefonu?</summary>
+        <p>iPhone: otevřete stránku v Safari a zvolte Sdílet → Přidat na plochu. Android: v Chromu otevřete menu ⋮ a zvolte Přidat na plochu nebo Instalovat aplikaci. Hra pak má vlastní ikonu a funguje i bez internetu.</p>
+      </details>
+      <details>
+        <summary>Pro jaký věk je hra vhodná?</summary>
+        <p>Pro děti zhruba od 8 do 12 let. Každý předmět má pět úrovní obtížnosti, které rodič může v sekci Pro rodiče nastavit i ručně.</p>
+      </details>
+      <p style="margin-top:10px;font-size:13px;color:#6b7280">Autor: <a href="https://www.ludek.sk/cs.html">Luděk Koňařík</a></p>
+    </div>
+  </article>
 </section>
 
 <!-- GAME -->
@@ -156,7 +248,7 @@ button{font:inherit;cursor:pointer;border:0}
     <div id="progress"><div id="progressBar"></div></div>
     <span class="pill"><span class="coin"></span> <span id="gCoins">0</span></span>
   </div>
-  <div id="canvasWrap"><canvas id="scene"></canvas><div id="toast"></div></div>
+  <div id="canvasWrap"><canvas id="scene" role="img" aria-label="Herní dráha s ostrůvky"></canvas><div id="toast"></div></div>
   <div id="panel">
     <div id="qMeta"><span id="qWorld"></span><span id="qNum"></span></div>
     <div id="qText"></div>
