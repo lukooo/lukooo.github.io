@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pavoučí Paťko – superhrdinská hra pro 3. třídu (CZ / SK)</title>
 <meta name="description" content="Pavoučí Paťko: superhrdinská vzdělávací hra pro 3. třídu. Vyjmenovaná slova, slovní druhy, násobilka a dělení se zbytkem, čísla do 1000, písemné sčítání a odčítání, hodiny, obvod, jednotky a slovní úlohy. Česky i slovensky, zdarma a bez reklam.">
-<meta name="keywords" content="hra pro 3. třídu, superhrdina hra, pavoučí hrdina, procvičování 3. třída, vyjmenovaná slova, slovní druhy, malá násobilka, dělení se zbytkem, čísla do 1000, písemné sčítání a odčítání, hodiny, obvod, převody jednotek, slovní úlohy, hra pro kluky, hra pre 3. ročník">
+<meta name="keywords" content="hra pro 3. třídu, superhrdinská hra pro děti, hra se superhrdinou, superhrdina hra, pavoučí hrdina, procvičování 3. třída, vyjmenovaná slova, slovní druhy, malá násobilka, dělení se zbytkem, čísla do 1000, písemné sčítání a odčítání, hodiny, obvod, převody jednotek, slovní úlohy, hra pro kluky, hra pre 3. ročník">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Luděk Koňařík">
 <link rel="canonical" href="https://www.ludek.sk/patko/">
@@ -37,6 +37,7 @@
       "@type": ["VideoGame", "WebApplication"],
       "@id": "https://www.ludek.sk/patko/#game",
       "name": "Pavoučí Paťko",
+      "alternateName": "Pavúčí Paťko",
       "url": "https://www.ludek.sk/patko/",
       "description": "Superhrdinská vzdělávací hra pro děti ve 3. třídě, česky i slovensky: vyjmenovaná slova, slovní druhy, malá násobilka a dělení se zbytkem, čísla do 1000, písemné sčítání a odčítání, hodiny a čas, obvod, převody jednotek a slovní úlohy.",
       "image": "https://www.ludek.sk/patko/og-image.png",
@@ -50,10 +51,24 @@
       "isAccessibleForFree": true,
       "typicalAgeRange": "8-9",
       "educationalUse": "procvičování učiva 3. třídy",
+      "educationalLevel": "3. třída základní školy",
+      "learningResourceType": "vzdělávací hra",
+      "keywords": "superhrdina, vyjmenovaná slova, násobilka, 3. třída",
       "teaches": ["vyjmenovaná slova", "slovní druhy", "malá násobilka", "dělení se zbytkem", "čísla do 1000", "zaokrouhlování", "písemné sčítání a odčítání", "hodiny a čas", "obvod", "převody jednotek", "slovní úlohy"],
       "audience": { "@type": "PeopleAudience", "suggestedMinAge": 8, "suggestedMaxAge": 9 },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
       "author": { "@type": "Person", "name": "Luděk Koňařík", "url": "https://www.ludek.sk/cs.html" }
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "cs",
+      "mainEntity": [
+        { "@type": "Question", "name": "Pro koho je hra Pavoučí Paťko?", "acceptedAnswer": { "@type": "Answer", "text": "Pro děti ve 3. třídě, hlavně kluky a holky, kteří mají rádi superhrdiny. Úlohy odpovídají učivu 3. třídy podle českého rámcového programu. Menším i větším dětem pomůže nastavitelná obtížnost." } },
+        { "@type": "Question", "name": "Je hra zdarma a bez reklam?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Nemá reklamy, nákupy ani registraci. Postup se ukládá jen v zařízení." } },
+        { "@type": "Question", "name": "Dá se hra přepnout do slovenštiny?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Tlačítkem CZ / SK nahoře se přepne celá hra včetně úloh a hlasu. Hodí se pro rodiny, kde se mluví slovensky a dítě chodí do české školy." } },
+        { "@type": "Question", "name": "Proč Pepík nemluví?", "acceptedAnswer": { "@type": "Answer", "text": "Hlas vytváří telefon. Zapněte zvuk. Na Androidu zkontrolujte v nastavení Převod textu na řeč, zda je nainstalovaná čeština nebo slovenština. iPhone je má v sobě." } },
+        { "@type": "Question", "name": "Jak hru přidat do telefonu?", "acceptedAnswer": { "@type": "Answer", "text": "iPhone: otevřete stránku v Safari a zvolte Sdílet → Přidat na plochu. Android: v Chromu otevřete menu ⋮ a zvolte Přidat na plochu. Hra pak funguje i bez internetu." } }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -256,21 +271,21 @@ html[lang="sk"] [lang="cs"].about, html[lang="cs"] [lang="sk"].about{display:non
     </div>
   </div>
   <h1 class="title">Pavoučí Paťko</h1>
-  <p class="subtitle" data-t="sub"></p>
+  <p class="subtitle" data-t="sub">superhrdinská škola pro 3. třídu</p>
   <div class="home-top">
-    <div class="bubble" id="homeBubble"></div>
+    <div class="bubble" id="homeBubble">Ahoj Paťko! Já jsem pavouček Pepík. Město potřebuje superhrdinu. Vyber si misi!</div>
     <div class="home-chars">
       <div id="homeRab" role="img" aria-label="Paťko"></div>
       <div id="homeCapy" role="img" aria-label="Pepík"></div>
     </div>
   </div>
-  <div class="sect" data-t="math"></div>
+  <div class="sect" data-t="math">🧮 Matematika</div>
   <div class="tiles" id="tilesM"></div>
-  <div class="sect" data-t="lang"></div>
+  <div class="sect" data-t="lang">✏️ Čeština</div>
   <div class="tiles" id="tilesL"></div>
   <div class="home-btns">
-    <button class="btn" id="shopBtn" data-t="shopBtn"></button>
-    <button class="btn light" id="parentsBtn" data-t="parentsBtn"></button>
+    <button class="btn" id="shopBtn" data-t="shopBtn">🦸 Šatník hrdiny</button>
+    <button class="btn light" id="parentsBtn" data-t="parentsBtn">⚙️ Pro rodiče</button>
   </div>
   <article class="about" lang="cs" id="o-hre">
     <div class="about-card">
@@ -292,7 +307,9 @@ html[lang="sk"] [lang="cs"].about, html[lang="cs"] [lang="sk"].about{display:non
         <li><strong>Slovní druhy:</strong> nejdřív podstatná a přídavná jména a slovesa, na vyšší úrovni všech 10 slovních druhů.</li>
       </ul>
       <p>Obtížnost se zvyšuje sama podle toho, jak se dítěti daří. Rodič ji může nastavit i ručně. Pavouček Pepík navíc prozradí zajímavosti o skutečných pavoucích.</p>
+      <details><summary>Pro koho je hra Pavoučí Paťko?</summary><p>Pro děti ve 3. třídě, hlavně kluky a holky, kteří mají rádi superhrdiny. Úlohy odpovídají učivu 3. třídy podle českého rámcového programu. Menším i větším dětem pomůže nastavitelná obtížnost.</p></details>
       <details><summary>Je hra zdarma a bez reklam?</summary><p>Ano. Nemá reklamy, nákupy ani registraci. Postup se ukládá jen v zařízení.</p></details>
+      <details><summary>Dá se hra přepnout do slovenštiny?</summary><p>Ano. Tlačítkem CZ / SK nahoře se přepne celá hra včetně úloh a hlasu. Hodí se pro rodiny, kde se mluví slovensky a dítě chodí do české školy.</p></details>
       <details><summary>Proč Pepík nemluví?</summary><p>Hlas vytváří telefon. Zapněte zvuk. Na Androidu zkontrolujte v nastavení Převod textu na řeč, zda je nainstalovaná čeština nebo slovenština. iPhone je má v sobě.</p></details>
       <details><summary>Jak hru přidat do telefonu?</summary><p>iPhone: otevřete stránku v Safari a zvolte Sdílet → Přidat na plochu. Android: v Chromu otevřete menu ⋮ a zvolte Přidat na plochu. Hra pak funguje i bez internetu.</p></details>
       <p style="margin-top:10px;font-size:13px;color:var(--muted)">Autor: <a href="https://www.ludek.sk/cs.html">Luděk Koňařík</a> · Další hry: <a href="../sofia/">Sofiina škola</a> (3. třída) · <a href="../kvido/">Kvidova škola</a> (2. třída) · <a href="../kostky/">Kostkový parkour</a></p>
