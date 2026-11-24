@@ -5,6 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lienka Lili – hra pre deti od 4 do 7 rokov</title>
 <meta name="description" content="Hovoriaca hra pre deti, ktoré ešte nevedia čítať: počítanie do 10, farby, tvary, zvieratká, písmenká a pexeso. Zadarmo, bez reklám, po slovensky aj česky.">
+<meta name="keywords" content="hra pre deti, hry pre 5 ročné deti, hry pre 6 ročné deti, predškoláci, počítanie do 10, farby pre deti, tvary pre deti, zvieratká, písmenká, pexeso, hra pre deti zadarmo, hry pro předškoláky, hra pro děti zdarma">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Luděk Koňařík">
+<link rel="canonical" href="https://www.ludek.sk/lienka/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Luděk Koňařík">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:locale:alternate" content="cs_CZ">
+<meta property="og:title" content="Lienka Lili – hovoriaca hra pre predškolákov">
+<meta property="og:description" content="Počítanie, farby, tvary, zvieratká, písmenká a pexeso. Lienka Lili všetko hovorí nahlas, takže dieťa nemusí vedieť čítať. Zadarmo a bez reklám.">
+<meta property="og:url" content="https://www.ludek.sk/lienka/">
+<meta property="og:image" content="https://www.ludek.sk/lienka/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lienka Lili, farebné balóniky a zvieratká">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lienka Lili – hovoriaca hra pre predškolákov">
+<meta name="twitter:description" content="Počítanie, farby, tvary, zvieratká, písmenká a pexeso. Hra hovorí nahlas, zadarmo a bez reklám.">
+<meta name="twitter:image" content="https://www.ludek.sk/lienka/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["VideoGame", "WebApplication"],
+      "@id": "https://www.ludek.sk/lienka/#game",
+      "name": "Lienka Lili",
+      "alternateName": "Beruška Lili",
+      "url": "https://www.ludek.sk/lienka/",
+      "description": "Hovoriaca vzdelávacia hra pre deti od 4 do 7 rokov, ktoré ešte nevedia čítať. Počítanie do 10, farby, tvary, zvieratká, prvé písmenká a pexeso.",
+      "image": "https://www.ludek.sk/lienka/og-image.png",
+      "inLanguage": ["sk", "cs"],
+      "genre": ["Vzdelávacia hra", "Hra pre predškolákov"],
+      "gamePlatform": ["Webový prehliadač", "Android", "iOS"],
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "EducationalApplication",
+      "operatingSystem": "Android, iOS, Windows, macOS",
+      "playMode": "SinglePlayer",
+      "isAccessibleForFree": true,
+      "typicalAgeRange": "4-7",
+      "educationalUse": "predškolská príprava",
+      "teaches": ["počítanie do 10", "farby", "geometrické tvary", "zvieratá a ich zvuky", "začiatočné písmená", "pamäť"],
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 4, "suggestedMaxAge": 7 },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+      "author": { "@type": "Person", "name": "Luděk Koňařík", "url": "https://www.ludek.sk/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Luděk Koňařík", "item": "https://www.ludek.sk/" },
+        { "@type": "ListItem", "position": 2, "name": "Lienka Lili", "item": "https://www.ludek.sk/lienka/" }
+      ]
+    }
+  ]
+}
+</script>
 <meta name="theme-color" content="#ff5a5f">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
@@ -131,6 +187,17 @@ button{font:inherit;border:0;cursor:pointer;color:inherit;background:none}
 .bigbtn.home{background:#ffe3a3}
 .bigbtn:active{transform:translateY(4px)}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:11}
+#home{overflow-y:auto}
+#home .tiles{flex:0 0 auto;overflow:visible}
+.about{max-width:560px;margin:4px auto 24px;padding:0 16px;width:100%}
+.about-card{background:rgba(255,255,255,.94);border-radius:22px;padding:16px 18px;box-shadow:0 5px 0 var(--shadow);line-height:1.5;font-size:15px;-webkit-user-select:text;user-select:text}
+.about-card h2{font-size:20px;margin:0 0 6px}
+.about-card h3{font-size:16px;margin:12px 0 4px}
+.about-card p{margin:0 0 8px}
+.about-card ul{margin:0 0 8px;padding-left:20px}
+.about-card details{border-top:1px solid #eadbc6;padding:8px 0}
+.about-card summary{font-weight:800;cursor:pointer}
+.about-card a{color:var(--red-d);font-weight:700}
 .parent-tip{text-align:center;font-size:13px;color:#2f5b20;font-weight:700;margin:0 16px 10px}
 @media (prefers-reduced-motion: reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
 </style>
@@ -171,6 +238,64 @@ button{font:inherit;border:0;cursor:pointer;color:inherit;background:none}
   <div class="tiles" id="tiles"></div>
   <button class="album-btn" id="albumBtn">📒 <span id="albumLbl"></span> <span id="albumCount"></span></button>
   <p class="parent-tip" id="tip"></p>
+  <article class="about" id="o-hre" lang="sk">
+    <div class="about-card">
+      <h2>Pre rodičov: o hre Lienka Lili</h2>
+      <p>Lienka Lili je <strong>hovoriaca hra pre deti od 4 do 7 rokov</strong>, ktoré ešte nevedia čítať ani počítať. Všetky pokyny Lili hovorí nahlas a dieťa odpovedá ťuknutím na veľké obrázky. Po chybe ho povzbudí a ukáže nápovedu, takže hra nikdy nekončí neúspechom.</p>
+      <h3>Čo sa dieťa naučí</h3>
+      <ul>
+        <li><strong>Počítanie:</strong> ťuká na obrázky a počíta spolu s Lili, najprv do 5, potom do 10.</li>
+        <li><strong>Farby:</strong> červená, modrá, zelená, žltá, oranžová, fialová, ružová a čierna.</li>
+        <li><strong>Tvary:</strong> kruh, štvorec, trojuholník, obdĺžnik, hviezda a srdce.</li>
+        <li><strong>Zvieratká:</strong> názvy zvierat a zvuky, ktoré robia.</li>
+        <li><strong>Písmenká:</strong> na aké písmeno začína slovo (A ako auto, D ako dom).</li>
+        <li><strong>Pexeso:</strong> tréning pamäte od 3 do 6 dvojíc.</li>
+      </ul>
+      <p>Za každých päť správnych odpovedí dostane dieťa nálepku do albumu. Hry sa podľa pokroku postupne sťažujú.</p>
+      <details>
+        <summary>Je hra zadarmo a bez reklám?</summary>
+        <p>Áno. Nemá reklamy, nákupy, registráciu ani chat. Postup sa ukladá len v zariadení.</p>
+      </details>
+      <details>
+        <summary>Prečo Lili nehovorí?</summary>
+        <p>Hlas tvorí telefón. Zapnite zvuk. Na Androide skontrolujte v nastaveniach Prevod textu na reč, či je nainštalovaná slovenčina alebo čeština. iPhone ich má v sebe.</p>
+      </details>
+      <details>
+        <summary>Ako hru pridať do telefónu?</summary>
+        <p>iPhone: otvorte stránku v Safari a zvoľte Zdieľať → Pridať na plochu. Android: v Chrome otvorte menu ⋮ a zvoľte Pridať na plochu. Hra potom funguje aj bez internetu.</p>
+      </details>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">Hra je aj po česky (prepínač CZ hore) · Autor: <a href="https://www.ludek.sk/">Luděk Koňařík</a> · Ďalšia hra pre staršie deti: <a href="../kostky/">Kostkový parkour</a></p>
+    </div>
+  </article>
+  <article class="about" id="o-hre-cs" lang="cs" hidden>
+    <div class="about-card">
+      <h2>Pro rodiče: o hře Beruška Lili</h2>
+      <p>Beruška Lili je <strong>mluvící hra pro děti od 4 do 7 let</strong>, které ještě neumí číst ani počítat. Všechny pokyny Lili říká nahlas a dítě odpovídá ťuknutím na velké obrázky. Po chybě ho povzbudí a ukáže nápovědu, takže hra nikdy nekončí neúspěchem.</p>
+      <h3>Co se dítě naučí</h3>
+      <ul>
+        <li><strong>Počítání:</strong> ťuká na obrázky a počítá spolu s Lili, nejdřív do 5, pak do 10.</li>
+        <li><strong>Barvy:</strong> červená, modrá, zelená, žlutá, oranžová, fialová, růžová a černá.</li>
+        <li><strong>Tvary:</strong> kruh, čtverec, trojúhelník, obdélník, hvězda a srdce.</li>
+        <li><strong>Zvířátka:</strong> názvy zvířat a zvuky, které dělají.</li>
+        <li><strong>Písmenka:</strong> na jaké písmeno začíná slovo (A jako auto, D jako dům).</li>
+        <li><strong>Pexeso:</strong> trénink paměti od 3 do 6 dvojic.</li>
+      </ul>
+      <p>Za každých pět správných odpovědí dostane dítě samolepku do alba. Hry se podle pokroku postupně ztěžují.</p>
+      <details>
+        <summary>Je hra zdarma a bez reklam?</summary>
+        <p>Ano. Nemá reklamy, nákupy, registraci ani chat. Postup se ukládá jen v zařízení.</p>
+      </details>
+      <details>
+        <summary>Proč Lili nemluví?</summary>
+        <p>Hlas vytváří telefon. Zapněte zvuk. Na Androidu zkontrolujte v nastavení Převod textu na řeč, zda je nainstalovaná čeština. iPhone ji má v sobě.</p>
+      </details>
+      <details>
+        <summary>Jak hru přidat do telefonu?</summary>
+        <p>iPhone: otevřete stránku v Safari a zvolte Sdílet → Přidat na plochu. Android: v Chromu otevřete menu ⋮ a zvolte Přidat na plochu. Hra pak funguje i bez internetu.</p>
+      </details>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">Autor: <a href="https://www.ludek.sk/cs.html">Luděk Koňařík</a> · Další hra pro starší děti: <a href="../kostky/">Kostkový parkour</a></p>
+    </div>
+  </article>
 </section>
 
 <!-- GAME -->
@@ -377,6 +502,7 @@ function renderHome() {
   $('#albumLbl').textContent = t.album;
   $('#albumCount').textContent = S.stickers.length ? `(${S.stickers.length})` : '';
   $('#tip').textContent = t.tip;
+  $('#o-hre').hidden = S.lang !== 'sk'; $('#o-hre-cs').hidden = S.lang !== 'cs';
   $('#soundBtn').textContent = S.sound ? '🔊' : '🔇';
   document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.l === S.lang));
   const box = $('#tiles'); box.innerHTML = '';

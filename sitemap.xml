@@ -5,7 +5,7 @@
 
   <url>
     <loc>https://www.ludek.sk/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/cs.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/en.html"/>
@@ -16,7 +16,7 @@
   </url>
   <url>
     <loc>https://www.ludek.sk/cs.html</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/cs.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/en.html"/>
@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://www.ludek.sk/en.html</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/cs.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/en.html"/>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://www.ludek.sk/de.html</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="sk" href="https://www.ludek.sk/"/>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.ludek.sk/cs.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.ludek.sk/en.html"/>
@@ -201,6 +201,15 @@
     <lastmod>2026-11-23</lastmod>
     <image:image>
       <image:loc>https://www.ludek.sk/kostky/og-image.png</image:loc>
+    </image:image>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.ludek.sk/lienka/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image>
+      <image:loc>https://www.ludek.sk/lienka/og-image.png</image:loc>
     </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
