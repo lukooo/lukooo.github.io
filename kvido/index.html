@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kvidova škola – hra pro prvňáčky se psem Kvidem</title>
+<meta name="description" content="Kvidova škola: hra pro děti v 1. třídě. Čtení slabik a slov, skládání slov, počítání do 20, porovnávání a číselná osa se psem Kvidem. Zdarma, bez reklam, mluví česky.">
+<meta name="keywords" content="hra pro prvňáčky, 1. třída, čtení slabik, čtení pro prvňáčky, počítání do 20, sčítání a odčítání, číselná osa, hra pro děti zdarma, pes Kvido">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Luděk Koňařík">
+<link rel="canonical" href="https://www.ludek.sk/kvido/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Luděk Koňařík">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Kvidova škola – hra pro prvňáčky">
+<meta property="og:description" content="Pes Kvido učí číst slabiky a slova a počítat do 20. Mluví česky, je zdarma a bez reklam.">
+<meta property="og:url" content="https://www.ludek.sk/kvido/">
+<meta property="og:image" content="https://www.ludek.sk/kvido/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pes Kvido se slabikami a čísly">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kvidova škola – hra pro prvňáčky">
+<meta name="twitter:description" content="Čtení slabik a slov a počítání do 20 se psem Kvidem. Zdarma, bez reklam.">
+<meta name="twitter:image" content="https://www.ludek.sk/kvido/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["VideoGame", "WebApplication"],
+      "@id": "https://www.ludek.sk/kvido/#game",
+      "name": "Kvidova škola",
+      "url": "https://www.ludek.sk/kvido/",
+      "description": "Mluvící vzdělávací hra pro děti v 1. třídě se psem Kvidem: čtení slabik a slov, skládání slov, sčítání a odčítání do 20, porovnávání čísel a číselná osa.",
+      "image": "https://www.ludek.sk/kvido/og-image.png",
+      "inLanguage": "cs",
+      "genre": ["Vzdělávací hra", "Hra pro prvňáčky"],
+      "gamePlatform": ["Webový prohlížeč", "Android", "iOS"],
+      "applicationCategory": "GameApplication",
+      "applicationSubCategory": "EducationalApplication",
+      "operatingSystem": "Android, iOS, Windows, macOS",
+      "playMode": "SinglePlayer",
+      "isAccessibleForFree": true,
+      "typicalAgeRange": "6-7",
+      "educationalUse": "procvičování učiva 1. třídy",
+      "teaches": ["čtení slabik", "čtení slov", "skládání slov z písmen", "sčítání do 20", "odčítání do 20", "porovnávání čísel", "číselná osa"],
+      "audience": { "@type": "PeopleAudience", "suggestedMinAge": 6, "suggestedMaxAge": 7 },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+      "author": { "@type": "Person", "name": "Luděk Koňařík", "url": "https://www.ludek.sk/cs.html" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Luděk Koňařík", "item": "https://www.ludek.sk/cs.html" },
+        { "@type": "ListItem", "position": 2, "name": "Kvidova škola", "item": "https://www.ludek.sk/kvido/" }
+      ]
+    }
+  ]
+}
+</script>
+<meta name="theme-color" content="#f59e0b">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kvido">
+<style>
+:root{
+  --bg:#fff8ec; --ink:#3a2817; --muted:#8c735a; --orange:#f59e0b; --orange-d:#c27803;
+  --green:#3cb371; --green-d:#2a8553; --blue:#3b82f6; --card:#fff; --shadow:rgba(90,55,20,.18);
+  --font:"Trebuchet MS","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:var(--font);overflow:hidden;
+  -webkit-user-select:none;user-select:none;touch-action:manipulation}
+button{font:inherit;border:0;cursor:pointer;color:inherit;background:none}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.screen.on{display:flex}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px}
+.round{width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:0 4px 0 var(--shadow);font-size:25px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.round:active{transform:translateY(3px);box-shadow:0 1px 0 var(--shadow)}
+.pill{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:999px;padding:8px 14px;font-weight:900;font-size:18px;box-shadow:0 4px 0 var(--shadow)}
+
+/* dog */
+.dog{display:block}
+.dog .tail{transform-origin:150px 150px;animation:wag 1s ease-in-out infinite alternate}
+.dog.happy .tail{animation-duration:.18s}
+.dog.happy{animation:jump .5s ease-out}
+.dog.talk .head{animation:nod .45s ease-in-out infinite alternate;transform-origin:100px 110px}
+@keyframes wag{from{transform:rotate(-12deg)}to{transform:rotate(14deg)}}
+@keyframes jump{40%{transform:translateY(-18px)}}
+@keyframes nod{from{transform:rotate(-3deg)}to{transform:rotate(3deg) translateY(-2px)}}
+
+.talk-row{display:flex;align-items:center;gap:8px;padding:0 14px 6px}
+.talk-row .dog{width:96px;height:96px;flex:0 0 auto}
+.bubble{position:relative;flex:1;background:#fff;border-radius:20px;padding:12px 14px;font-weight:800;font-size:18px;line-height:1.3;box-shadow:0 4px 0 var(--shadow);min-height:56px;display:flex;align-items:center}
+.bubble::before{content:"";position:absolute;left:-10px;top:50%;margin-top:-10px;border:10px solid transparent;border-right-color:#fff;border-left:0}
+
+/* home */
+#home{background:linear-gradient(#ffe7b8,#fff3d6 340px,#d7efc0 340px,#b9e39b);overflow-y:auto}
+.title{text-align:center;font-size:34px;font-weight:900;color:#fff;margin:0;text-shadow:0 3px 0 var(--orange-d),0 6px 12px rgba(0,0,0,.18)}
+.home-dog{display:flex;align-items:flex-end;justify-content:center;gap:6px;padding:0 14px}
+.home-dog .dog{width:170px;height:170px;flex:0 0 auto}
+.home-dog .bubble{max-width:200px;margin-bottom:60px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:8px 16px 12px;max-width:520px;width:100%;margin:0 auto}
+.tile{border-radius:22px;background:#fff;box-shadow:0 6px 0 var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 4px;min-height:108px;gap:4px;position:relative}
+.tile:active{transform:translateY(4px);box-shadow:0 2px 0 var(--shadow)}
+.tile .ic{font-size:42px;line-height:1;font-weight:900}
+.tile .nm{font-weight:900;font-size:14px}
+.tile .st{position:absolute;top:6px;right:8px;font-size:12px;font-weight:900;color:var(--muted)}
+.home-btns{display:flex;gap:12px;justify-content:center;padding:4px 16px 16px;flex-wrap:wrap}
+.btn{background:var(--orange);color:#fff;font-weight:900;font-size:18px;padding:13px 20px;border-radius:999px;box-shadow:0 5px 0 var(--orange-d)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--orange-d)}
+.btn.light{background:#fff;color:var(--ink);box-shadow:0 5px 0 var(--shadow)}
+
+/* game */
+.dots{display:flex;gap:7px}
+.dots i{width:16px;height:16px;border-radius:50%;background:#efdcc0;transition:.3s}
+.dots i.on{background:var(--green);transform:scale(1.15)}
+#area{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:6px 14px 18px;min-height:0;overflow-y:auto}
+.opts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;width:100%;max-width:520px}
+.opt{background:#fff;border-radius:22px;box-shadow:0 6px 0 var(--shadow);display:flex;align-items:center;justify-content:center;
+  min-width:96px;min-height:86px;padding:10px 16px;font-size:40px;font-weight:900;transition:transform .12s;flex:0 1 auto}
+.opt.pic{font-size:60px;width:calc(50% - 6px);max-width:170px;aspect-ratio:1}
+.opt:active{transform:translateY(4px);box-shadow:0 2px 0 var(--shadow)}
+.opt.ok{background:#c8f5d8;animation:pop .4s}
+.opt.bad{animation:shake .4s}
+.opt.hint{animation:pulse 1s infinite}
+@keyframes pop{50%{transform:scale(1.12)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+@keyframes pulse{50%{transform:scale(1.07);box-shadow:0 0 0 8px rgba(60,179,113,.45)}}
+.word{font-size:54px;font-weight:900;letter-spacing:4px;background:#fff;border-radius:24px;padding:14px 26px;box-shadow:0 6px 0 var(--shadow);text-align:center}
+.eq{font-size:44px;font-weight:900;letter-spacing:2px}
+.bones{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;max-width:440px;background:#fff;border-radius:22px;padding:12px;box-shadow:0 5px 0 var(--shadow)}
+.bones span{font-size:30px;line-height:1.1}
+.bones span.add{filter:hue-rotate(160deg) saturate(1.6)}
+.bones span.gone{opacity:.25;position:relative}
+.bones span.gone::after{content:"";position:absolute;left:-2px;right:-2px;top:50%;height:4px;background:#e53935;transform:rotate(-30deg);border-radius:2px}
+.bones .plus{font-size:30px;font-weight:900;color:var(--muted);padding:0 4px}
+/* build word */
+.slots{display:flex;gap:6px;justify-content:center;flex-wrap:nowrap}
+.slot{width:clamp(36px,12vw,54px);height:clamp(48px,15vw,64px);border-radius:14px;background:#fff;border:3px dashed #e3c9a3;font-size:38px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.slot.f{border-style:solid;border-color:var(--green);background:#eafaf0}
+.letters .opt{min-width:66px;min-height:70px;font-size:36px;padding:6px 10px}
+.letters .opt.used{visibility:hidden}
+.bigpic{font-size:96px;line-height:1;background:#fff;border-radius:28px;padding:12px 24px;box-shadow:0 6px 0 var(--shadow)}
+/* bowls */
+.bowls{display:flex;gap:14px;justify-content:center;width:100%;max-width:480px}
+.bowl{flex:1;background:#fff;border-radius:24px;box-shadow:0 6px 0 var(--shadow);padding:12px 8px 8px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.bowl .gr{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;min-height:96px;align-content:flex-end;max-width:150px}
+.bowl .gr i{width:16px;height:16px;border-radius:50%;background:#a0612b;box-shadow:inset -3px -3px 0 rgba(0,0,0,.2)}
+.bowl svg{width:100%;max-width:150px;height:auto}
+/* number line */
+.line{position:relative;width:100%;max-width:520px;padding:70px 0 6px}
+.line .nums::before{content:"";position:absolute;left:4%;right:4%;top:50%;margin-top:-3px;height:6px;background:#c9a77d;border-radius:3px}
+.line .nums{position:relative;display:flex;justify-content:space-between}
+.line .n{width:calc(100% / 11 - 3px);aspect-ratio:1;min-width:26px;border-radius:50%;background:#fff;box-shadow:0 3px 0 var(--shadow);font-weight:900;font-size:clamp(13px,4vw,22px);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.line .n.start{background:#ffe6a8}
+.line .walker{position:absolute;top:0;width:64px;height:64px;transform:translateX(-50%);transition:left .35s ease-in-out}
+/* shop */
+#shop{background:linear-gradient(#e2f0ff,#fff8ec)}
+#shopDog{width:200px;height:200px;margin:0 auto;display:block}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:4px 12px 10px;scrollbar-width:none}
+.tab{flex:0 0 auto;background:#fff;font-weight:800;padding:9px 14px;border-radius:999px;font-size:15px;box-shadow:0 3px 0 var(--shadow)}
+.tab.on{background:var(--orange);color:#fff}
+.items{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;padding:6px 14px 20px;align-content:start}
+.item{background:#fff;border-radius:18px;padding:8px;box-shadow:0 4px 0 var(--shadow);display:flex;flex-direction:column;align-items:center;gap:2px;border:3px solid transparent}
+.item.eq{border-color:var(--green)}
+.item svg{width:84px;height:84px}
+.item .nm{font-weight:800;font-size:14px}
+.item .pr{font-weight:900;font-size:14px}
+.item .pr.own{color:var(--green-d)}
+/* parents */
+#parents{background:#f7f3ec;overflow-y:auto}
+.pcard{background:#fff;border-radius:18px;padding:14px;margin:8px 16px;box-shadow:0 3px 0 var(--shadow)}
+.pcard h3{margin:0 0 8px;font-size:17px}
+.choices{display:flex;flex-wrap:wrap;gap:8px}
+.choices button{background:#f3e8d8;border-radius:12px;padding:8px 12px;font-weight:800}
+.choices button.on{background:var(--orange);color:#fff}
+.furs button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px}
+.furs svg{width:60px;height:60px}
+/* overlay */
+.overlay{position:fixed;inset:0;background:rgba(58,40,23,.55);display:none;align-items:center;justify-content:center;z-index:10;padding:16px}
+.overlay.on{display:flex}
+.reward{background:#fff;border-radius:30px;padding:22px 20px;text-align:center;max-width:360px;width:100%;box-shadow:0 10px 0 var(--shadow)}
+.reward .dog{width:160px;height:160px;margin:0 auto}
+.reward .row{display:flex;gap:12px;justify-content:center;margin-top:16px}
+.bigbtn{width:80px;height:80px;border-radius:50%;font-size:38px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 0 var(--shadow)}
+.bigbtn.go{background:var(--green);box-shadow:0 6px 0 var(--green-d)}
+.bigbtn.home{background:#ffe3a3}
+.bigbtn:active{transform:translateY(4px)}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:11}
+/* about */
+.about{max-width:560px;margin:6px auto 24px;padding:0 16px;width:100%}
+.about-card{background:rgba(255,255,255,.95);border-radius:22px;padding:16px 18px;box-shadow:0 5px 0 var(--shadow);line-height:1.5;font-size:15px;-webkit-user-select:text;user-select:text}
+.about-card h2{font-size:20px;margin:0 0 6px}
+.about-card h3{font-size:16px;margin:12px 0 4px}
+.about-card p{margin:0 0 8px}
+.about-card ul{margin:0 0 8px;padding-left:20px}
+.about-card details{border-top:1px solid #eadbc6;padding:8px 0}
+.about-card summary{font-weight:800;cursor:pointer}
+.about-card a{color:var(--orange-d);font-weight:700}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<section id="home" class="screen on">
+  <div class="bar">
+    <button class="round" id="soundBtn" aria-label="Zvuk">🔊</button>
+    <span class="pill">🦴 <span id="hBones">0</span></span>
+  </div>
+  <h1 class="title">Kvidova škola</h1>
+  <div class="home-dog">
+    <div id="homeDog" role="img" aria-label="Pes Kvido"></div>
+    <div class="bubble" id="homeBubble">Haf! Já jsem Kvido. Pojď si se mnou hrát!</div>
+  </div>
+  <div class="tiles" id="tiles"></div>
+  <div class="home-btns">
+    <button class="btn" id="shopBtn">🎀 Kvidův šatník</button>
+    <button class="btn light" id="parentsBtn">⚙️ Pro rodiče</button>
+  </div>
+  <article class="about" id="o-hre">
+    <div class="about-card">
+      <h2>O hře Kvidova škola</h2>
+      <p>Kvidova škola je <strong>mluvící hra pro děti v 1. třídě</strong>. Provází ji pes Kvido, který všechny úkoly říká nahlas, chválí a po chybě ukáže nápovědu. Za každý splněný úkol dostane dítě kostičky a v šatníku za ně Kvidovi kupuje obojky, čepice, brýle a hračky.</p>
+      <h3>Co se dítě procvičí</h3>
+      <ul>
+        <li><strong>Slabiky:</strong> Kvido řekne slabiku nebo slovo a dítě najde, jak se píše.</li>
+        <li><strong>Čtení:</strong> přečte krátké slovo a vybere obrázek. Nejdřív velká tiskací písmena, pak malá.</li>
+        <li><strong>Skládání slov:</strong> poskládá slovo z písmen podle obrázku.</li>
+        <li><strong>Počítání:</strong> sčítání a odčítání s kostičkami do 5, do 10 a do 20.</li>
+        <li><strong>Víc nebo méně:</strong> porovnávání misek s granulemi a čísel se znaménky &lt;, &gt; a =.</li>
+        <li><strong>Procházka:</strong> skoky po číselné ose dopředu a dozadu.</li>
+      </ul>
+      <p>Obtížnost se zvyšuje podle toho, jak se dítěti daří. Rodič ji může nastavit i ručně a vybrat barvu Kvida, aby vypadal jako váš pes.</p>
+      <details>
+        <summary>Je hra zdarma a bez reklam?</summary>
+        <p>Ano. Nemá reklamy, nákupy ani registraci. Postup se ukládá jen v zařízení.</p>
+      </details>
+      <details>
+        <summary>Proč Kvido nemluví?</summary>
+        <p>Hlas vytváří telefon. Zapněte zvuk. Na Androidu zkontrolujte v nastavení Převod textu na řeč, zda je nainstalovaná čeština. iPhone ji má v sobě.</p>
+      </details>
+      <details>
+        <summary>Jak hru přidat do telefonu?</summary>
+        <p>iPhone: otevřete stránku v Safari a zvolte Sdílet → Přidat na plochu. Android: v Chromu otevřete menu ⋮ a zvolte Přidat na plochu. Hra pak funguje i bez internetu.</p>
+      </details>
+      <p style="margin-top:10px;font-size:13px;color:var(--muted)">Autor: <a href="https://www.ludek.sk/cs.html">Luděk Koňařík</a> · Pro menší děti: <a href="../lienka/">Beruška Lili</a> · Pro starší děti: <a href="../kostky/">Kostkový parkour</a></p>
+    </div>
+  </article>
+</section>
+
+<!-- GAME -->
+<section id="game" class="screen">
+  <div class="bar">
+    <button class="round" id="homeBtn" aria-label="Domů">🏠</button>
+    <div class="dots" id="dots"></div>
+    <button class="round" id="repeatBtn" aria-label="Zopakovat">🔊</button>
+  </div>
+  <div class="talk-row">
+    <div id="gameDog" role="img" aria-label="Pes Kvido"></div>
+    <div class="bubble" id="bubble"></div>
+  </div>
+  <div id="area"></div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" class="screen">
+  <div class="bar">
+    <button class="round" id="shopBack" aria-label="Domů">🏠</button>
+    <span class="pill">🦴 <span id="sBones">0</span></span>
+  </div>
+  <div id="shopDog"></div>
+  <div class="tabs" id="tabs"></div>
+  <div class="items" id="items"></div>
+</section>
+
+<!-- PARENTS -->
+<section id="parents" class="screen">
+  <div class="bar"><button class="round" id="parentsBack" aria-label="Domů">🏠</button><h2 style="margin:0;font-size:22px">Pro rodiče</h2><span style="width:52px"></span></div>
+  <div class="pcard"><h3>Jak vypadá Kvido?</h3><div class="choices furs" id="furs"></div></div>
+  <div class="pcard"><h3>Obtížnost (mění se sama podle výsledků)</h3><div id="levels"></div></div>
+  <div class="pcard"><h3>Postup</h3><p style="margin:0 0 10px;color:var(--muted);font-size:14px" id="progressInfo"></p><button class="btn light" id="resetBtn">Smazat postup</button></div>
+</section>
+
+<div class="overlay" id="rewardOv">
+  <div class="reward">
+    <div id="rewardDog"></div>
+    <div style="font-weight:900;font-size:24px" id="rewardText"></div>
+    <div style="font-weight:800;font-size:20px;margin-top:6px" id="rewardBones"></div>
+    <div class="row">
+      <button class="bigbtn home" id="rewardHome" aria-label="Domů">🏠</button>
+      <button class="bigbtn go" id="rewardAgain" aria-label="Hrát znovu">▶️</button>
+    </div>
+  </div>
+</div>
+<div class="overlay" id="confOv">
+  <div class="reward"><div style="font-weight:900;font-size:22px">Opravdu smazat všechen postup?</div>
+    <div class="row"><button class="btn light" id="confNo">Ne</button><button class="btn" id="confYes">Ano</button></div></div>
+</div>
+<canvas id="confetti"></canvas>
+
+<script>
+'use strict';
+const $ = s => document.querySelector(s);
+const rnd = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const pl = (n, one, few, many) => n === 1 ? one : n >= 2 && n <= 4 ? few : many;
+
+/* ---------- save ---------- */
+const KEY = 'kvidova-skola-v1';
+const DEF = { sound: true, bones: 0, fur: 'brown', owned: ['col_red', 'hat_none', 'gl_none', 'toy_none', 'bed_none'],
+  eq: { col: 'col_red', hat: 'hat_none', gl: 'gl_none', toy: 'toy_none', bed: 'bed_none' }, wins: {}, lvl: {} };
+let S;
+try { S = Object.assign(JSON.parse(JSON.stringify(DEF)), JSON.parse(localStorage.getItem(KEY)) || {}); } catch (e) { S = JSON.parse(JSON.stringify(DEF)); }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const level = g => S.lvl[g] || 1;
+
+/* ---------- Kvido drawing ---------- */
+const FURS = {
+  brown: { name: 'Hnědý', fur: '#b5763c', dark: '#7a4a22', light: '#f3d9b5' },
+  golden: { name: 'Zlatý', fur: '#e8b04b', dark: '#c4882a', light: '#fff0cf' },
+  black: { name: 'Černý', fur: '#3a3330', dark: '#1f1a18', light: '#d9c7b2' },
+  white: { name: 'Bílý s flekem', fur: '#f7f3ee', dark: '#8a5a32', light: '#ffffff', spot: '#8a5a32' },
+  grey: { name: 'Šedý', fur: '#9a9ea6', dark: '#5f636b', light: '#e6e7ea' },
+  tricolor: { name: 'Trikolóra', fur: '#2f2a28', dark: '#7a4a22', light: '#ffffff', tri: '#c07a3c' },
+};
+const ITEMS = [
+  { id: 'col_red', cat: 'col', name: 'Červený', price: 0, c: '#e53935' },
+  { id: 'col_blue', cat: 'col', name: 'Modrý', price: 10, c: '#2f6fe0' },
+  { id: 'col_pink', cat: 'col', name: 'Růžový', price: 10, c: '#ec5fa0' },
+  { id: 'col_green', cat: 'col', name: 'Zelený', price: 10, c: '#2e9e55' },
+  { id: 'col_gold', cat: 'col', name: 'Zlatý', price: 40, c: '#e0a800' },
+  { id: 'hat_none', cat: 'hat', name: 'Nic', price: 0 },
+  { id: 'hat_bow', cat: 'hat', name: 'Mašle', price: 15 },
+  { id: 'hat_cap', cat: 'hat', name: 'Kšiltovka', price: 20 },
+  { id: 'hat_party', cat: 'hat', name: 'Párty', price: 25 },
+  { id: 'hat_crown', cat: 'hat', name: 'Korunka', price: 50 },
+  { id: 'gl_none', cat: 'gl', name: 'Nic', price: 0 },
+  { id: 'gl_round', cat: 'gl', name: 'Brýle', price: 20 },
+  { id: 'gl_sun', cat: 'gl', name: 'Sluneční', price: 30 },
+  { id: 'toy_none', cat: 'toy', name: 'Nic', price: 0 },
+  { id: 'toy_bone', cat: 'toy', name: 'Kost', price: 10 },
+  { id: 'toy_ball', cat: 'toy', name: 'Míček', price: 15 },
+  { id: 'toy_teddy', cat: 'toy', name: 'Plyšák', price: 30 },
+  { id: 'bed_none', cat: 'bed', name: 'Nic', price: 0 },
+  { id: 'bed_red', cat: 'bed', name: 'Pelíšek', price: 40 },
+  { id: 'bed_blue', cat: 'bed', name: 'Modrý pelíšek', price: 40 },
+];
+const ITEM = Object.fromEntries(ITEMS.map(i => [i.id, i]));
+const CATS = [{ id: 'col', name: 'Obojek' }, { id: 'hat', name: 'Na hlavu' }, { id: 'gl', name: 'Brýle' }, { id: 'toy', name: 'Hračka' }, { id: 'bed', name: 'Pelíšek' }];
+
+function dogSVG(eq = S.eq, furKey = S.fur, cls = '') {
+  const f = FURS[furKey] || FURS.brown, col = (ITEM[eq.col] || ITEM.col_red).c;
+  let bed = '', toy = '', hat = '', gl = '';
+  if (eq.bed === 'bed_red' || eq.bed === 'bed_blue') {
+    const c = eq.bed === 'bed_red' ? '#d64545' : '#3d6fd6', c2 = eq.bed === 'bed_red' ? '#f2a3a3' : '#a9c3f5';
+    bed = `<ellipse cx="100" cy="186" rx="86" ry="14" fill="${c}"/><ellipse cx="100" cy="182" rx="70" ry="9" fill="${c2}"/>`;
+  }
+  if (eq.toy === 'toy_ball') toy = `<circle cx="172" cy="176" r="14" fill="#ffd21a"/><path d="M160 170 Q172 178 184 170" stroke="#e05a2b" stroke-width="3" fill="none"/>`;
+  if (eq.toy === 'toy_bone') toy = `<g transform="translate(168 180) rotate(-20)"><rect x="-16" y="-4" width="32" height="8" rx="4" fill="#f4ead8"/><circle cx="-16" cy="-5" r="6" fill="#f4ead8"/><circle cx="-16" cy="5" r="6" fill="#f4ead8"/><circle cx="16" cy="-5" r="6" fill="#f4ead8"/><circle cx="16" cy="5" r="6" fill="#f4ead8"/></g>`;
+  if (eq.toy === 'toy_teddy') toy = `<g transform="translate(170 168)"><circle cx="-9" cy="-14" r="5" fill="#9c6b3c"/><circle cx="9" cy="-14" r="5" fill="#9c6b3c"/><circle cx="0" cy="-6" r="11" fill="#b07a45"/><ellipse cx="0" cy="12" rx="13" ry="12" fill="#b07a45"/><circle cx="-4" cy="-8" r="1.8" fill="#222"/><circle cx="4" cy="-8" r="1.8" fill="#222"/><circle cx="0" cy="-3" r="2.2" fill="#222"/></g>`;
+  if (eq.hat === 'hat_cap') hat = `<path d="M64 52 Q100 14 136 52 Z" fill="#2f6fe0"/><rect x="62" y="48" width="76" height="8" rx="4" fill="#2457b8"/><path d="M100 50 L150 50 Q152 58 140 58 L100 58Z" fill="#2457b8"/><circle cx="100" cy="27" r="4" fill="#fff"/>`;
+  if (eq.hat === 'hat_party') hat = `<polygon points="100,0 82,46 118,46" fill="#a855f7"/><circle cx="100" cy="2" r="6" fill="#ffd21a"/><circle cx="94" cy="30" r="3" fill="#fff"/><circle cx="104" cy="18" r="3" fill="#ffd21a"/><circle cx="106" cy="38" r="3" fill="#fff"/>`;
+  if (eq.hat === 'hat_crown') hat = `<polygon points="74,48 74,20 88,34 100,14 112,34 126,20 126,48" fill="#ffcc1a" stroke="#c99a00" stroke-width="3" stroke-linejoin="round"/><circle cx="100" cy="38" r="4" fill="#e53935"/>`;
+  if (eq.hat === 'hat_bow') hat = `<g transform="translate(138 44) rotate(15)"><path d="M0 0 L-16 -11 L-16 11 Z" fill="#ec4899"/><path d="M0 0 L16 -11 L16 11 Z" fill="#ec4899"/><circle r="5" fill="#be185d"/></g>`;
+  if (eq.gl === 'gl_round') gl = `<g fill="rgba(255,255,255,.25)" stroke="#2b2b2b" stroke-width="3.5"><circle cx="84" cy="72" r="13"/><circle cx="116" cy="72" r="13"/></g><path d="M97 72 L103 72" stroke="#2b2b2b" stroke-width="3.5"/>`;
+  if (eq.gl === 'gl_sun') gl = `<path d="M68 64 H98 V76 Q98 86 84 86 Q68 86 68 74Z M102 64 H132 V74 Q132 86 116 86 Q102 86 102 76Z" fill="#1d1d1d"/><path d="M98 68 H102" stroke="#1d1d1d" stroke-width="4"/><path d="M74 68 L82 68" stroke="rgba(255,255,255,.6)" stroke-width="3"/>`;
+  const spot = f.spot ? `<ellipse cx="117" cy="68" rx="15" ry="13" fill="${f.spot}" opacity=".9"/>` : '';
+  const tri = f.tri ? `<ellipse cx="84" cy="66" rx="5" ry="3" fill="${f.tri}"/><ellipse cx="116" cy="66" rx="5" ry="3" fill="${f.tri}"/>` : '';
+  return `<svg class="dog ${cls}" viewBox="0 0 200 200" aria-hidden="true">
+    ${bed}
+    <g class="tail"><path d="M140 150 Q176 138 170 104" stroke="${f.fur}" stroke-width="13" fill="none" stroke-linecap="round"/></g>
+    <ellipse cx="100" cy="146" rx="46" ry="40" fill="${f.fur}"/>
+    <ellipse cx="100" cy="154" rx="26" ry="28" fill="${f.light}"/>
+    <ellipse cx="80" cy="182" rx="15" ry="9" fill="${f.light}"/><ellipse cx="120" cy="182" rx="15" ry="9" fill="${f.light}"/>
+    <g class="head">
+      <ellipse cx="57" cy="78" rx="14" ry="30" fill="${f.dark}" transform="rotate(22 57 78)"/>
+      <ellipse cx="143" cy="78" rx="14" ry="30" fill="${f.dark}" transform="rotate(-22 143 78)"/>
+      <ellipse cx="100" cy="76" rx="42" ry="38" fill="${f.fur}"/>
+      ${spot}
+      <ellipse cx="100" cy="96" rx="24" ry="17" fill="${f.light}"/>
+      <circle cx="84" cy="72" r="6.5" fill="#2b1d12"/><circle cx="116" cy="72" r="6.5" fill="#2b1d12"/>
+      <circle cx="86" cy="70" r="2.2" fill="#fff"/><circle cx="118" cy="70" r="2.2" fill="#fff"/>
+      ${tri}
+      <ellipse cx="100" cy="88" rx="9" ry="6.5" fill="#222"/>
+      <path d="M100 94 V100 M88 100 Q100 110 112 100" stroke="#222" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="100" cy="108" rx="6" ry="7" fill="#ff7a8a"/>
+      ${gl}${hat}
+    </g>
+    <path d="M66 112 Q100 128 134 112" stroke="${col}" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <circle cx="100" cy="126" r="7" fill="#ffd21a" stroke="#c99a00" stroke-width="2"/>
+    ${toy}
+  </svg>`;
+}
+function paintDogs() {
+  $('#homeDog').innerHTML = dogSVG(); $('#gameDog').innerHTML = dogSVG(); $('#shopDog').innerHTML = dogSVG();
+}
+const dogEl = () => ($('#game').classList.contains('on') ? $('#gameDog') : $('#homeDog')).querySelector('.dog');
+function happy() { const d = dogEl(); if (!d) return; d.classList.remove('happy'); void d.getBoundingClientRect(); d.classList.add('happy'); setTimeout(() => d.classList.remove('happy'), 1200); }
+
+/* ---------- audio ---------- */
+let AC = null, voice = null, tok = 0;
+function pickVoice() { try { const vs = speechSynthesis.getVoices().filter(v => v.lang.toLowerCase().replace('_', '-').startsWith('cs')); voice = vs.find(v => /zuzana|iveta|google/i.test(v.name)) || vs[0] || null; } catch (e) { voice = null; } }
+if ('speechSynthesis' in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function say(text) {
+  const t = ++tok;
+  return new Promise(res => {
+    const d = dogEl();
+    const end = () => { if (t === tok && d) d.classList.remove('talk'); res(); };
+    if (d) d.classList.add('talk');
+    if (!S.sound || !('speechSynthesis' in window)) { setTimeout(end, Math.min(2500, 400 + text.length * 40)); return; }
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text); u.lang = 'cs-CZ'; if (voice) u.voice = voice; u.rate = .92; u.pitch = 1.05;
+      let done = false; const fin = () => { if (!done) { done = true; end(); } };
+      u.onend = fin; u.onerror = fin; setTimeout(fin, 1500 + text.length * 110);
+      speechSynthesis.speak(u);
+    } catch (e) { end(); }
+  });
+}
+function tone(f, d, type = 'sine', v = .12, w = 0, f2) {
+  if (!S.sound) return;
+  try {
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const t = AC.currentTime + w, o = AC.createOscillator(), g = AC.createGain();
+    o.type = type; o.frequency.setValueAtTime(f, t); if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + d);
+    g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+    o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t + d);
+  } catch (e) {}
+}
+const sfx = {
+  ok() { [660, 880, 1100].forEach((f, i) => tone(f, .16, 'triangle', .11, i * .08)); },
+  bark() { tone(520, .09, 'sawtooth', .06, 0, 260); tone(560, .1, 'sawtooth', .06, .16, 280); },
+  bad() { tone(260, .2, 'sine', .1); tone(210, .25, 'sine', .1, .12); },
+  tap() { tone(700, .06, 'triangle', .09); },
+  hop() { tone(400, .1, 'triangle', .1, 0, 800); },
+  win() { [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, .2, 'triangle', .12, i * .1)); },
+};
+const PRAISE = ['Výborně!', 'Super!', 'Jsi šikovná!', 'Paráda!', 'Bezva!', 'Správně!', 'Haf haf, skvělé!'];
+const AGAIN = ['Zkus to ještě jednou.', 'Skoro! Zkus to znovu.'];
+
+/* ---------- content ---------- */
+const CONS = ['M', 'L', 'S', 'P', 'T', 'V', 'N', 'D', 'K', 'J', 'B', 'R'];
+const VOW = ['A', 'E', 'I', 'O', 'U'];
+const WORDS = [ // [word, emoji, level]
+  ['PES', '🐶', 1], ['LES', '🌲', 1], ['OKO', '👁️', 1], ['NOS', '👃', 1], ['SÝR', '🧀', 1], ['MÍČ', '⚽', 1], ['DŮM', '🏠', 1], ['MYŠ', '🐭', 1],
+  ['LEV', '🦁', 1], ['KŮŇ', '🐴', 1], ['MÁMA', '👩', 1], ['TÁTA', '👨', 1], ['AUTO', '🚗', 1], ['KOST', '🦴', 1],
+  ['RYBA', '🐟', 2], ['SOVA', '🦉', 2], ['VODA', '💧', 2], ['KOLO', '🚲', 2], ['VLAK', '🚂', 2], ['DORT', '🎂', 2], ['MRAK', '☁️', 2],
+  ['ŽÁBA', '🐸', 2], ['MÉDA', '🧸', 2], ['LUNA', '🌙', 2], ['KVIDO', '🐕', 2],
+  ['KOČKA', '🐱', 3], ['JABLKO', '🍎', 3], ['HRUŠKA', '🍐', 3], ['BANÁN', '🍌', 3], ['MOTÝL', '🦋', 3], ['SLUNCE', '☀️', 3],
+  ['KNIHA', '📖', 3], ['LŽÍCE', '🥄', 3], ['DRAK', '🐉', 3], ['TRAKTOR', '🚜', 3], ['MRKEV', '🥕', 3], ['HVĚZDA', '⭐', 3],
+];
+const HEAR = [ // two-syllable words to hear & pick (level 2+), grouped by similar look
+  ['MÁMA', 'MÍSA', 'MASO'], ['TÁTA', 'TETA', 'TAŠKA'], ['LUPA', 'LOPATA', 'LÍPA'], ['VOLÁ', 'VODA', 'VÁZA'], ['SOVA', 'SÍTO', 'SALÁT'],
+  ['KOLO', 'KOZA', 'KÁVA'], ['NOHA', 'NORA', 'NOVÁ'], ['PÍSEK', 'PIVO', 'PILA'], ['LAMA', 'LÁVA', 'LÍNÁ'], ['RUKA', 'RYBA', 'RÁNO'],
+];
+const GAMES = [
+  { id: 'slab', name: 'Slabiky', icon: 'MA', bg: '#ffe1e1' }, { id: 'read', name: 'Čtení', icon: '📖', bg: '#e1efff' },
+  { id: 'build', name: 'Skládání', icon: '🔤', bg: '#efe6ff' }, { id: 'count', name: 'Počítání', icon: '🦴', bg: '#fff1d6' },
+  { id: 'cmp', name: 'Víc, méně', icon: '⚖️', bg: '#e6f9e1' }, { id: 'line', name: 'Procházka', icon: '🐾', bg: '#ffe6f3' },
+];
+
+/* ---------- screens ---------- */
+function show(id) { document.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.id === id)); }
+function renderHome() {
+  $('#hBones').textContent = S.bones; $('#soundBtn').textContent = S.sound ? '🔊' : '🔇';
+  paintDogs();
+  const box = $('#tiles'); box.innerHTML = '';
+  for (const g of GAMES) {
+    const b = document.createElement('button'); b.className = 'tile'; b.style.background = g.bg;
+    b.innerHTML = `<span class="ic"${g.icon === 'MA' ? ' style="color:#d63c41"' : ''}>${g.icon}</span><span class="nm">${g.name}</span>` + (S.wins[g.id] ? `<span class="st">⭐${S.wins[g.id]}</span>` : '');
+    b.onclick = () => { sfx.tap(); startGame(g.id); };
+    box.appendChild(b);
+  }
+}
+$('#soundBtn').onclick = () => { S.sound = !S.sound; save(); renderHome(); if (S.sound) say('Haf! Já jsem Kvido. Pojď si se mnou hrát!'); else try { speechSynthesis.cancel(); } catch (e) {} };
+$('#homeDog').onclick = () => { sfx.bark(); happy(); say('Haf! Já jsem Kvido. Pojď si se mnou hrát!'); };
+$('#shopBtn').onclick = () => { sfx.tap(); openShop(); };
+$('#parentsBtn').onclick = () => { sfx.tap(); openParents(); };
+
+/* ---------- shop ---------- */
+let shopCat = 'col';
+function openShop() { show('shop'); renderShop(); }
+$('#shopBack').onclick = () => { sfx.tap(); show('home'); renderHome(); };
+function renderShop() {
+  $('#sBones').textContent = S.bones; $('#shopDog').innerHTML = dogSVG();
+  const tabs = $('#tabs'); tabs.innerHTML = '';
+  CATS.forEach(c => { const b = document.createElement('button'); b.className = 'tab' + (c.id === shopCat ? ' on' : ''); b.textContent = c.name; b.onclick = () => { shopCat = c.id; sfx.tap(); renderShop(); }; tabs.appendChild(b); });
+  const box = $('#items'); box.innerHTML = '';
+  ITEMS.filter(i => i.cat === shopCat).forEach(it => {
+    const own = S.owned.includes(it.id), on = S.eq[it.cat] === it.id;
+    const d = document.createElement('button'); d.className = 'item' + (on ? ' eq' : '');
+    d.innerHTML = dogSVG(Object.assign({}, S.eq, { [it.cat]: it.id })) + `<span class="nm">${it.name}</span>` +
+      (on ? '<span class="pr own">✔ Má na sobě</span>' : own ? '<span class="pr own">Obléct</span>' : `<span class="pr">🦴 ${it.price}</span>`);
+    d.onclick = () => {
+      if (own) { S.eq[it.cat] = it.id; sfx.tap(); }
+      else if (S.bones >= it.price) { S.bones -= it.price; S.owned.push(it.id); S.eq[it.cat] = it.id; sfx.win(); say('Haf! Děkuju!'); }
+      else { sfx.bad(); say(`Ještě ti chybí ${it.price - S.bones} ${pl(it.price - S.bones, 'kostička', 'kostičky', 'kostiček')}. Zahraj si a nasbírej je.`); return; }
+      save(); renderShop();
+      const dd = $('#shopDog .dog'); dd && dd.classList.add('happy');
+    };
+    box.appendChild(d);
+  });
+}
+
+/* ---------- parents ---------- */
+function openParents() {
+  show('parents');
+  const f = $('#furs'); f.innerHTML = '';
+  Object.entries(FURS).forEach(([k, v]) => {
+    const b = document.createElement('button'); b.className = k === S.fur ? 'on' : '';
+    b.innerHTML = dogSVG(S.eq, k) + `<span>${v.name}</span>`;
+    b.onclick = () => { S.fur = k; save(); openParents(); };
+    f.appendChild(b);
+  });
+  const lv = $('#levels'); lv.innerHTML = '';
+  GAMES.forEach(g => {
+    const row = document.createElement('div'); row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0';
+    row.innerHTML = `<b>${g.name}</b><div class="choices">${[1, 2, 3].map(n => `<button data-g="${g.id}" data-n="${n}" class="${level(g.id) === n ? 'on' : ''}">${n}</button>`).join('')}</div>`;
+    lv.appendChild(row);
+  });
+  lv.querySelectorAll('button').forEach(b => b.onclick = () => { S.lvl[b.dataset.g] = +b.dataset.n; save(); openParents(); });
+  const total = Object.values(S.wins).reduce((a, b) => a + b, 0);
+  $('#progressInfo').textContent = `Dokončených kol: ${total} · Kostiček: ${S.bones} · Věcí v šatníku: ${S.owned.length - 5}`;
+}
+$('#parentsBack').onclick = () => { sfx.tap(); show('home'); renderHome(); };
+$('#resetBtn').onclick = () => $('#confOv').classList.add('on');
+$('#confNo').onclick = () => $('#confOv').classList.remove('on');
+$('#confYes').onclick = () => { const fur = S.fur; S = JSON.parse(JSON.stringify(DEF)); S.fur = fur; save(); $('#confOv').classList.remove('on'); openParents(); };
+
+/* ---------- game core ---------- */
+const ROUND = 5;
+let G = null;
+function startGame(id) {
+  G = { id, step: 0, busy: false, wrong: 0, last: null, firstTry: 0 };
+  show('game'); paintDogs(); renderDots(); nextTask();
+}
+function renderDots() { const d = $('#dots'); d.innerHTML = ''; for (let i = 0; i < ROUND; i++) { const x = document.createElement('i'); if (i < G.step) x.className = 'on'; d.appendChild(x); } }
+function ask(text, speak = text) { $('#bubble').textContent = text; G.prompt = speak; say(speak); }
+$('#repeatBtn').onclick = () => G && G.prompt && say(G.prompt);
+$('#gameDog').onclick = () => G && G.prompt && say(G.prompt);
+$('#homeBtn').onclick = () => { try { speechSynthesis.cancel(); } catch (e) {} G = null; show('home'); renderHome(); };
+function nextTask() {
+  G.wrong = 0; G.busy = false;
+  const area = $('#area'); area.innerHTML = ''; area.scrollTop = 0;
+  ({ slab: taskSlab, read: taskRead, build: taskBuild, count: taskCount, cmp: taskCmp, line: taskLine })[G.id](area);
+}
+async function answer(el, ok, okEl, okText, after) {
+  if (G.busy) return;
+  if (ok) {
+    G.busy = true; el && el.classList.add('ok'); sfx.ok(); setTimeout(sfx.bark, 300); happy();
+    if (G.wrong === 0) G.firstTry++;
+    G.step++; renderDots();
+    if (after) await after();
+    await say(okText || pick(PRAISE));
+    await sleep(300);
+    if (!G) return;
+    if (G.step >= ROUND) return finish();
+    nextTask();
+  } else {
+    G.wrong++; if (el) { el.classList.remove('bad'); void el.offsetWidth; el.classList.add('bad'); }
+    sfx.bad();
+    if (G.wrong >= 2 && okEl) okEl.classList.add('hint');
+    say(pick(AGAIN));
+  }
+}
+function finish() {
+  const w = (S.wins[G.id] || 0) + 1; S.wins[G.id] = w;
+  const gain = 5 + G.firstTry; S.bones += gain;
+  if (G.firstTry >= 4 && level(G.id) < 3) S.lvl[G.id] = level(G.id) + 1;      // grows with success
+  else if (G.firstTry <= 1 && level(G.id) > 1) S.lvl[G.id] = level(G.id) - 1;  // eases off after struggle
+  save();
+  $('#rewardDog').innerHTML = dogSVG(S.eq, S.fur, 'happy');
+  $('#rewardText').textContent = 'Hurá! Kolo je hotové!';
+  $('#rewardBones').textContent = `🦴 +${gain} ${pl(gain, 'kostička', 'kostičky', 'kostiček')}`;
+  $('#rewardOv').classList.add('on'); sfx.win(); confetti();
+  say(`Hurá! Dostala jsi ${gain} ${pl(gain, 'kostičku', 'kostičky', 'kostiček')}. Můžeš mi koupit něco v šatníku.`);
+}
+$('#rewardAgain').onclick = () => { $('#rewardOv').classList.remove('on'); stopConfetti(); startGame(G.id); };
+$('#rewardHome').onclick = () => { $('#rewardOv').classList.remove('on'); stopConfetti(); G = null; show('home'); renderHome(); };
+
+function mkOpt(html, cls = '') { const b = document.createElement('button'); b.className = 'opt ' + cls; b.innerHTML = html; return b; }
+function noRepeat(gen, key) { let x, n = 0; do { x = gen(); n++; } while (key(x) === G.last && n < 12); G.last = key(x); return x; }
+const lower = s => s.toLowerCase();
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+
+/* 1) Slabiky: hear a syllable / word, pick written form */
+function taskSlab(area) {
+  const lv = level('slab');
+  let target, options;
+  if (lv === 1 || (lv === 2 && Math.random() < .4)) {
+    target = noRepeat(() => pick(CONS) + pick(VOW), x => x);
+    const tc = target[0], tv = target[1];
+    const set = new Set([target]);
+    while (set.size < 3) set.add(Math.random() < .5 ? tc + pick(VOW) : pick(CONS) + tv);
+    options = shuffle([...set]);
+  } else {
+    const grp = noRepeat(() => pick(HEAR), g => g[0]);
+    target = pick(grp); options = shuffle(grp);
+  }
+  const small = lv === 3;
+  const box = document.createElement('div'); box.className = 'opts';
+  let okEl;
+  options.forEach(o => {
+    const b = mkOpt(small ? lower(o) : o); if (o === target) okEl = b;
+    b.onclick = () => answer(b, o === target, okEl, `${pick(PRAISE)} ${cap(target)}.`);
+    box.appendChild(b);
+  });
+  area.appendChild(box);
+  const isWord = target.length > 2;
+  $('#bubble').textContent = isWord ? 'Ťukni na slovo, které říkám.' : 'Ťukni na slabiku, kterou říkám.';
+  G.prompt = lower(target);
+  say((isWord ? 'Ťukni na slovo, které říkám. ' : 'Ťukni na slabiku, kterou říkám. ') + lower(target) + '.');
+}
+
+/* 2) Čtení: read a word, pick the picture */
+function taskRead(area) {
+  const lv = level('read');
+  const pool = WORDS.filter(w => w[2] <= Math.min(lv, 3) && (lv === 1 ? w[0].length <= 4 : true));
+  const w = noRepeat(() => pick(pool), x => x[0]);
+  const word = document.createElement('div'); word.className = 'word'; word.textContent = lv === 3 && Math.random() < .6 ? lower(w[0]) : w[0];
+  area.appendChild(word);
+  const others = shuffle(WORDS.filter(x => x[1] !== w[1])).slice(0, lv === 1 ? 2 : 3);
+  const box = document.createElement('div'); box.className = 'opts';
+  let okEl;
+  shuffle([w, ...others]).forEach(o => {
+    const b = mkOpt(o[1], 'pic'); if (o === w) okEl = b;
+    b.onclick = () => answer(b, o === w, okEl, `${pick(PRAISE)} ${cap(w[0])}.`);
+    box.appendChild(b);
+  });
+  area.appendChild(box);
+  ask('Přečti slovo a ťukni na správný obrázek.');
+}
+
+/* 3) Skládání: build the word from letters */
+function taskBuild(area) {
+  const lv = level('build');
+  const pool = WORDS.filter(w => w[2] <= lv && w[0].length <= (lv === 1 ? 3 : lv === 2 ? 4 : 6));
+  const w = noRepeat(() => pick(pool), x => x[0]);
+  const letters = [...w[0]];
+  const pic = document.createElement('div'); pic.className = 'bigpic'; pic.textContent = w[1]; area.appendChild(pic);
+  const slots = document.createElement('div'); slots.className = 'slots';
+  letters.forEach(() => { const s = document.createElement('div'); s.className = 'slot'; slots.appendChild(s); });
+  area.appendChild(slots);
+  const extra = lv >= 2 ? shuffle('AEIOUMLSPTKRDVN'.split('').filter(c => !letters.includes(c))).slice(0, lv - 1) : [];
+  const box = document.createElement('div'); box.className = 'opts letters';
+  let pos = 0;
+  const tiles = shuffle([...letters, ...extra]).map(ch => {
+    const b = mkOpt(ch); b.dataset.ch = ch;
+    b.onclick = () => {
+      if (G.busy) return;
+      const need = letters[pos];
+      if (ch === need) {
+        sfx.tap(); b.classList.add('used');
+        const s = slots.children[pos]; s.textContent = ch; s.classList.add('f'); pos++;
+        box.querySelectorAll('.hint').forEach(x => x.classList.remove('hint')); G.wrong = Math.min(G.wrong, 1);
+        if (pos === letters.length) answer(null, true, null, `${pick(PRAISE)} ${cap(w[0])}.`);
+      } else {
+        G.wrong++; b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); sfx.bad();
+        if (G.wrong >= 2) { const h = [...box.children].find(x => x.dataset.ch === need && !x.classList.contains('used')); h && h.classList.add('hint'); }
+      }
+    };
+    box.appendChild(b); return b;
+  });
+  void tiles;
+  area.appendChild(box);
+  ask('Slož slovo podle obrázku.', `Slož slovo ${lower(w[0])}.`);
+}
+
+/* 4) Počítání s kostičkami */
+function taskCount(area) {
+  const lv = level('count');
+  const max = lv === 1 ? 5 : lv === 2 ? 10 : 20;
+  const kind = lv === 1 ? 'add' : pick(lv === 2 ? ['add', 'sub'] : ['add', 'sub', 'miss']);
+  let a, b, ans, text, eq;
+  const k = n => `${n} ${pl(n, 'kostičku', 'kostičky', 'kostiček')}`;
+  const showBones = (n1, n2, sub) => {
+    const box = document.createElement('div'); box.className = 'bones';
+    if (max <= 10 || n1 + (sub ? 0 : n2) <= 20) {
+      for (let i = 0; i < n1; i++) { const s = document.createElement('span'); s.textContent = '🦴'; if (sub && i >= n1 - n2) s.className = 'gone'; box.appendChild(s); }
+      if (!sub && n2) { const p = document.createElement('span'); p.className = 'plus'; p.textContent = '+'; box.appendChild(p); for (let i = 0; i < n2; i++) { const s = document.createElement('span'); s.textContent = '🦴'; s.className = 'add'; box.appendChild(s); } }
+    }
+    area.appendChild(box);
+  };
+  if (kind === 'add') {
+    ({ a, b } = noRepeat(() => { const a = rnd(1, max - 1); return { a, b: rnd(1, max - a) }; }, x => x.a * 100 + x.b));
+    ans = a + b; text = `Kvido má ${k(a)}. Dostane ještě ${b}. Kolik jich má teď?`; eq = `${a} + ${b} = ?`; showBones(a, b, false);
+  } else if (kind === 'sub') {
+    ({ a, b } = noRepeat(() => { const a = rnd(2, max); return { a, b: rnd(1, a - 1) }; }, x => x.a * 100 + x.b));
+    ans = a - b; text = `Kvido měl ${k(a)}. ${b} snědl. Kolik mu jich zbylo?`; eq = `${a} − ${b} = ?`; showBones(a, b, true);
+  } else {
+    a = rnd(1, 15); ans = rnd(1, 20 - a); b = a + ans;
+    text = `Kvido má ${k(a)}. Kolik mu jich chybí, aby jich měl ${b}?`; eq = `${a} + ? = ${b}`; showBones(a, 0, false);
+  }
+  const e = document.createElement('div'); e.className = 'eq'; e.textContent = eq; area.appendChild(e);
+  const set = new Set([ans]); while (set.size < 3) { const c = ans + pick([-2, -1, 1, 2, 3]); if (c >= 0 && c <= 20) set.add(c); }
+  const box = document.createElement('div'); box.className = 'opts';
+  let okEl;
+  shuffle([...set]).forEach(v => { const bt = mkOpt(String(v)); if (v === ans) okEl = bt; bt.onclick = () => answer(bt, v === ans, okEl, `${pick(PRAISE)} ${eq.replace('?', ans)}.`.replace('−', 'mínus')); box.appendChild(bt); });
+  area.appendChild(box);
+  ask(text);
+}
+
+/* 5) Víc nebo méně */
+function bowlSVG() { return '<svg viewBox="0 0 150 50"><path d="M5 5 H145 Q140 45 75 45 Q10 45 5 5Z" fill="#e53935"/><rect x="0" y="0" width="150" height="9" rx="4" fill="#c62828"/></svg>'; }
+function taskCmp(area) {
+  const lv = level('cmp');
+  if (lv === 1 || (lv === 2 && Math.random() < .35)) {
+    const more = Math.random() < .6;
+    let a, b; do { a = rnd(1, 10); b = rnd(1, 10); } while (Math.abs(a - b) < 1);
+    const box = document.createElement('div'); box.className = 'bowls';
+    let okEl;
+    [a, b].forEach(n => {
+      const bw = document.createElement('button'); bw.className = 'opt bowl';
+      bw.innerHTML = `<div class="gr">${'<i></i>'.repeat(n)}</div>${bowlSVG()}`;
+      const ok = more ? n === Math.max(a, b) : n === Math.min(a, b);
+      if (ok) okEl = bw;
+      bw.onclick = () => answer(bw, ok, okEl, `${pick(PRAISE)} V této misce ${pl(n, 'je', 'jsou', 'je')} ${n} ${pl(n, 'granule', 'granule', 'granulí')}.`);
+      box.appendChild(bw);
+    });
+    area.appendChild(box);
+    ask(more ? 'Ve které misce je víc granulí?' : 'Ve které misce je méně granulí?');
+    return;
+  }
+  const max = lv === 2 ? 10 : 20;
+  const a = rnd(0, max), b = Math.random() < .15 ? a : rnd(0, max);
+  const sign = a > b ? '>' : a < b ? '<' : '=';
+  const e = document.createElement('div'); e.className = 'eq'; e.style.fontSize = '64px'; e.textContent = `${a}  ?  ${b}`; area.appendChild(e);
+  const box = document.createElement('div'); box.className = 'opts';
+  let okEl;
+  ['<', '=', '>'].forEach(s => {
+    const bt = mkOpt(s); bt.style.fontSize = '54px'; if (s === sign) okEl = bt;
+    const words = sign === '>' ? `${a} je větší než ${b}` : sign === '<' ? `${a} je menší než ${b}` : `${a} se rovná ${b}`;
+    bt.onclick = () => answer(bt, s === sign, okEl, `${pick(PRAISE)} ${words}.`);
+    box.appendChild(bt);
+  });
+  area.appendChild(box);
+  ask('Které znaménko patří doprostřed? Zobáček ukazuje na menší číslo.');
+}
+
+/* 6) Procházka po číselné ose */
+function taskLine(area) {
+  const lv = level('line');
+  const base = lv === 3 ? 10 : 0;
+  const fwd = lv === 1 ? true : Math.random() < .55;
+  const maxStep = lv === 1 ? 4 : 6;
+  const { s, n } = noRepeat(() => {
+    const n = rnd(1, maxStep); const s = fwd ? rnd(base, base + 10 - n) : rnd(base + n, base + 10); return { s, n };
+  }, x => x.s * 100 + x.n);
+  const ans = fwd ? s + n : s - n;
+  const wrap = document.createElement('div'); wrap.className = 'line';
+  wrap.innerHTML = `<div class="walker">${dogSVG()}</div>`;
+  const nums = document.createElement('div'); nums.className = 'nums';
+  let okEl;
+  const btns = [];
+  for (let i = base; i <= base + 10; i++) {
+    const b = document.createElement('button'); b.className = 'n' + (i === s ? ' start' : ''); b.textContent = i;
+    if (i === ans) okEl = b;
+    b.onclick = () => answer(b, i === ans, okEl, `${pick(PRAISE)} Kvido je na čísle ${ans}.`, () => walk(i));
+    nums.appendChild(b); btns.push(b);
+  }
+  wrap.appendChild(nums); area.appendChild(wrap);
+  const walker = wrap.querySelector('.walker');
+  const place = i => { const b = btns[i - base]; walker.style.left = (b.offsetLeft + b.offsetWidth / 2) + 'px'; };
+  requestAnimationFrame(() => { walker.style.transition = 'none'; place(s); requestAnimationFrame(() => walker.style.transition = ''); });
+  async function walk(to) { const dir = to > s ? 1 : -1; for (let i = s + dir; dir > 0 ? i <= to : i >= to; i += dir) { place(i); sfx.hop(); await sleep(380); } }
+  const sk = pl(n, 'skok', 'skoky', 'skoků');
+  const txt = `Kvido stojí na čísle ${s}. Udělá ${n === 1 ? 'jeden' : n === 2 ? 'dva' : n} ${sk} ${fwd ? 'dopředu' : 'dozadu'}. Kde bude?`;
+  ask(txt);
+}
+
+/* ---------- confetti ---------- */
+let confRun = 0;
+function stopConfetti() { confRun++; const c = $('#confetti'); c.getContext('2d').clearRect(0, 0, c.width, c.height); }
+function confetti() {
+  const cv = $('#confetti'), c = cv.getContext('2d'), dpr = Math.min(2, devicePixelRatio || 1);
+  cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; c.scale(dpr, dpr);
+  const ps = Array.from({ length: 110 }, () => ({ x: innerWidth / 2, y: innerHeight / 2, vx: (Math.random() - .5) * 12, vy: -Math.random() * 14 - 4, s: rnd(6, 12), r: Math.random() * 6,
+    c: pick(['#f59e0b', '#ef4444', '#3cb371', '#3b82f6', '#a855f7', '#ec4899']), bone: Math.random() < .25 }));
+  const t0 = performance.now(), id = ++confRun;
+  (function tick(now) {
+    if (id !== confRun) return;
+    c.clearRect(0, 0, innerWidth, innerHeight);
+    for (const p of ps) { p.x += p.vx; p.y += p.vy; p.vy += .35; p.r += .1; c.save(); c.translate(p.x, p.y); c.rotate(p.r);
+      if (p.bone) { c.font = '22px sans-serif'; c.fillText('🦴', -11, 8); } else { c.fillStyle = p.c; c.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); } c.restore(); }
+    if (now - t0 < 2600) requestAnimationFrame(tick); else c.clearRect(0, 0, innerWidth, innerHeight);
+  })(t0);
+}
+
+/* ---------- boot ---------- */
+renderHome();
+if ('serviceWorker' in navigator && location.protocol === 'https:') { try { navigator.serviceWorker.register('sw.js').catch(() => {}); } catch (e) {} }
+</script>
+</body>
+</html>
