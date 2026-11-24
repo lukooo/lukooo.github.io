@@ -774,7 +774,7 @@ TASKS.mul = (area, lv) => {
   }
   // division with remainder
   const d = rnd(3, 9), qq = rnd(2, 9), r = rnd(1, d - 1), n = d * qq + r;
-  const z = tr('zb.', 'zv.'), lab = o => `${o[0]} <small style="font-size:.6em">${z} ${o[1]}</small>`;
+  const z = tr('zb.', 'zv.'), lab = o => `${o[0]} <small style="font-size:.6em;margin-left:.25em">${z} ${o[1]}</small>`;
   const right = [qq, r], opts = [right, [qq - 1, r + d], [qq, r === 1 ? 2 : r - 1], [qq + 1, r]].filter(o => o[0] > 0 && o[1] >= 0).slice(0, 3);
   area.appendChild(card(`${n} : ${d} = <span class="blank">?</span>`));
   const box = el('div', 'opts'); let okEl;
