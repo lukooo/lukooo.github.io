@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kvidova škola – hra pro 2. třídu se psem Kvidem</title>
-<meta name="description" content="Kvidova škola: mluvící hra pro 2. třídu. Y/i po tvrdých a měkkých souhláskách, párové souhlásky, abeceda, čtení vět, počítání do 100, malá násobilka, hodiny a peníze. Zdarma, bez reklam.">
-<meta name="keywords" content="hra pro 2. třídu, procvičování 2. třída, tvrdé a měkké souhlásky, y i po souhláskách, párové souhlásky, abeceda, počítání do 100, malá násobilka, hodiny pro děti, peníze, hra pro děti zdarma, pes Kvido">
+<meta name="description" content="Kvidova škola: mluvící hra pro 2. třídu. Y/i po souhláskách, vyjmenovaná slova, párové souhlásky, abeceda, čtení vět, počítání do 100, malá násobilka, hodiny a peníze. Zdarma, bez reklam.">
+<meta name="keywords" content="hra pro 2. třídu, procvičování 2. třída, tvrdé a měkké souhlásky, y i po souhláskách, vyjmenovaná slova, vyjmenovaná slova hra, párové souhlásky, abeceda, počítání do 100, malá násobilka, hodiny pro děti, peníze, hra pro děti zdarma, pes Kvido">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Luděk Koňařík">
 <link rel="canonical" href="https://www.ludek.sk/kvido/">
@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Luděk Koňařík">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:title" content="Kvidova škola – hra pro 2. třídu">
-<meta property="og:description" content="Se salašníkem Kvidem procvičíš y/i, párové souhlásky, abecedu, čtení, počítání do 100, násobilku, hodiny a peníze. Zdarma a bez reklam.">
+<meta property="og:description" content="Se salašníkem Kvidem procvičíš y/i, vyjmenovaná slova, párové souhlásky, abecedu, čtení, počítání do 100, násobilku, hodiny a peníze. Zdarma a bez reklam.">
 <meta property="og:url" content="https://www.ludek.sk/kvido/">
 <meta property="og:image" content="https://www.ludek.sk/kvido/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -32,7 +32,7 @@
       "@id": "https://www.ludek.sk/kvido/#game",
       "name": "Kvidova škola",
       "url": "https://www.ludek.sk/kvido/",
-      "description": "Mluvící vzdělávací hra pro děti ve 2. třídě s bernským salašníkem Kvidem: y/i po tvrdých a měkkých souhláskách, párové souhlásky, abeceda, čtení s porozuměním, sčítání a odčítání do 100, malá násobilka, hodiny a peníze.",
+      "description": "Mluvící vzdělávací hra pro děti ve 2. třídě s bernským salašníkem Kvidem: y/i po tvrdých a měkkých souhláskách, vyjmenovaná slova, párové souhlásky, abeceda, čtení s porozuměním, sčítání a odčítání do 100, malá násobilka, hodiny a peníze.",
       "image": "https://www.ludek.sk/kvido/og-image.png",
       "inLanguage": "cs",
       "genre": ["Vzdělávací hra", "Hra pro 2. třídu"],
@@ -44,7 +44,7 @@
       "isAccessibleForFree": true,
       "typicalAgeRange": "7-8",
       "educationalUse": "procvičování učiva 2. třídy",
-      "teaches": ["tvrdé a měkké souhlásky", "párové souhlásky", "abeceda", "druhy vět", "čtení s porozuměním", "sčítání a odčítání do 100", "malá násobilka", "dělení", "hodiny", "počítání s penězi", "číselná osa do 100"],
+      "teaches": ["tvrdé a měkké souhlásky", "vyjmenovaná slova", "párové souhlásky", "abeceda", "druhy vět", "čtení s porozuměním", "sčítání a odčítání do 100", "malá násobilka", "dělení", "hodiny", "počítání s penězi", "číselná osa do 100"],
       "audience": { "@type": "PeopleAudience", "suggestedMinAge": 7, "suggestedMaxAge": 8 },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
       "author": { "@type": "Person", "name": "Luděk Koňařík", "url": "https://www.ludek.sk/cs.html" }
@@ -138,6 +138,7 @@ button{font:inherit;border:0;cursor:pointer;color:inherit;background:none}
 .opt.txt{font-size:22px;min-height:64px;padding:10px 18px}
 .opt.letter{font-size:44px;min-width:84px}
 .opt.used{opacity:.25;pointer-events:none}
+.vlist{background:#fff7e0;border:2px solid #f5c26b;border-radius:16px;padding:10px 14px;font-size:16px;line-height:1.45;max-width:460px;text-align:left}
 .sorted{display:flex;flex-direction:column;gap:6px;width:100%;max-width:300px}
 .sslot{background:#fff;border:3px dashed #e3c9a3;border-radius:14px;padding:8px 14px;font-size:22px;font-weight:900;min-height:48px;color:var(--muted)}
 .sslot.f{border-style:solid;border-color:var(--green);background:#eafaf0;color:var(--ink)}
@@ -246,6 +247,7 @@ button{font:inherit;border:0;cursor:pointer;color:inherit;background:none}
       <h3>Co se dítě procvičí</h3>
       <ul>
         <li><strong>Y nebo I:</strong> tvrdé souhlásky h, ch, k, r, d, t, n a měkké ž, š, č, ř, c, j.</li>
+        <li><strong>Vyjmenovaná slova:</strong> po B, L, M, P, S, V, Z. Doplňování i/y, poznávání vyjmenovaných slov a po chybě se ukáže celá řada.</li>
         <li><strong>Párové souhlásky:</strong> b/p, d/t, z/s, v/f, h/ch, ž/š na konci slova, s nápovědou „řekni víc kusů“.</li>
         <li><strong>Abeceda:</strong> které písmeno je před a po, samohlásky a řazení slov podle abecedy.</li>
         <li><strong>Věty:</strong> čtení s porozuměním a znaménka na konci vět (věta oznamovací, tázací, zvolací).</li>
@@ -566,7 +568,38 @@ const GAMES = [
   { id: 'add', name: 'Do 100', icon: '➕', bg: '#fff1d6' }, { id: 'mul', name: 'Násobilka', icon: '✖️', bg: '#e6f9e1' },
   { id: 'clock', name: 'Hodiny', icon: '🕒', bg: '#e0f7fa' }, { id: 'money', name: 'Peníze', icon: '🪙', bg: '#fff6c9' },
   { id: 'line', name: 'Procházka', icon: '🐾', bg: '#ffe6f3' },
+  { id: 'vyj', name: 'Vyjmenovaná slova', icon: 'B L M P S V Z', bg: '#fde2c8', txt: '#b45309', wide: true },
 ];
+/* vyjmenovaná slova */
+const VYJ = {
+  B: 'být, bydlit, obyvatel, byt, příbytek, nábytek, dobytek, obyčej, bystrý, bylina, kobyla, býk, Přibyslav',
+  L: 'slyšet, mlýn, blýskat se, polykat, plynout, plýtvat, vzlykat, lysý, lýko, lýtko, lyže, pelyněk, plyš',
+  M: 'my, mýt, myslit, mýlit se, hmyz, myš, hlemýžď, mýtit, zamykat, smýkat, dmýchat, chmýří, nachomýtnout se, Litomyšl',
+  P: 'pýcha, pytel, pysk, netopýr, slepýš, pyl, kopyto, klopýtat, třpytit se, zpytovat, pýřit se, pykat',
+  S: 'syn, sytý, sýr, syrový, sychravý, usychat, sýkora, sýček, sysel, syčet, sypat',
+  V: 'vy, vysoký, výt, výskat, zvykat, žvýkat, vydra, výr, vyžle, povyk, výheň',
+  Z: 'brzy, jazyk, nazývat se',
+};
+const VYJ_FILL = [ // [word with _, letter, group, isVyj]
+  ['b_dlet', 'y', 'B'], ['ob_vatel', 'y', 'B'], ['náb_tek', 'y', 'B'], ['dob_tek', 'y', 'B'], ['ob_čej', 'y', 'B'], ['b_strý', 'y', 'B'],
+  ['b_lina', 'y', 'B'], ['kob_la', 'y', 'B'], ['b_k', 'ý', 'B'], ['příb_tek', 'y', 'B'],
+  ['sl_šet', 'y', 'L'], ['ml_n', 'ý', 'L'], ['bl_skat se', 'ý', 'L'], ['pol_kat', 'y', 'L'], ['pl_nout', 'y', 'L'], ['pl_tvat', 'ý', 'L'],
+  ['l_že', 'y', 'L'], ['l_ko', 'ý', 'L'], ['l_tko', 'ý', 'L'], ['pl_š', 'y', 'L'], ['vzl_kat', 'y', 'L'],
+  ['m_dlo', 'ý', 'M'], ['m_š', 'y', 'M'], ['hm_z', 'y', 'M'], ['m_slet', 'y', 'M'], ['m_lit se', 'ý', 'M'], ['zam_kat', 'y', 'M'], ['chm_ří', 'ý', 'M'], ['hlem_žď', 'ý', 'M'],
+  ['p_cha', 'ý', 'P'], ['p_tel', 'y', 'P'], ['p_sk', 'y', 'P'], ['netop_r', 'ý', 'P'], ['slep_š', 'ý', 'P'], ['p_l', 'y', 'P'], ['kop_to', 'y', 'P'],
+  ['třp_tit se', 'y', 'P'], ['klop_tat', 'ý', 'P'],
+  ['s_n', 'y', 'S'], ['s_tý', 'y', 'S'], ['s_r', 'ý', 'S'], ['s_rový', 'y', 'S'], ['s_chravý', 'y', 'S'], ['s_kora', 'ý', 'S'], ['s_ček', 'ý', 'S'],
+  ['s_sel', 'y', 'S'], ['s_čet', 'y', 'S'], ['s_pat', 'y', 'S'],
+  ['v_soký', 'y', 'V'], ['v_skat', 'ý', 'V'], ['zv_kat', 'y', 'V'], ['žv_kat', 'ý', 'V'], ['v_dra', 'y', 'V'], ['pov_k', 'y', 'V'],
+  ['brz_', 'y', 'Z'], ['jaz_k', 'y', 'Z'], ['naz_vat se', 'ý', 'Z'],
+  // not on the list: written with i / í
+  ['b_lý', 'í', 'B'], ['b_cykl', 'i', 'B'], ['l_st', 'i', 'L'], ['l_monáda', 'i', 'L'], ['l_ný', 'í', 'L'], ['l_pa', 'í', 'L'],
+  ['m_nuta', 'i', 'M'], ['m_sa', 'í', 'M'], ['m_lý', 'i', 'M'], ['p_vo', 'i', 'P'], ['p_lot', 'i', 'P'], ['p_sek', 'í', 'P'], ['p_la', 'i', 'P'],
+  ['s_la', 'í', 'S'], ['s_lnice', 'i', 'S'], ['s_rka', 'i', 'S'], ['v_la', 'í', 'V'], ['v_dlička', 'i', 'V'], ['v_tr', 'í', 'V'], ['v_no', 'í', 'V'],
+  ['z_ma', 'i', 'Z'], ['z_tra', 'í', 'Z'], ['z_vat', 'í', 'Z'],
+];
+const VYJ_NOT = { B: ['bílý', 'bicykl', 'bič'], L: ['list', 'lípa', 'líný', 'limonáda'], M: ['minuta', 'mísa', 'milý', 'mír'], P: ['pivo', 'pilot', 'písek', 'pila'],
+  S: ['síla', 'silnice', 'sirka', 'síto'], V: ['víla', 'vidlička', 'vítr', 'víno'], Z: ['zima', 'zítra', 'zívat', 'zisk'] };
 function numOpts(ans, extra = [], n = 3) {
   const set = new Set([ans]);
   for (const c of shuffle([...extra, ans + 1, ans - 1, ans + 10, ans - 10, ans + 2, ans - 2])) { if (set.size >= n) break; if (c >= 0 && c <= 100) set.add(c); }
@@ -581,7 +614,7 @@ function renderHome() {
   paintDogs();
   const box = $('#tiles'); box.innerHTML = '';
   for (const g of GAMES) {
-    const b = document.createElement('button'); b.className = 'tile'; b.style.background = g.bg;
+    const b = document.createElement('button'); b.className = 'tile'; b.style.background = g.bg; if (g.wide) { b.style.gridColumn = '1 / -1'; b.style.minHeight = '84px'; }
     b.innerHTML = `<span class="ic"${g.txt ? ` style="color:${g.txt};font-size:34px"` : ''}>${g.icon}</span><span class="nm">${g.name}</span>` + (S.wins[g.id] ? `<span class="st">⭐${S.wins[g.id]}</span>` : '');
     b.onclick = () => { sfx.tap(); startGame(g.id); };
     box.appendChild(b);
@@ -657,7 +690,7 @@ $('#homeBtn').onclick = () => { try { speechSynthesis.cancel(); } catch (e) {} G
 function nextTask() {
   G.wrong = 0; G.busy = false;
   const area = $('#area'); area.innerHTML = ''; area.scrollTop = 0;
-  ({ yi: taskYi, pair: taskPair, abc: taskAbc, sent: taskSent, add: taskAdd, mul: taskMul, clock: taskClock, money: taskMoney, line: taskLine })[G.id](area);
+  ({ yi: taskYi, pair: taskPair, abc: taskAbc, sent: taskSent, add: taskAdd, mul: taskMul, clock: taskClock, money: taskMoney, line: taskLine, vyj: taskVyj })[G.id](area);
 }
 async function answer(el, ok, okEl, okText, after) {
   if (G.busy) return;
@@ -915,6 +948,44 @@ function taskMoney(area) {
   const p = document.createElement('div'); p.className = 'coins'; p.innerHTML = coins.map(coinSVG).join(''); area.appendChild(p);
   choice(area, numOpts(ans, [ans + 5, ans - 5]), ans, `${pick(PRAISE)} Je to ${ans} ${pl(ans, 'koruna', 'koruny', 'korun')}.`);
   ask('Kolik korun má Kvido v pokladničce?');
+}
+
+/* 10) Vyjmenovaná slova po B, L, M, P, S, V, Z */
+function taskVyj(area) {
+  const lv = level('vyj');
+  const groups = lv === 1 ? ['B', 'L', 'M'] : lv === 2 ? ['B', 'L', 'M', 'P', 'S'] : ['B', 'L', 'M', 'P', 'S', 'V', 'Z'];
+  const kind = lv === 1 ? 'fill' : pick(['fill', 'fill', lv === 3 ? 'spell' : 'which', 'which']);
+  const showList = g => {
+    if (area.querySelector('.vlist')) return;
+    const d = document.createElement('div'); d.className = 'vlist'; d.innerHTML = `<b>Vyjmenovaná slova po ${g}:</b> ${VYJ[g]}`; area.appendChild(d);
+  };
+  if (kind === 'which') {
+    const g = noRepeat(() => pick(groups), x => x);
+    const right = pick(VYJ[g].split(', ').filter(w => w.length > 2 && w[0] === w[0].toLowerCase()));
+    const opts = shuffle([right, ...shuffle(VYJ_NOT[g]).slice(0, 2)]);
+    area.appendChild(wordCard(g));
+    const box = choice(area, opts, right, `${pick(PRAISE)} ${cap(right)} je vyjmenované slovo po ${g}.`, 'txt');
+    box.addEventListener('click', () => { if (G.wrong) showList(g); });
+    ask(`Které slovo patří mezi vyjmenovaná slova po ${g}?`);
+    return;
+  }
+  const pool = VYJ_FILL.filter(x => groups.includes(x[2]));
+  const [w, l, g] = noRepeat(() => pick(pool), x => x[0]);
+  const full = w.replace('_', l), isY = 'yý'.includes(l);
+  const why = isY ? `Je to vyjmenované slovo po ${g}.` : `Není to vyjmenované slovo, proto ${l}.`;
+  if (kind === 'spell') {
+    const wrong = w.replace('_', { y: 'i', i: 'y', 'ý': 'í', 'í': 'ý' }[l]);
+    area.appendChild(wordCard('?'));
+    const box = choice(area, shuffle([full, wrong]), full, `${pick(PRAISE)} ${cap(full)}. ${why}`, 'txt');
+    box.addEventListener('click', () => { if (G.wrong) showList(g); });
+    ask('Které slovo je napsané správně?');
+    return;
+  }
+  area.appendChild(wordCard(blank(w)));
+  const long = 'ýí'.includes(l);
+  const box = choice(area, long ? ['í', 'ý'] : ['i', 'y'], l, `${pick(PRAISE)} ${cap(full)}. ${why}`, 'letter');
+  box.addEventListener('click', () => { if (G.wrong) showList(g); });
+  ask('Doplň i nebo y. Je to vyjmenované slovo?', `Doplň i, nebo y. Vzpomeň si na vyjmenovaná slova po ${g}.`);
 }
 
 /* 9) Procházka po číselné ose do 100 */
